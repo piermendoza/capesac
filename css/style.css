@@ -8147,11 +8147,11 @@ div.cs-select span {
   vertical-align: middle;
   heght: 100%;
   line-height: 20px;
-  padding: 14px;
+  padding: 25px;
   display: block;
   width: 100%;
   color: #fff;
-  text-align: left;
+  text-align: center;
   background: #3c4146;
   text-transform: uppercase;
   -webkit-transition: 0.5s;
@@ -8268,12 +8268,16 @@ div.cs-select span {
   display: -webkit-flex;
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  width: 90%;
   margin-bottom: 30px;
 }
-.feature-full-1col .image, .feature-full-1col .desc {
+.feature-full-1col .image {
   float: left;
-  width: 50%;
+  width: 60%;
+}
+.feature-full-1col .desc {
+  float: left;
+  width: 40%;
 }
 @media screen and (max-width: 768px) {
   .feature-full-1col .image, .feature-full-1col .desc {
