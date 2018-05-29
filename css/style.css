@@ -8212,6 +8212,7 @@ div.cs-select span {
 #availability .a-col .input-field input[type="text"] {
   float: right;
   margin-right: 0;
+  width: 100%;
   height: 42px;
   font-size: 15px;
   line-height: 36px;
