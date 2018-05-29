@@ -8816,7 +8816,7 @@ input[type="text"] {
 #footer .phone, a {
   color: white;
 }
-#footer .phone:hover , a:hover{
+#footer .phone:hover a:hover{
   text-decoration: underline !important;
   color: #496a77;
 }
