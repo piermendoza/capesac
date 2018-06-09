@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js" lang="es">
 	<head>
@@ -81,21 +82,21 @@
 			  font-size:40px;
 			}
 		
-			/*Escala Griz*/
+			
 			.xd{
 				-webkit-filter: grayscale(0%);
 				filter: grayscale(0%);
 			}
 			
-			/*Hover Escala Griz*/
 			.xd:hover{
 			 -webkit-filter: grayscale(100%);
 				filter: grayscale(100%);
 			}
+			
 	</style>
 	
 </head>
-<body style="background-color:#e9e4b4">
+<body style="background-color:#e9e4b4 ">
 	
 	<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -123,7 +124,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-119036410-1');
-  alert("Pagina en desarrollo 30/05/2018 by: piermendoza25@gmail.com");	
+  alert("Pagina en desarrollo 09/06/2018");
 </script>
 
 	<div id="fh5co-wrapper">
@@ -178,12 +179,40 @@
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>Hostal Dluxo</span></p>
-		   						<h2>Reservas para vacaciones familiares</h2>
-			   					<p>
-			   						<a href="#" class="btn btn-primary btn-lg">Reservar</a>
-			   					</p>
-		   					</div>
+		   						<p><span>Hostales Capesac</span></p>
+								<div class="row"> 								
+									<div class="col-sm-2">
+										<a href="#">
+											<img class="hol" src="img/hst1.jpg" alt="Card image cap">Hostal Dluxo
+										</a>
+									</div>
+									<div class="col-sm-2">
+										<a href="#">
+											<img class="hol" src="img/hst2.jpg" alt="Card image cap">Hostal Emporio
+										</a>
+									</div>
+									<div class="col-sm-2">
+										<a href="#">
+											<img class="hol" src="img/hst3.jpg" alt="Card image cap">Hostal La Parada
+										</a>
+									</div>
+									<div class="col-sm-2">
+										<a href="#">
+											<img class="hol" src="img/hst4.jpg" alt="Card image cap">Hostal Conquista
+										</a>
+									</div>
+									<div class="col-sm-2">
+										<a href="#">
+											<img class="hol" src="img/hst5.jpg" alt="Card image cap">Hostal Costa Azul
+										</a>
+									</div>
+									<div class="col-sm-2">
+										<a href="#">
+											<img class="hol" src="img/hst6.jpg" alt="Card image cap">Hostal Tu & Yo
+										</a>
+									</div>
+								</div>		
+							</div>
 		   				</div>
 		   			</div>
 		   		</div>
@@ -628,16 +657,84 @@
 	</div>	
 		<br><br>
 <!--Main Footer -->	
-		<footer id="footer" class="text-white text-center" style="background-color: black; list-style-type:none;">
-			<li class="nav-item active">
-				<span class="phone"><i class="fas fa-phone fa-lg"></i><a href="tel:+51965003620"> +51 965003620</a><br></span>
-				<i class="fas fa-envelope-open fa-lg"></i> reservaciones@grupocapesac.com
-			</li>
-			<li class="nav-item text-center">
-				<label class="wLabel-center">Grupo CapeSac All Rights Reserved &copy; 2018</label>
-			</li>
+<div class="container-fluid" style="background-color:#142512;">
+		<footer id="footer" class="text-white" >
+		    <br>
+			<div class="row">
+				<div class="col-sm-3" style="border-right: 1px solid #b8c7c2;">
+					<div class="row text-center">GRUPO CAPESAC</div>
+						<li>
+							<a>Inicio</a>
+						</li>
+						<li>
+							<a>Hostal Dluxo</a>
+						</li>
+						<li>
+							<a>Hostal Emporio</a>
+						</li>
+						<li>
+							<a>Hostal La Parada</a>
+						</li>
+						<li>
+							<a>Hostal Conquistador</a>
+						</li>
+						<li>
+							<a>Hostal Costa Azul</a>
+						</li>
+						<li>
+							<a>Hostal Tu & Yo</a>
+						</li>
+						<li>
+							<a>Hostal 901</a>
+						</li>
+				</div>
+				<div class="col-sm-3" style="border-right: 1px solid #b8c7c2;">
+					<div class="row text-center">MEDIOS DE PAGO</div>
+						<li>
+							<a>Deposito</a>
+						</li>
+						<li>
+							<a>Transferencia</a>
+						</li>
+						<li>
+							<a>Giro</a>
+						</li>
+						<li>
+							<a>EfectiPago</a>
+						</li>
+						<li>
+							<a>Visa / Visa Net</a>
+						</li>
+						
+						<a class="xd"><img src="img/visa4.png"></a>
+						<a class="xd"><img src="img/pagoefe.png"></a>
+				</div>
+				<div class="col-sm-3" style="border-right: 1px solid #b8c7c2;">
+					<div class="row text-center">SUSCRIBETE</div>
+					<form method="post">
+						<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+						<br>
+						<input type="text" class="form-control" id="email" name="email" placeholder="Correo" value="" data-fv-field="email">
+						<br>
+						<center>	
+							<button type="submit" id="submitfrmsus" class="btn btn-success">Enviar</button>
+						</center>	
+					</form>
+
+				</div>
+				<div class="col-sm-3">
+					<div class="row text-center">CONTACTENOS</div>
+						<span class="phone"><i class="fas fa-phone fa-lg"></i><a href="tel:+51965003620"> +51 965003620</a><br></span>
+						<i class="fas fa-envelope-open fa-lg"></i> reservaciones@grupocapesac.com
+					
+				</div>
+			</div>
+			<br> 
+			<div class="row">
+				<p class="text-center"><a href="" >Powerd by:Pier castañeda</a></p>
+			</div>
 		</footer>
-	
+	</div>
 	<!--Iconos Sociales -->		
 		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style a2a_follow" style="left:0px; top:80px;">
 			<a href="https://www.facebook.com/grupocapesac/" class="a2a_button_facebook"></a>
@@ -660,6 +757,5 @@
 		<script src="js/selectFx.js"></script>
 		<script src="js/jquery.flexslider-min.js"></script>
 		<script src="js/custom.js"></script>
-
 	</body>
 </html>
