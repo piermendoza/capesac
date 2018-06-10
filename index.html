@@ -104,8 +104,6 @@
 	
  /*Estilos Base*/
     .contenedor-img .mascara,.contenedor-img .contenido {
-        width: 300px;
-        height: 200px;
         position: absolute;
         overflow: hidden;
         top: 0;
@@ -114,7 +112,11 @@
     .contenedor-img img {
         display: block;
         position: relative;
-       
+        
+		 padding:1px;
+   border:1px solid #021a40;
+   background-color:#ff0;
+   border-radius: 10px;
     }
     .contenedor-img h2 {
         text-transform: uppercase;
@@ -153,7 +155,6 @@
     
 }
 .ejemplo-5 .mascara { 
-    background-color: rgba(119, 80, 21, 0.9); 
     transition: all 0.5s linear;
     opacity: 0;
 }	
@@ -172,13 +173,6 @@
     transform: scale(0);
     transition: all 0.5s linear;
 }
-.ejemplo-5 a.link { 
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.5s linear;
-    background-color: rgba(119, 80, 21, 0.9);
-}
-
 .ejemplo-5:hover img { 
 	transform: scale(10);
     opacity: 0;
@@ -325,7 +319,7 @@
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>Proximamente</span></p>
+		   						<p><span>Nuevo Hostal</span></p>
 								
 								<div class="row">
 									<div class="col-sm-4"></div>
@@ -334,7 +328,7 @@
 													<div class="contenedor-img ejemplo-5">  
 											 <img src="images/901.jpeg" />  
 											 <div class="mascara">
-												 <p>Proximamente</p>  
+												 <p>¡PROXIMAMENTE!</p>  
 											 </div>
 										</div>
 
@@ -829,7 +823,7 @@
 			</div>
 			<br> 
 			<div class="row">
-				<p class="text-center"><a href="" >Powerd by:Pier castañeda</a></p>
+				<p class="text-center"><a href="https://facebook.com/jepicame" >Powerd by:Pier castañeda</a></p>
 			</div>
 		</footer>
 	</div>
