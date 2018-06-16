@@ -191,6 +191,39 @@
 			z-index: 100;
 		}
 
+	
+								#menuhor {
+width: 100%;
+height: 50px;
+margin-left: 8px;
+margin-right: 8px;
+margin-top: 16px; /* Margen superior negativo para pegar el menu al div con id "fondo_encabezado" */
+}
+
+#boton {
+padding: 0px;
+margin: auto;
+text-align:center;
+/*margin-left: 28%; /* Modificar el margin para centrar los botones cuando se añado o quite alguno */
+}
+
+#boton li {
+display: inline;
+
+}
+
+#boton li a {
+line-height: 30px;	
+font-family: Arial;
+font-size: 16px;
+text-decoration: none;
+display: inline-block;
+padding: 10px;
+font-family: 'Dosis', sans-serif;
+text-transform: uppercase;
+
+} 
+								
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
@@ -339,35 +372,53 @@ alert("Pagina en desarrollo 16/06/2018");
 		   			</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(images/slider2.jpg);">
+			<li style="background-image: url(images/slider1.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>Nuevo Hostal</span></p>
-								
-								<div class="row">
-									<div class="col-sm-4"></div>
-									<div class="col-sm-4">
-									
-													<div class="contenedor-img ejemplo-5">  
-											 <img src="images/901.jpeg" />  
-											 <div class="mascara">
-												 <p>¡PROXIMAMENTE!</p>  
-											 </div>
-										</div>
-
-										
+		   						<p><span>Hostales Capesac</span></p>
+								<br><br>
+								<div class="row"> 								
+									<div class="col-sm-2  img-contenedor">
+										<a href="#">
+											<img class="hol" src="img/hst1.jpg" alt="Hostal en Lima - Dluxo">Hostal Dluxo
+										</a>
 									</div>
-									<div class="col-sm-4"></div>
-								</div>
-								<br>
-		   					</div>
+									<div class="col-sm-2  img-contenedor">
+										<a href="#">
+											<img class="hol" src="img/hst2.jpg" alt="Hostal en Lima - Emporio">Hostal Emporio
+										</a>
+									</div>
+									<div class="col-sm-2 img-contenedor">
+										<a href="#">
+											<img class="hol" src="img/hst3.jpg" alt="Hostal en Lima - La Parada">Hostal La Parada
+										</a>
+									</div>
+									<div class="col-sm-2 img-contenedor">
+										<a href="#">
+											<img class="hol" src="img/hst4.jpg" alt="Hostal en Lima - Conquistador">Hostal Conquista
+										</a>
+									</div>
+									<div class="col-sm-2 img-contenedor">
+										<a href="#">
+											<img class="hol" src="img/hst5.jpg" alt="Hostal en Lima - Costa Azul">Hostal Costa Azul
+										</a>
+									</div>
+									<div class="col-sm-2 img-contenedor">
+										<a href="#">
+											<img class="hol" src="img/hst6.jpg" alt="Hostal en Lima - Tu & Yo">Hostal Tu & Yo
+										</a>
+									</div>
+								</div>		
+								<br><br>
+							</div>
 		   				</div>
 		   			</div>
 		   		</div>
 		   	</li>
+		   	
 		  	</ul>
 	  	</div>
 	</aside>
@@ -414,7 +465,7 @@ alert("Pagina en desarrollo 16/06/2018");
 						<div class="a-col action">
 							<a href="#">
 							<span> </span>
-								cheking
+								reservar
 							</a>
 						</div>
 					</form>
@@ -459,79 +510,145 @@ alert("Pagina en desarrollo 16/06/2018");
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst1.jpg" />
 							<div class="mask">
-								<h2>Hover Style #10</h2>
-								<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-								<a href="#" class="info">Read More</a>
+								<h2 class="h3" style="font-weight: bold;">Hostal Dluxo</h3>
+								<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
+									confortable para su estadia y conexion wifi en alta velocidad.
+								</p>
+								<div class="menuhor" >
+									<ul id="boton" style="color:#496a77;">
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+									</ul> 	
+								</div>
+								<i class="fas fa-map-marker-alt fa-lg"></i>
+								<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
-						<p>HOSTAL DLUXO</p>
+						<p class="text-center" style=" font-weight: bold;color: #5e5e5e;">HOSTAL DLUXO</p>
 					</div>
 					<div class="col-sm-6">  
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst2.jpg" />
 							<div class="mask">
-								<h2>Hover Style #10</h2>
-								<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-								<a href="#" class="info">Read More</a>
+								<h2 class="h3" style="font-weight: bold;">Hostal Dluxo</h3>
+								<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
+									confortable para su estadia y conexion wifi en alta velocidad.
+								</p>
+								<div class="menuhor" >
+									<ul id="boton" style="color:#496a77;">
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+									</ul> 	
+								</div>
+								<i class="fas fa-map-marker-alt fa-lg"></i>
+								<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
-						<p>HOSTAL EMPORIO</p>
+						<p class="text-center" style=" font-weight: bold;color: #5e5e5e;">HOSTAL DLUXO</p>
 					</div>
 					<div class="col-sm-6">  
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst3.jpg" />
 							<div class="mask">
-								<h2>Hover Style #10</h2>
-								<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-								<a href="#" class="info">Read More</a>
+								<h2 class="h3" style="font-weight: bold;">Hostal Dluxo</h3>
+								<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
+									confortable para su estadia y conexion wifi en alta velocidad.
+								</p>
+								<div class="menuhor" >
+									<ul id="boton" style="color:#496a77;">
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+									</ul> 	
+								</div>
+								<i class="fas fa-map-marker-alt fa-lg"></i>
+								<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
-						<p>HOSTAL EMPORIO</p>
+						<p class="text-center" style=" font-weight: bold;color: #5e5e5e;">HOSTAL DLUXO</p>
 					</div>
 					<div class="col-sm-6">  
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst4.jpg" />
 							<div class="mask">
-								<h2>Hover Style #10</h2>
-								<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-								<a href="#" class="info">Read More</a>
+								<h2 class="h3" style="font-weight: bold;">Hostal Dluxo</h3>
+								<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
+									confortable para su estadia y conexion wifi en alta velocidad.
+								</p>
+								<div class="menuhor" >
+									<ul id="boton" style="color:#496a77;">
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+									</ul> 	
+								</div>
+								<i class="fas fa-map-marker-alt fa-lg"></i>
+								<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
-						<p>HOSTAL EMPORIO</p>
+						<p class="text-center" style=" font-weight: bold;color: #5e5e5e;">HOSTAL DLUXO</p>
 					</div>
 					<div class="col-sm-6">  
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst5.jpg" />
 							<div class="mask">
-								<h2>Hover Style #10</h2>
-								<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-								<a href="#" class="info">Read More</a>
+								<h2 class="h3" style="font-weight: bold;">Hostal Dluxo</h3>
+								<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
+									confortable para su estadia y conexion wifi en alta velocidad.
+								</p>
+								<div class="menuhor" >
+									<ul id="boton" style="color:#496a77;">
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+									</ul> 	
+								</div>
+								<i class="fas fa-map-marker-alt fa-lg"></i>
+								<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
-						<p>HOSTAL EMPORIO</p>
+						<p class="text-center" style=" font-weight: bold;color: #5e5e5e;">HOSTAL DLUXO</p>
 					</div>
 					<div class="col-sm-6">  
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst6.jpg" />
 							<div class="mask">
-								<h3 style="font-weight: bold;">Hostal Dluxo</h3>
-						<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
-							confortable para su estadia y conexion wifi en alta velocidad.</p>
-						<i class="fas fa-map-marker-alt fa-lg"></i>
-						<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
-						<p>
-							<label style="font-size: 10px;">Medios de pago</label><br>
-							<a class="xd"><img src="img/visa4.png"></a>
-							<a class="xd"><img src="img/pagoefe.png"></a> 
-							<a class="xd"><img src="img/visa4.png"></a>
-							<a class="xd"><img src="img/pagoefe.png"></a>
-						</p>
-						<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>
-								
-								
+								<h2 class="h3" style="font-weight: bold;">Hostal Dluxo</h3>
+								<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
+									confortable para su estadia y conexion wifi en alta velocidad.
+								</p>
+								<div class="menuhor" >
+									<ul id="boton" style="color:#496a77;">
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+										<li><i class="fas fa-wifi fa-lg"></i></li>
+									</ul> 	
+								</div>
+								<i class="fas fa-map-marker-alt fa-lg"></i>
+								<a class="text-center resalt" href="https://goo.gl/maps/iAFiDbTCcBn">Av.Caminos del Inca 2376 Santiago de Surco</a>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
-						<p>HOSTAL EMPORIO SAC</p>
+						<p class="text-center" style=" font-weight: bold;color: #5e5e5e;">HOSTAL DLUXO</p>
 					</div>
 				</div>
 		<!--
