@@ -67,28 +67,7 @@
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- Fontawesome JS-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-		
-	<script>
-$(function(){
-				$(window).scroll(function(){
-					if ($(window).scrollTop() < 650){
-						$("#reserv").css("position", "static");
-						//$("#reserv").insertAfter("#footer");
-					}else{
-					
-					
-						$("#reserv").css("position", "fixed");
-						$("#reserv").css("top", "0%");
-						//$(".div1").insertAfter(".div2");
-						//alert("asd");
-					}
-					
-					
-				});
-			});	
-	</script>	
-		
-		
+	
 	<style type="text/css">
 		.hol{
 			background-color:white;
@@ -213,7 +192,28 @@ $(function(){
 		}
 
 	</style>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	
+	$(function(){
+				$(window).scroll(function(){
+					if ($(window).scrollTop() < 650){
+						$("#reserv").css("position", "static");
+						//$("#reserv").insertAfter("#footer");
+					}else{
+					
+					
+						$("#reserv").css("position", "fixed");
+						$("#reserv").css("top", "0%");
+						//$(".div1").insertAfter(".div2");
+						//alert("asd");
+					}
+					
+					
+				});
+			});
+	</script>
+	
 </head>
 <body style="background-color:#e9e4b4 ">
 	
