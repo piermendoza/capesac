@@ -188,7 +188,26 @@
 
 
 	</style>
+	<script>
 	
+	$(function(){
+				$(window).scroll(function(){
+					if ($(window).scrollTop() < 650){
+						$("#reserv").css("position", "static");
+						//$("#reserv").insertAfter("#footer");
+					}else{
+					
+					
+						$("#reserv").css("position", "fixed");
+						$("#reserv").css("top", "0%");
+						//$(".div1").insertAfter(".div2");
+						//alert("asd");
+					}
+					
+					
+				});
+			});
+	</script>
 </head>
 <body style="background-color:#e9e4b4 ">
 	
@@ -346,7 +365,7 @@ alert("Pagina en desarrollo 16/06/2018");
 		  	</ul>
 	  	</div>
 	</aside>
-	<div class="wrap">
+	<div id="reserv" class="wrap">
 		<div class="container">
 			<div class="row">
 				<div id="availability">
@@ -491,9 +510,7 @@ alert("Pagina en desarrollo 16/06/2018");
 						<div class="view view-tenth  hol">
 							<img class="img-thumbnail" src="img/hst6.jpg" />
 							<div class="mask">
-								
-								
-													<h3 style="font-weight: bold;">Hostal Dluxo</h3>
+								<h3 style="font-weight: bold;">Hostal Dluxo</h3>
 						<p>La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones, ambiente
 							confortable para su estadia y conexion wifi en alta velocidad.</p>
 						<i class="fas fa-map-marker-alt fa-lg"></i>
