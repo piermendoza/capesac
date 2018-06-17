@@ -240,6 +240,12 @@ text-transform: uppercase;
 }
 								
 	</style>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+		<link rel="stylesheet" href="css/jquery.modal.min.css" />
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 	
@@ -264,6 +270,10 @@ text-transform: uppercase;
 	
 </head>
 <body style="background-image: url('img/white_texture.jpg');">
+
+
+<!-- Link to open the modal -->
+<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
 	
 	<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -1051,6 +1061,12 @@ alert("Pagina en desarrollo 16/06/2018");
 			<br>
 			<a href="https://facebook.com/jepicame" >Powerd by:Pier castañeda</a>
 		</footer>
+		
+		
+
+		<div id="ex1" class="modal" style="padding: 0px 0px;">
+			<img class="img-thumbnail" src="images/901.jpeg">
+		</div>
 	</div>
 	<!--Iconos Sociales -->		
 		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style a2a_follow" style="left:0px; top:230px;">
