@@ -12,7 +12,7 @@
 }
 .view-tenth .mask {
    height:500px;
-   background-color: rgba(255, 231, 179, 0.3);
+   background-color: rgba(255, 231, 179, 0.9);
    -webkit-transition: all 0.5s linear;
    -moz-transition: all 0.5s linear;
    -o-transition: all 0.5s linear;
