@@ -222,7 +222,22 @@ padding: 10px;
 font-family: 'Dosis', sans-serif;
 text-transform: uppercase;
 
+
 } 
+
+.link-1 {
+  transition: 0.3s ease;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid #3fa46a;
+  border-bottom: 4px solid #3fa46a;
+}
+.link-1:hover {
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0; 
+}
 								
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -290,9 +305,9 @@ alert("Pagina en desarrollo 16/06/2018");
 					<h1 id="fh5co-logo"><a href="index.html"> GRUPO CAPESAC</a></h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="index.html">INICIO</a></li>
+							<li><a class="active link-1" href="index.html">INICIO</a></li>
 							<li>
-								<a href="#" class="fh5co-sub-ddown">HOSTALES</a>
+								<a href="#" class="link-1 fh5co-sub-ddown">HOSTALES</a>
 								<ul class="fh5co-sub-menu">
 								 	<li><a href="hostal/dluxo.html">Hostal Dluxo</a></li>
 								 	<li><a href="hostal/emporio.html">Hostal Emporio</a></li>
@@ -303,17 +318,17 @@ alert("Pagina en desarrollo 16/06/2018");
 									<li><a href="hostal/901.html">Hostal 901</a></li>
 								</ul>
 							</li>
-							<li><a href="#">SERVICIOS</a></li>
-							<li><a href="#">CONTACTO</a></li>
+							<li><a class="link-1" href="#">SERVICIOS</a></li>
+							<li><a class="link-1" href="#">CONTACTO</a></li>
 							<li>
-								<a href="#" class="fh5co-sub-ddown">IDIOMA</a>
+								<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
 								<ul class="fh5co-sub-menu">
 								 	<li><a href="#"><img src="images/espñ.png"> Español</a></li>
 								 	<li><a href="#"><img src="images/eeuu.png"> Ingles</a></li>
 								</ul>
 							</li>
 							<li>
-								<a href="tel:+51965003620"><img src="images/phono.png">965003620</a>
+								<a class="link-1" href="tel:+51965003620"><img src="images/phono.png">965003620</a>
 							</li>
 						</ul>
 					</nav>
