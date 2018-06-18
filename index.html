@@ -267,6 +267,13 @@ text-transform: uppercase;
       $("#mostrarmodal").modal("show");
    });
    
+   if($(window).width() < 767)
+	{
+		$("#reserv").css("position", "fixed");
+		$("#reserv").css("top", "0%");
+	} else {
+   // change functionality for larger screens
+	}
 	</script>
 	
 
