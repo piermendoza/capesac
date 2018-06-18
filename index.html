@@ -676,7 +676,7 @@ alert("Pagina en desarrollo 16/06/2018");
 									</ul> 	
 								</div>
 								<i class="fas fa-map-marker-alt fa-lg"></i>
-								<a class="text-center resalt" data-toggle="modal" data-target="#modelMap">Av.Manco Capac 1080 - La Victoria</a>
+								<a class="text-center resalt" data-toggle="modal" data-target="#myModal">Av.Manco Capac 1080 - La Victoria</a>
 								<p><a href="#" class="btn btn-primary btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a></p>		
 							</div>
 						</div>
@@ -692,8 +692,10 @@ alert("Pagina en desarrollo 16/06/2018");
 				<div class="modal fade" id="modelMap" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 				   <div class="modal-dialog">
 					  <div class="modal-content">
-							<div id="map">
-							</div>
+							<div class="embed-responsive embed-responsive-16by9">
+					        
+					<iframe class="embed-responsive-item" src="https://goo.gl/maps/a6LMHdXssex" allowfullscreen></iframe>			
+          </div>
 						</div>
 				   </div>
 				</div>
@@ -714,6 +716,28 @@ alert("Pagina en desarrollo 16/06/2018");
 	
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5bRkeYqg3qWclUNhbNqA220b0LYIwmro&callback=initMap"
     async defer></script>
+	
+	
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content bmd-modalContent">
+
+				<div class="modal-body">
+          
+          <div class="close-button">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+					        
+					<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC5bRkeYqg3qWclUNhbNqA220b0LYIwmro&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>			
+          </div>
+		  
+		 
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 		<!--
 				<div class="feature-full-1col" style="border-style: solid;">
 					<div class="image" style="background-image: url(img/hst6.jpg);">
