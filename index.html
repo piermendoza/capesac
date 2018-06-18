@@ -244,16 +244,17 @@ text-transform: uppercase;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script>
-	
+		$(function(){
+			if(window.matchMedia('(max-width: 768px)').matches){
+							$('.ocultar').hide();}				
+			});
+						
 	$(function(){
+			
 				$(window).scroll(function(){
 					if ($(window).scrollTop() < 650 || window.matchMedia('(max-width: 768px)').matches){
 						$("#reserv").css("position", "static");
 						//$("#reserv").insertAfter("#footer");
-						if(window.matchMedia('(max-width: 768px)').matches){
-							$('.ocultar').hide();
-						}
-						
 					}else{
 					
 					
