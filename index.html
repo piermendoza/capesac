@@ -43,8 +43,11 @@
 	<!-- Owl Slider -->
 	<!-- <link rel="stylesheet" href="css/owl.carousel.css"> -->
 	<!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
-	<!-- Date Picker -->
-	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	
+	
+	<!-- Date Picker
+	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css"> -->
+	
 	<!-- CS Select -->
 	<link rel="stylesheet" href="css/cs-select.css">
 	<link rel="stylesheet" href="css/cs-skin-border.css">
@@ -241,14 +244,18 @@ text-transform: uppercase;
   border-top: 4px solid #ffffff;
   border-bottom: 4px solid #ffffff;
   padding: 6px 0; 
-}
-						
+}						
 	</style>
-	
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<script src="js/jquery.datetimepicker.full.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+	
 	<script>
 		$(function(){
+		
 			if(window.matchMedia('(max-width: 768px)').matches){
 							$('.ocultar').hide();}				
 			});
@@ -485,7 +492,7 @@ alert("Pagina en desarrollo 23/06/2018");
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="date-start"  
+								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="dateTimeL"  
 										style="
 											background-image: url(img/calendar.png);
 											background-repeat: no-repeat;
@@ -495,7 +502,7 @@ alert("Pagina en desarrollo 23/06/2018");
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="date-end"  
+								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="dateTimeS"  
 										style="
 											background-image: url(img/calendar.png);
 											background-repeat: no-repeat;
@@ -503,6 +510,18 @@ alert("Pagina en desarrollo 23/06/2018");
 								/>
 							</div>
 						</div>
+						<script>
+							$('#dateTimeL').datetimepicker({
+								 formatDate:'Y/m/d',
+								 minDate:'-1970/01/01',
+								 maxDate:'+1970/07/12'
+							});
+							$('#dateTimeS').datetimepicker({
+								 formatDate:'Y/m/d',
+								 minDate:'-1970/01/01',
+								 maxDate:'+1970/07/12'
+							});
+						</script>
 						<div id="atten" class="a-col action">
 							<a href="#">
 							<span> </span>
@@ -537,7 +556,7 @@ alert("Pagina en desarrollo 23/06/2018");
 			</div>
 		</div>
 	</div>
-
+	
 	<div class="container">
 		<br>
 		
