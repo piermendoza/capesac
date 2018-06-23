@@ -1,7 +1,6 @@
 .view {
    margin: 10px;
    float: left;
-   border: 10px solid #fff;
    overflow: hidden;
    position: relative;
    text-align: center;
@@ -32,9 +31,8 @@
    margin: 20px 0 0 0;
 }
 .view p {
-   font-family: Georgia, serif;
    font-style: italic;
-   font-size: 12px;
+   font-size:12px;
    position: relative;
    color: #fff;
    padding: 10px 20px 20px;
