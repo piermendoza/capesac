@@ -6,7 +6,7 @@
    transition: all 0.2s ease-in;
 }
 .view-second .mask {
-   background-color: rgba(0,0,0, 0.5);
+   background-color: rgba(0,0,0, 0.7);
    width: 750px;
    padding: 60px;
    height: 700px;
