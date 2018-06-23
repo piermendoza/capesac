@@ -281,8 +281,17 @@ text-transform: uppercase;
 	//Open modal in init
 	$(document).ready(function () {
         $("#mostrarmodal").modal("show");
+		
+		function changeOne(){
+			$("#atten").css("font-size", "20px");
+		}
+		function changeTwo(){
+			$("#atten").css("font-size", "16px");
+		}
+		 setInterval(changeOne, 500);
+		 setInterval(changeTwo, 700);
     });	
-			
+	
 	</script>
 	
 
