@@ -24,42 +24,21 @@
 	<meta property="og:type" content="website">
 	
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="icono.ico">
-	<!-- Stylesheets -->
-	<!-- Dropdown Menu -->
 	<link rel="stylesheet" href="css/superfish.css">
-	<!-- Owl Slider -->
-	<!-- <link rel="stylesheet" href="css/owl.carousel.css"> -->
-	<!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
-	
-	
-	<!-- Date Picker
-	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css"> -->
-	
-	<!-- CS Select -->
 	<link rel="stylesheet" href="css/cs-select.css">
 	<link rel="stylesheet" href="css/cs-skin-border.css">
-
-	<!-- Themify Icons -->
 	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Flat Icon -->
 	<link rel="stylesheet" href="css/flaticon.css">
-	<!-- Icomoon -->
 	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	
-	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/demo.css">
-    <link rel="stylesheet" type="text/css" href="css/style_common.css" />
-    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+	<link rel="preload" href="css/flexslider.css">
+	<link rel="preload" href="css/style.css">
+	<link rel="prefetch" href="css/demo.css">
+    <link rel="prefetch" type="text/css" href="css/style_common.css" />
+    <link rel="prefetch" type="text/css" href="css/style2.css" />
 
-	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- Fontawesome JS-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link rel="prefetch" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	
 	<style type="text/css">
 		.hol{
@@ -308,7 +287,6 @@ text-transform: uppercase;
   js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-alert("Pagina en desarrollo 23/06/2018");
 </script>
 
 <!-- Your customer chat code -->
@@ -803,7 +781,7 @@ alert("Pagina en desarrollo 23/06/2018");
 <!-- Modal -->		
 	<link rel="stylesheet" href="css/bootraps.css">
 <div class="modal fade" id="modalForm" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style=" width: 80% !important;">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -811,26 +789,46 @@ alert("Pagina en desarrollo 23/06/2018");
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Cerrar</span>
                 </button>
-                <h1 class="modal-title text-center" id="myModalLabel">Contacto y Reservas</h1>
+                <h1 class="modal-title text-center h2" id="myModalLabel">Contacto y Reservas</h1>
             </div>
             
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
-                <form role="form">
-                    <div class="form-group">
-                        <label for="inputName">Nombre/Apellidos</label>
-                        <input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputMessage">Mensaje</label>
-                        <textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
-                    </div>
-                </form>
+				<div class="row">
+					<div class="col-sm-5">
+						<form role="form">
+							<div class="form-group">
+								<label for="inputName">Hostal</label>
+								<select style="width: 100%;">
+									<option disabled selected>Seleccionar hostal</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="inputName">Nombre/Apellidos</label>
+								<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail">Email</label>
+								<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+							</div>
+							<div class="form-group">
+								<label for="inputMessage">Mensaje</label>
+								<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="col-sm-7">
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003" allowfullscreen></iframe>			
+						</div>
+					</div>
+					
+					
+				</div>
             </div>
             
             <!-- Modal Footer -->
