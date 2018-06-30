@@ -7356,15 +7356,6 @@ body {
   overflow-x: hidden;
 }
 
-
-.resalt{
-	color:#007bff;
-}
-.resalt:hover{
-	color:#007bff;
-	text-decoration: underline;
-}
-
 body.fh5co-offcanvas {
   overflow: hidden;
 }
