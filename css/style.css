@@ -8810,13 +8810,6 @@ input[type="text"] {
   font-size: 12px;
   color: white;
 }
-#footer .phone, a {
-  color: white;
-}
-#footer .phone:hover a:hover{
-  text-decoration: underline !important;
-  color: #496a77;
-}
 #footer p {
   font-size: 16px;
 }
