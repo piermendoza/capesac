@@ -7369,7 +7369,7 @@ p, ol {
 
 ul{
   margin-bottom: 1.5em;
-  font-size: 18px;
+  font-size: 16px;
   color: #000000;
 }
 
@@ -7671,7 +7671,7 @@ figure {
 }
 
 .sf-menu a {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
   padding: 2.4em 1.3em !important;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -7680,7 +7680,7 @@ figure {
   border-top: none;
   text-decoration: none;
   zoom: 1;
-  font-size: 13px;
+  font-size: 14px;
   border-bottom: none !important;
 }
 .sf-menu a:hover, .sf-menu a:focus, .sf-menu a.active {
