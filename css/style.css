@@ -8224,9 +8224,9 @@ div.cs-select span {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   color: #fff;
-  background: transparent url(../images/arrow_down_input.png) 98% 90% no-repeat;
+  background: transparent url(../images/calendar.png) 98% 90% no-repeat;
+  background-position: right center;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0px;
   box-shadow: none;
 }
 #availability .a-col .input-field input[type="text"]:focus, #availability .a-col .input-field input[type="text"]:active {
