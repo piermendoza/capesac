@@ -7885,7 +7885,6 @@ figure {
 
 #fh5co-hero {
   margin-bottom: 0;
-  background: #fff url(../images/loader.gif) no-repeat center center;
   margin-bottom: 0 !important;
   position: relative;
   display: -webkit-box;
@@ -7939,7 +7938,7 @@ figure {
   left: 0;
   right: 0;
   content: '';
-  background: rgba(0, 0, 0, 0.3); /*OPACIODAD*/
+  background: rgba(0, 0, 0, 0.3); /*OPACIDAD*/
   z-index: 1;
 }
 #fh5co-hero .flexslider .flex-control-nav {
