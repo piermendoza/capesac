@@ -16,27 +16,13 @@
    top: 0;
    left: 0;
 }
-.content a{
-	font-weight: bold;
-	font-size:1.0em;
-	font-style:normal;
-}
+
 
 .view img {
    display: block;
    position: relative;
 }
-.view h2 {
-   font-weight: bold;
-   text-transform: uppercase;
-   color: #fff;
-   text-align: center;
-   position: relative;
-   font-size: 17px;
-   padding: 10px;
-   background: rgba(0, 0, 0, 0.8);
-   margin: 20px 0 0 0;
-}
+
 .view p {
    font-style: italic;
    font-size:0em;
