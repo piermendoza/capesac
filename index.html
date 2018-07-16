@@ -873,18 +873,16 @@ text-transform: uppercase;
   });
   </script>
   
-  <script>
-  $(document).ready(function() {
-    $('.animsition').animsition();
-	setTimeout(function(){
-      
-		$("#mostrarmodal").modal("show");
-      
-    }, 6000);
-	 
-		
-  });
+  <script src="js/animsition.min.js" charset="utf-8"></script>
+  	<script>
+		$(document).ready(function() {
+			$('.animsition').animsition();
+		});
+		$(window).load(function() {
+			setTimeout(function(){
+				$("#mostrarmodal").modal("show");      
+			}, 2000);
+		});
   </script>
-  
 	</body>
 </html>
