@@ -868,21 +868,17 @@ text-transform: uppercase;
   $(function() {
      $("img.lazy").lazyload({
 		threshold:400,
-        effect : "fadeIn",
-		load  :  function ( elements_left , settings ) {
-			$("#mostrarmodal").modal("show");
-    	}
+        effect : "fadeIn"
      }); 
   });
   </script>
   
-  <script src="js/animsition.min.js" charset="utf-8"></script>
   <script>
   $(document).ready(function() {
     $('.animsition').animsition();
 	setTimeout(function(){
       
-    
+		$("#mostrarmodal").modal("show");
       
     }, 6000);
 	 
