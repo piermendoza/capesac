@@ -77,12 +77,6 @@
 </head>
 <body class="fondo">
 	<div class="animsition">
-	<div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-   <div class="modal-dialog">
-		<div class="modal-content">
-			<img class="img-thumbnail" src="images/901.jpeg"></div>
-   </div>
-</div>
 		
 	<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -660,11 +654,6 @@
   	<script>
 		$(document).ready(function() {
 			$('.animsition').animsition();
-		});
-		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
-			setTimeout(function(){
-				$("#mostrarmodal").modal("show");      
-			}, 2000);
 		});
   </script>
 	</body>
