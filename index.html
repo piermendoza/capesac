@@ -868,7 +868,10 @@ text-transform: uppercase;
   $(function() {
      $("img.lazy").lazyload({
 		threshold:400,
-        effect : "fadeIn"
+        effect : "fadeIn",
+		load  :  function ( elements_left , settings ) {
+			$("#mostrarmodal").modal("show");
+    	}
      }); 
   });
   </script>
@@ -879,7 +882,7 @@ text-transform: uppercase;
     $('.animsition').animsition();
 	setTimeout(function(){
       
-     $("#mostrarmodal").modal("show");
+    
       
     }, 6000);
 	 
