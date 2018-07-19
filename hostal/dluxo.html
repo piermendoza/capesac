@@ -227,23 +227,31 @@
 			<br>
 				<!-- HABITACIONES TIPOS-->
 
-				<style>
-						#padre{
-						position:relative;
-						}
-					
+					<style>		
 						#uno {
-						position: absolute;
-						top: 0;
-						left:0;
-						right: 0;
-						margin: 0 auto;
-						width: 20px;
+							position: absolute;
+							top: 0;
+							margin: 0 auto;
+							width: 20px;
 						}
+						.cuerpo {
+							width: 100px;
+							height: 50px;
+							background: red;
+						}
+						.abajo-izquierda:before {
+							content: "";
+							position: absolute;
+							bottom: -25px;
+							border-width: 25px 25px 0;
+							border-style: solid;
+							border-color: red transparent transparent;
+
+            			}
 					</style>
 
 				<div class="row">
-						<div class="col-sm-6 col-md-4" id="padre">
+						<div class="col-md-6">
 						  <div class="thumbnail">
 							<img src="../img/hst1.jpg" alt="Img 01">
 							<div class="caption">
@@ -256,10 +264,13 @@
 							  </div>
 						  </div>
 						  <div id="uno">
-								<a><img src="../images/loc.png"></a>
-						  </div>
+								<div class="cuerpo abajo-izquierda" style="color:white; text-align: center;font-size: 2em;"> 
+								<strong>20% Dsct</strong>	 
+									
+								</div>
+							  </div>
 						</div>
-						 <div class="col-sm-6 col-md-4">
+						 <div class="col-md-6">
 						  <div class="thumbnail">
 							<img src="../img/hst1.jpg" alt="Img 01">
 							<div class="caption">
@@ -272,7 +283,7 @@
 							  </div>
 						  </div>
 						</div>
-						 <div class="col-sm-6 col-md-4">
+						 <div class="col-md-6">
 						  <div class="thumbnail">
 							<img src="../img/hst1.jpg" alt="Img 01">
 							<div class="caption">

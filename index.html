@@ -43,6 +43,16 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.datetimepicker.full.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script>
+			$(document).ready(function(){
+				$("#emporio").hover(function(){
+					$("#uno").hide();
+					}, function(){
+						$("#uno").show();
+					});
+			});
+		</script>
   
 	<script>
 		$(function(){
@@ -299,8 +309,32 @@
 						</div>
 						<p class="name-hs">HOSTAL DLUXO</p>
 					</div>
+
+					<style>		
+							#uno {
+								position: absolute;
+								top: 0;
+								right:0;
+							}
+							.cuerpo {
+								width: 100px;
+								height: 40px;
+								background: red;
+							}
+							.abajo-izquierda:before {
+								content: "";
+								position: absolute;
+								bottom: -20px;
+								border-width: 25px 25px 0;
+								border-style: solid;
+								border-color: red transparent transparent;
+	
+							}
+						</style>
+						
+
 					<div class="col-sm-6"> 
-						<div class="view view-second hol">
+						<div class="view view-second hol" id="emporio">
 							<img class="lazy no-src img-thumbnail" data-original="img/hst1.jpg">
 							<div class="mask "></div>
 							<div class="content">
@@ -310,11 +344,22 @@
 								</p>
 								<p>
 									<a class="resalt" data-toggle="modal" data-target="#modalEmporio"><i class="fas fa-map-marker-alt fa-lg"></i>Av.Francisco Pizarro 911 - El Rimac</a><br>
+									<label style="color: red;font-size: 1.3em;">¡Oferta - Dsct del 20% en habitaciones!</label><br>
 									<a href="#" class="btn btn-luxe-primary">Más detalles...<i class="ti-angle-right"></i></a>	
-								</p>									
-							</div>
+								</p>
+								
+							
+
+
+						</div>
+						<div id="uno">
+								<div class="cuerpo abajo-izquierda" style="color:white; text-align: center;font-size: 2em;"> 
+									<strong>20% Dsct</strong>	 		
+								</div>
+							</div>									
 						</div>
 						<p class="name-hs">HOSTAL EMPORIO</p>
+						
 					</div>
 					<div class="col-sm-6">
 						<div class="view view-second hol">
