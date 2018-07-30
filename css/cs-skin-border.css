@@ -16,10 +16,11 @@ div.cs-skin-border {
 	max-width: 600px;
 }
 
+/*
 @media screen and (max-width: 30em) {
 	div.cs-skin-border { font-size: 1em; }
 }
-
+*/
 .cs-skin-border > span {
 	border: 5px solid #000;
 	border-color: inherit;
