@@ -72,15 +72,15 @@
 	$(function(){
 			
 				$(window).scroll(function(){
-					if ($(window).scrollTop() < 576 || window.matchMedia('(max-width: 768px)').matches){
+					if ($(window).scrollTop() < 600 || window.matchMedia('(max-width: 768px)').matches){
 						$("#reserv").css("position", "static");
-						$("#reserv").append("<br>");
+						$('.espacio').hide();
 						//$("#reserv").insertAfter("#footer");
 					}else{
 					
-					
+						$('.espacio').show();
 						$("#reserv").css("position", "fixed");
-						$("#reserv").css("top", "0%");
+						$("#reserv").css("top", "2%");
 						//$(".div1").insertAfter(".div2");
 						//alert("asd");
 					}
@@ -232,6 +232,14 @@
 		  	</div>
 	  	</div>
 	</header>
+
+	<div class="espacio">
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+
 	<div id="reserv" class="wrap">
 		<div class="container">
 			<div class="row">
