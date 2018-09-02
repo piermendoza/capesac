@@ -169,6 +169,7 @@
 	<br>
 	<br>
 	<br>
+	<br>
 </div>
 
 	<div id="reserv" class="wrap">
@@ -376,7 +377,7 @@
 
 	</div>
 <!-- Modal -->		
-	<link rel="stylesheet" href="../css/bootraps.css">
+<link rel="stylesheet" href="../css/bootraps.css">
 <div class="modal fade" id="modalForm" role="dialog">
     <div class="modal-dialog" style=" width: 80% !important;">
         <div class="modal-content">
@@ -386,57 +387,61 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Cerrar</span>
                 </button>
-                <h1 class="modal-title text-center h2" id="myModalLabel">Contacto y Reservas</h1>
+                <h1 class="modal-title text-center h2" id="myModalLabel">
+					¡
+					<span style="color:#205bb3;">
+						<script>
+							fecha=new Date();
+							var dias = new Array('Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado');
+							document.write(dias[fecha.getDay()]);
+						</script>
+					</span>, lo tengo!
+				</h1>
             </div>
             
             <!-- Modal Body -->
             <div class="modal-body">
-                <p class="statusMsg"></p>
-				<div class="row">
-					<div class="col-sm-5">
-						<form role="form">
-							<div class="form-group">
-								<label for="inputName">Hostal</label>
-								<select class="form-control">
-									<option disabled selected>Seleccionar hostal</option>
-									<option value="1">Hostal Emporio</option>
-									<option value="2">Hostal La Parada</option>
-									<option value="3">Hostal Conquistador</option>
-									<option value="4">Hostal Costa Azul</option>
-									<option value="5">Hostal Tu & Yo</option>
-									<option value="5">Hostal 901</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="inputName">Nombre/Apellidos</label>
-								<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
-							</div>
-							<div class="form-group">
-								<label for="inputEmail">Email</label>
-								<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-							</div>
-							<div class="form-group">
-								<label for="inputMessage">Mensaje</label>
-								<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
-							</div>
-						</form>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
-						<br>
-					</div>
-					<div class="col-sm-7">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003" allowfullscreen></iframe>			
+				<form autocomplete="off">
+					<div class="row">
+						<div class="col-sm-5">
+							<form role="form">
+								<div class="form-group">
+									<label for="inputName">Hostal</label>
+									<select class="form-control">
+										<option value=0 disabled selected>HOSTAL DLUXO</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="inputName">Nombre/Apellidos</label>
+									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
+								</div>
+								<div class="form-group">
+									<label for="inputEmail">Email</label>
+									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+								<div class="form-group">
+									<label for="inputMessage">Mensaje</label>
+									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
+								</div>
+							</form>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+							<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
+							<br>
 						</div>
+						<div class="col-sm-7">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707" allowfullscreen></iframe>			
+							</div>
+						</div>
+						
+						
 					</div>
-					
-					
-				</div>
+				</form>
             </div>
         </div>
     </div>
 </div>
-
+<!--FOOTER-->
 <div class="container-fluid" style="background-color:#0b0b17;">
 		<footer id="footer" class="text-white">
 		    <br>
