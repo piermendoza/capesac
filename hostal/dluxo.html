@@ -43,14 +43,11 @@
 				$(window).scroll(function(){
 					if ($(window).scrollTop() < 576 || window.matchMedia('(max-width: 768px)').matches){
 						$("#reserv").css("position", "static");
-						//$("#reserv").insertAfter("#footer");
-					}else{
-					
-					
+						$('.espacio').hide();
+					}else{					
+						$('.espacio').show();
 						$("#reserv").css("position", "fixed");
 						$("#reserv").css("top", "0%");
-						//$(".div1").insertAfter(".div2");
-						//alert("asd");
 					}
 					
 					
@@ -104,32 +101,37 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-					<h1 id="fh5co-logo"><a href="https://capesac.com.pe">GRUPO CAPESAC</a></h1>
+					<h1 id="fh5co-logo">
+						<a href="https://capesac.com.pe">
+							<img src="../images/logo.png">
+						</a>
+					</h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active link-1" href="https://capesac.com.pe">INICIO</a></li>
+							<li><a class="active link-1" href="https://capesac.com.pe"><i class="fas fa-home"></i> INICIO</a></li>
 							<li>
-								<a href="#" class="link-1 fh5co-sub-ddown">HOSTALES</a>
+								<a href="#" class="link-1 fh5co-sub-ddown"> ESTABLECIMIENTOS</a>
 								<ul class="fh5co-sub-menu">
-								 	<li><a href="hostal/emporio.html">Hostal Emporio</a></li>
-									<li><a href="hostal/la-parada.html">Hostal La Parada</a></li>
-									<li><a href="hostal/conquistador.html">Hostal Conquistador</a></li>
-								 	<li><a href="hostal/costa-azul.html">Hostal Costa Azul</a></li>
-									<li><a href="hostal/tu-y-yo.html">Hostal Tu  & Yo</a></li>
-									<li><a href="hostal/901.html">Hostal 901</a></li>
-								</ul>
+									<li><a href="hostal/901.html">HOTEL URBAN 901</a></li>
+										<li><a href="hostal/dluxo.html">HOSTAL DLUXO</a></li>
+										<li><a href="hostal/tu-y-yo.html">HOSTAL TU & YO</a></li>
+										<li><a href="hostal/la-parada.html">HOSTAL LA PARADA</a></li>
+										<li><a href="hostal/conquistador.html">HOSTAL CONQUISTADOR</a></li>
+										<li><a href="hostal/costa-azul.html">HOSTAL COSTA AZUL</a></li>
+										<li><a href="hostal/emporio.html">HOSTAL EMPORIO</a></li>
+								</ul> 
 							</li>
 							<li><a class="link-1" href="#">SERVICIOS</a></li>
 							<li><a class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
-								<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
-								<ul class="fh5co-sub-menu">
-								 	<li><a href="#"><img src="../img/esp.png"> Español</a></li>
-									<li><a href="#"><img src="../img/esu.png"> Ingles</a></li>
-								</ul>
-							</li>
+									<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
+									<ul class="fh5co-sub-menu">
+										 <li><a href="#"><img src="../img/esp.png"> ESPAÑOL</a></li>
+										<li><a href="#"><img src="../img/esu.png"> INGLES</a></li>
+									</ul>
+							</li> 
 							<li>
-								<a class="link-1" href="tel:+51965003620"><img src="../img/ph.png">965003620</a>
+								<a class="link-1" href="tel:+51965003620"><i class="fas fa-phone-volume"></i> 965003620</a>
 							</li>
 						</ul>
 					</nav>
@@ -148,15 +150,27 @@
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>Hostal Dluxo</span></p>
+		   						<p><span>HOSTAL DLUXO</span></p>
 							</div>
 		   				</div>
 		   			</div>
-		   		</div>
-		   	</li>
-		  	</div>
-	  	</div>
-	</header>
+				</div>
+			</li>
+		</div>
+	</div>
+</header>
+
+<div class="espacio">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</div>
+
 	<div id="reserv" class="wrap">
 		<div class="container">
 			<div class="row">
@@ -165,16 +179,16 @@
 						<div class="a-col">
 							<section>
 								<select class="cs-select cs-skin-border">
-									<option value="0"  disabled selected>Hostal Dluxo</option>
+									<option value="0"  disabled selected>HOSTAL DLUXO</option>
 								</select>
 							</section>
 						</div>
-						<div class="a-col alternate">
+						<div class="a-col calendar">
 							<div class="input-field">
 								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="dateTimeL"/>
 							</div>
 						</div>
-						<div class="a-col alternate">
+						<div class="a-col calendar">
 							<div class="input-field">
 								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="dateTimeS"  />
 										
@@ -183,11 +197,9 @@
 						<div class="a-col alternate">
 							<section>
 								<select class="cs-select cs-skin-border">
-									<option value="" disabled selected>HABITACIÓN</option>
-									<option value="0">Habitación Simple</option>
-									<option value="1">Habitación Matrimonial</option>
-									<option value="2">Habitación Ocasional</option>
-									<option value="3">Habitación Real</option>
+									<option disabled selected>HABITACIÓN</option>
+									<option value="0">HABITACIÓN PREMIUM</option>
+									<option value="1">HABITACIÓN MATRIMONIAL</option>
 								</select>
 							</section>
 						</div>
@@ -196,16 +208,16 @@
 								 formatDate:'Y/m/d',
 								 minDate:'-1970/01/01',
 								 maxDate:'+1970/07/12'
-							});
-							$('#dateTimeS').datetimepicker({
-								 formatDate:'Y/m/d',
-								 minDate:'-1970/01/01',
-								 maxDate:'+1970/07/12'
-							});
-						</script>
+								});
+								$('#dateTimeS').datetimepicker({
+									formatDate:'Y/m/d',
+									minDate:'-1970/01/01',
+									maxDate:'+1970/07/12'
+								});
+								</script>
 						<div id="atten" class="a-col action">
 							<a href="#">
-							<span> </span>
+								<span> </span>
 								<label id="text">reservar</label>
 							</a>
 						</div>
@@ -215,14 +227,20 @@
 		</div>
 	</div>
 	
+
 	<div class="container">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<br>
 		<br>
 		<br>
 			<center>
 				<span class="font-weight-bold sub">Habitaciones</span>
 			</center>
-			<br>
 			<br>
 			<br>
 				<!-- HABITACIONES TIPOS-->
@@ -251,7 +269,7 @@
 					</style>
 
 					<div class="row">
-							<div class="col-md-4">
+							<div class="col-md-6">
 									<div class="thumbnail">
 										<div id="habitacion01" class="carousel slide" data-ride="carousel">
 											<ol class="carousel-indicators">
@@ -286,16 +304,15 @@
 											</div>
 										</div>
 										<div class="caption">
-											<h3>Habitación Matrimonial</h3>
+											<h3>HABITACIÓN PREMIUM</h3>
 											<p>
-												adsadadad asd ad asdas adasd
-												sadadad adas assdassda a as 
-												adasdasdasd asd adsa dadadasd
+												Cama redonda queen, TV cable con canal privado, baño privado con agua caliente.
+												(S/.60)
 											</p>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-6">
 										<div class="thumbnail">
 											<div id="habitacion02" class="carousel slide" data-ride="carousel" data-interval="2000">
 												<ol class="carousel-indicators">
@@ -325,55 +342,15 @@
 												</div>
 											</div>
 											<div class="caption">
-												<h3>Habitación Matrimonial</h3>
+												<h3>HABITACIÓN MATRIMONIAL</h3>
 												<p>
-													adsadadad asd ad asdas adasd
-													sadadad adas assdassda a as 
-													adasdasdasd asd adsa dadadasd
+														Cama de 2 plazas, TV cable con canal privado, baño privado con agua caliente.
+														(S/.50)
 												</p>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4">
-											<div class="thumbnail">
-												<div id="habitacion03" class="carousel slide" data-ride="carousel">
-													<ol class="carousel-indicators">
-														<li data-target="#habitacion03" data-slide-to="0" class="active"></li>
-														<li data-target="#habitacion03" data-slide-to="1"></li>
-														<li data-target="#habitacion03" data-slide-to="2"></li>
-													</ol>
-													<div class="carousel-inner" role="listbox">
-														<div class="item active">
-															<img src="../images/cq.jpg" >
-															<div class="carousel-caption">
-																Habitacion tipo 'A'
-															</div>
-														</div>
-														<div class="item">
-															<img src="../images/cq.jpg">
-															<div class="carousel-caption">
-																Habitacion tipo 'B'
-															</div>
-														</div>
-														<div class="item">
-															<img src="../images/cq.jpg">
-															<div class="carousel-caption">
-																Habitacion tipo 'C'
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="caption">
-													<h3>Habitación Matrimonial</h3>
-													<p>
-														adsadadad asd ad asdas adasd
-														sadadad adas assdassda a as 
-														adasdasdasd asd adsa dadadasd
-													</p>
-												</div>
-											</div>
-										</div>
-				    				</div>
+									
 
 
 				  <br>
@@ -389,25 +366,9 @@
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1526878809085"  frameborder="0" style="border:0" allowfullscreen></iframe>
 			
 					</div>
-						
-				
-
-		<div id="fh5co-counter-section" class="fh5co-counters">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-4"></div>
-				<div class="col-md-2 ">
-					<span class="fh5co-counter js-counter" data-from="0" data-to="203" data-speed="5000" data-refresh-interval="50"></span>
-					<span class="fh5co-counter-label">Clientes Hospedados</span>
-				</div>
-				<div class="col-md-2">
-					<span class="fh5co-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
-					<span class="fh5co-counter-label">Reservas por Internet</span>
-				</div>
-				<div class="col-md-4"></div>
-			</div>
-		</div>
-	</div>
+			<br>
+			<br>
+			<br>
 		
 		
 	</div>
@@ -476,8 +437,6 @@
     </div>
 </div>
 
-	
-<!--Main Footer -->	
 <div class="container-fluid" style="background-color:#0b0b17;">
 		<footer id="footer" class="text-white">
 		    <br>
@@ -485,14 +444,15 @@
 				<div class="col-sm-1"></div>
 				<div class="col-sm-4">
 					
-						<label class="link-1 h4">GRUPO CAPESAC</label>
+					<label class="link-1 h4">GRUPO CAPESAC</label>
 					<div class="row">
-					<label>Capesac ,cademas de hostales en lugares centricos de Lima,Reservaciones ocacionales vc cxv s ds fdfdsfdsfdfd ssd
-					dsfdsfdsfdsf dsfdsfsdf sdfsdfsdf sdfdsfdsf sdfsdfds sdfdsf mensaje de prueba adsadf dfjsjdfhshdfjshdfs fsdjfhsdjfhdsjf.</label>
+					<label>Castañeda Pedrosa SAC es un grupo hotelero con más de quince años de trayectoria,adoptando diversos tipos de ambientes
+						en sus establecimientos acorde a la variedad de clientes para ofrecer la mejor experiencia en cada estadia.
+					</label>
 					</div>
 				</div>
 				<div class="col-sm-2">
-					<img  class="lazy" style="padding: 4px;line-height: 1.42857;-webkit-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;display: inline-block;max-width: 100%;height: auto;" data-original="../images/hu2.png" />
+					<img  class="lazy tumbails-perso"  data-original="../images/hu2.png" />
 				</div>	
 				<div class="col-sm-4">
 					<label class="link-1 h4">RESERVACIONES</label>
@@ -513,7 +473,8 @@
 			<br>
 			<center><a href="https://facebook.com/jepicame" >Powerd by:Pier</a></center>
 		</footer>
-	</div>
+	</div>	
+
 	
 	<!--Iconos Sociales -->		
 		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style a2a_follow" style="left:0px; top:180px;">

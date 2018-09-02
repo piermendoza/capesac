@@ -8313,11 +8313,12 @@ div.cs-select span {
   }
 }
 #availability .a-col {
-  width: 20%;
+  width: 23%;
   float: left;
   position: relative;
   padding: 14px;
 }
+
 @media screen and (max-width: 829px) {
   #availability .a-col {
     width: 100% !important;
@@ -8326,6 +8327,8 @@ div.cs-select span {
 #availability .a-col.alternate {
   width: 30%;
 }
+
+
 @media screen and (max-width: 829px) {
   #availability .a-col.alternate {
     width: 50% !important;
@@ -8336,6 +8339,22 @@ div.cs-select span {
     width: 100% !important;
   }
 }
+
+#availability .a-col.calendar {
+  width: 25%;
+}
+
+@media screen and (max-width: 829px) {
+  #availability .a-col.calendar {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 492px) {
+  #availability .a-col.calendar {
+    width: 100% !important;
+  }
+}
+
 #availability .a-col.action {
   padding: 0 !important;
   position: relative;
