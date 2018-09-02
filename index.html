@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="google-site-verification" content="CWOgMEdNdcOMMbRGrxdRBck9w1BfL2Eo9IfTj7NgqC0" />
-	<title>Hostales | Hostal en Lima - Grupo Capesac</title>
+	<title>Hotel & Hostales en Lima - Grupo Capesac</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<meta name="description" content="Cadena de hostales en ubicaciones centricas a precios accesibles con cálidas suites, reservaciones@capesac.com.pe o llamar/whatsapp a +51 965003620."/>	
@@ -51,16 +51,14 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<script>
-			$(document).ready(function(){
-				$("#emporio").hover(function(){
-					$("#uno").hide();
-					}, function(){
-						$("#uno").show();
-					});
-			});
-		</script>
-  
-	<script>
+		$(document).ready(function(){
+			$("#emporio").hover(function(){
+				$("#uno").hide();
+				}, function(){
+					$("#uno").show();
+				});
+		});
+
 		$(function(){
 		
 			if(window.matchMedia('(max-width: 992px)').matches ){
@@ -80,15 +78,12 @@
 				$(window).scroll(function(){
 					if ($(window).scrollTop() < 557 || window.matchMedia('(max-width: 768px)').matches){
 						$("#reserv").css("position", "static");
-						$('.espacio').hide();
-						//$("#reserv").insertAfter("#footer");
-					}else{
-					
 						$('.espacio').show();
+						$("#reserv").hide();
+					}else{
+						$("#reserv").show();
 						$("#reserv").css("position", "fixed");
 						$("#reserv").css("top", "2%");
-						//$(".div1").insertAfter(".div2");
-						//alert("asd");
 					}
 					
 					
@@ -155,9 +150,9 @@
 					</h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active link-1" href="https://capesac.com.pe">INICIO</a></li>
+							<li><a class="active link-1" href="https://capesac.com.pe"><i class="fas fa-home"></i> INICIO</a></li>
 							<li>
-								<a href="#" class="link-1 fh5co-sub-ddown">HOSTALES</a>
+								<a href="#" class="link-1 fh5co-sub-ddown"> HOSTALES</a>
 								<ul class="fh5co-sub-menu">
 								 	<li><a href="hostal/dluxo.html">Hostal Dluxo</a></li>
 								 	<li><a href="hostal/emporio.html">Hostal Emporio</a></li>
@@ -168,7 +163,7 @@
 									<li><a href="hostal/901.html">Hostal Urban 901</a></li>
 								</ul> 
 							</li>
-							<li><a class="link-1" href="#">SERVICIOS</a></li>
+							<li><a class="link-1" href="#"><i class="fas fa-concierge-bell"></i> SERVICIOS</a></li>
 							<li><a class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 								<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
@@ -178,7 +173,7 @@
 								</ul>
 							</li> 
 							<li>
-								<a class="link-1" href="tel:+51965003620"><img src="img/ph.png">965003620</a>
+								<a class="link-1" href="tel:+51965003620"><i class="fas fa-phone-volume"></i> 965003620</a>
 							</li>
 						</ul>
 					</nav>
@@ -196,10 +191,11 @@
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>Hostales Capesac</span></p>
-								<br><br>
-								<div class="row ocultar"> 	
-									<b>							
+								<br><br><br><br><br><br><br><br>
+		   							<p><span style="padding-top: 0;">Hostales Capesac</span></p>
+								<br><br><br><br><br><br><br><br>
+								<div class="row ocultar"  style="border-bottom: 0px;"> 	
+									<b>	
 										<div class="col-sm-2  img-contenedor">
 											<a href="#">
 												<img class="hol img-thumbnail" src="images/d3min.jpg" alt="Hostal en Santiago de Surco Lima Perú - Dluxo">Hostal Dluxo
@@ -238,7 +234,7 @@
 					   
 				   
 				<span style="bottom: 0;position:absolute;color:white; z-index:3;">
-						CATEDRAL DE AREQUIPA -PERÚ
+						imagen referencial
 					</span>
 				   </div>
 			   </li>
@@ -247,6 +243,8 @@
 	</header>
 
 	<div class="espacio">
+		<br>
+		<br>
 		<br>
 		<br>
 		<br>
@@ -328,8 +326,7 @@
 							<div class="mask"></div>
 							<div class="content">
 								<h2 class="title-hs" >Hostal Dluxo</h2>
-								<p>
-									<spam class="desph">La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones.</spam><br>
+								<p style="padding: 4em;">
 									<a class="resalt" data-toggle="modal" data-target="#modalDluxo">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
 										Av.Caminos del Inca 2376 - Santiago de Surco
@@ -370,8 +367,7 @@
 							<div class="mask "></div>
 							<div class="content">
 								<h2 class="title-hs">Hostal Emporio</h2>
-								<p>
-									<spam class="desph">La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones.</spam><br>
+								<p style="padding: 4em;">
 									<a class="resalt" data-toggle="modal" data-target="#modalEmporio">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
 										Av.Francisco Pizarro 911 - El Rimac
@@ -394,8 +390,7 @@
 							<div class="mask "></div>
 							<div class="content">
 								<h2 class="title-hs">Hostal La Parada</h2>
-								<p>
-									<spam class="desph">La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones.</spam><br>
+								<p style="padding: 4em;">
 									<a class="resalt" data-toggle="modal" data-target="#modalLaParada">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
 										Av.Samuel Alcazar 888 - El Rimac
@@ -412,8 +407,7 @@
 							<div class="mask "></div>
 							<div class="content">
 								<h2 class="title-hs">Hostal Conquistador</h2>
-								<p>
-									<spam class="desph">La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones.</spam><br>
+								<p style="padding: 4em;">
 									<a class="resalt" data-toggle="modal" data-target="#modalElConquistador">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
 										Av.Francisco Pizarro 1011 - El Rimac
@@ -430,8 +424,7 @@
 							<div class="mask "></div>
 							<div class="content">
 								<h2 class="title-hs">Hostal Costa Azul</h2>
-								<p>
-									<spam class="desph">La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones.</spam><br>
+								<p style="padding: 4em;">
 									<a class="resalt" data-toggle="modal" data-target="#modalCostaAzul">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
 										Av.Manco Capac 1090 - La Victoria
@@ -448,8 +441,7 @@
 							<div class="mask "></div>
 							<div class="content">
 								<h2 class="title-hs">Hostal Tu & Yo</h2>
-								<p>
-									<spam class="desph">La propiedad es un hostal calificado con tres estrellas, la misma que cuenta con 44 habitaciones.</spam><br>
+								<p style="padding: 4em;">
 									<a class="resalt" data-toggle="modal" data-target="#modalTuyyo">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
 										Av.Manco Capac 1080 - La Victoria
@@ -599,7 +591,7 @@
 					</div>
 					<div class="col-md-3">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="fh5co-counter-label">Hostales</span>
+						<span class="fh5co-counter-label">establecimientos</span>
 					</div>
 					<div class="col-md-3">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="1200" data-speed="5000" data-refresh-interval="50"></span>

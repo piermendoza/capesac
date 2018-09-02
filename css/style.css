@@ -231,7 +231,7 @@ font-weight: bold;
 	background-image: url('../images/fondo.jpg');
 }
 .slider{
-    background-image:url('../images/fondos.jpg');
+    background-image:url('../images/doble2-carmel.jpg');
 }
 
 body {
@@ -8138,7 +8138,7 @@ figure {
   left: 0;
   right: 0;
   content: '';
-  background: rgba(0, 0, 0, 0.3); /*OPACIDAD*/
+  background: rgba(0, 0, 0, 0.5); /*OPACIDAD*/
   z-index: 1;
 }
 #fh5co-hero .flexslider .flex-control-nav {
@@ -8258,7 +8258,7 @@ div.cs-select span {
 }
 
 #availability {
-  background: #302a39;
+  background: #98281c;
   width: 100%;
   top: 1em;
   z-index: 99;
