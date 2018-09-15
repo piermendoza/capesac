@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hostal en Lima | Dluxo - El Rimac </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	<link rel="shortcut icon" href="../icono.ico">
+	<link rel="stylesheet" type="text/css" href="../css/superfish.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/cs-select.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/cs-skin-border.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style_common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type="text/css" href="../css/animsition.min.css" />
+	
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.datetimepicker.full.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+	<script>
+		$(function(){
+		
+			if(window.matchMedia('(max-width: 992px)').matches ){
+				$('.ocultar').hide();
+				$('.desph').hide();
+				$('.carousel-caption').hide();
+			}else{
+
+				$(".desph").css("font-size", "1.5em");
+				$(".desph").css("font-style", "italic");
+				$(".ocultar").css("font-size", "1.5em");
+			}
+
+		});
+						
+	$(function(){
+			
+				$(window).scroll(function(){
+					if ($(window).scrollTop() < 576 || window.matchMedia('(max-width: 768px)').matches){
+						$("#reserv").css("position", "static");
+						$('.espacio').hide();
+					}else{					
+						$('.espacio').show();
+						$("#reserv").css("position", "fixed");
+						$("#reserv").css("top", "0%");
+					}
+					
+					
+				});
+			});
+	$(document).ready(function () {
+       
+		function changeOne(){
+			$("#atten").css("font-size", "20px");
+			$("#text").css("font-weight", " bold");
+		}
+		function changeTwo(){
+			$("#atten").css("font-size", "16px");
+			$("#text").css("font-weight", " normal");
+		}
+		 setInterval(changeOne, 500);
+		 setInterval(changeTwo, 700);
+    });	
+	
+	
+	</script>
+	
+
+</head>
+<body class="fondo">
+	<div class="animsition">
+		
+	<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution="setup_tool"
+  page_id="612830009060086"
+  logged_in_greeting="Hola! Como podemos ayudarte"
+  logged_out_greeting="Hola, Inicia session en Facebook para ayudarte">
+</div>
+
+	<div  id="fh5co-wrapper">
+	<div id="fh5co-page">
+	<div id="fh5co-header">
+		<header id="fh5co-header-section">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+					<h1 id="fh5co-logo">
+						<a href="https://capesac.com.pe">
+							<img src="../images/logo.png">
+						</a>
+					</h1>
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active link-1" href="https://capesac.com.pe"><i class="fas fa-home"></i> INICIO</a></li>
+							<li>
+								<a href="#" class="link-1 fh5co-sub-ddown"> ESTABLECIMIENTOS</a>
+								<ul class="fh5co-sub-menu">
+									<li><a href="tu-y-yo.html">HOSTAL TU & YO</a></li>
+									<li><a href="901.html">HOTEL URBAN 901</a></li>
+									<li><a href="la-parada.html">HOSTAL LA PARADA</a></li>
+									<li><a href="conquistador.html">HOSTAL CONQUISTADOR</a></li>
+									<li><a href="costa-azul.html">HOSTAL COSTA AZUL</a></li>
+									<li><a href="emporio.html">HOSTAL EMPORIO</a></li>
+								</ul> 
+							</li>
+							<li><a class="link-1" href="#">SERVICIOS</a></li>
+							<li><a class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
+							<li>
+									<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
+									<ul class="fh5co-sub-menu">
+										 <li><a href="#"><img src="../img/esp.png"> ESPAÑOL</a></li>
+										<li><a href="#"><img src="../img/esu.png"> INGLES</a></li>
+									</ul>
+							</li> 
+							<li>
+								<a class="link-1" href="tel:+51965003620"><i class="fas fa-phone-volume"></i> 965003620</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		
+	</div>
+	<!-- end:fh5co-header -->
+	<header id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<div class="slides"  style="width:115%;">
+		   	<li class=" slider">
+		   		
+		   		<div class="container">
+		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
+		   				<div class="slider-text-inner js-fullheight">
+		   					<div class="desc">
+		   						<p><span>HOSTAL COSTA AZUL</span></p>
+							</div>
+		   				</div>
+		   			</div>
+				</div>
+			</li>
+		</div>
+	</div>
+</header>
+
+<div class="espacio">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</div>
+
+	<div id="reserv" class="wrap">
+		<div class="container">
+			<div class="row">
+				<div id="availability">
+					<form action="#">
+						<div class="a-col">
+							<section>
+								<select class="cs-select cs-skin-border">
+									<option value="0"  disabled selected>HOSTAL DLUXO</option>
+								</select>
+							</section>
+						</div>
+						<div class="a-col calendar">
+							<div class="input-field">
+								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="dateTimeL"/>
+							</div>
+						</div>
+						<div class="a-col calendar">
+							<div class="input-field">
+								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="dateTimeS"  />
+										
+							</div>
+						</div>
+						<div class="a-col alternate">
+							<section>
+								<select class="cs-select cs-skin-border">
+									<option disabled selected>HABITACIÓN</option>
+									<option value="0">HABITACIÓN PREMIUM</option>
+									<option value="1">HABITACIÓN MATRIMONIAL</option>
+								</select>
+							</section>
+						</div>
+						<script>
+							$('#dateTimeL').datetimepicker({
+								 formatDate:'Y/m/d',
+								 minDate:'-1970/01/01',
+								 maxDate:'+1970/07/12'
+								});
+								$('#dateTimeS').datetimepicker({
+									formatDate:'Y/m/d',
+									minDate:'-1970/01/01',
+									maxDate:'+1970/07/12'
+								});
+								</script>
+						<div id="atten" class="a-col action">
+							<a href="#">
+								<span> </span>
+								<label id="text">reservar</label>
+							</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="container">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<center>
+			<span class="font-weight-bold sub">Habitaciones</span>
+		</center>
+		<br>
+		<br>
+			<!-- HABITACIONES TIPOS-->
+
+			<style>		
+				#uno {
+					position: absolute;
+					top: 0;
+					margin: 0 auto;
+					width: 20px;
+				}
+				.cuerpo {
+					width: 100px;
+					height: 50px;
+					background: red;
+				}
+				.abajo-izquierda:before {
+					content: "";
+					position: absolute;
+					bottom: -25px;
+					border-width: 25px 25px 0;
+					border-style: solid;
+					border-color: red transparent transparent;
+
+				}
+			</style>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div id="habitacion01" class="carousel slide" data-ride="carousel" data-interval="2000">
+							<ol class="carousel-indicators">
+								<li data-target="#habitacion01" data-slide-to="0" class="active"></li>
+								<li data-target="#habitacion01" data-slide-to="1"></li>
+								<li data-target="#habitacion01" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="../images/cq.jpg" >
+								</div>
+								<div class="item">
+									<img src="../images/cq.jpg">
+								</div>
+								<div class="item">
+									<img src="../images/cq.jpg">
+								</div>
+								<div class="carousel-caption" >
+									<h3 style="color:white">HABITACIÓN PREMIUM</h3>
+									<p style="color:white;font-size: 1.3em;">
+										Cama redonda queen, TV cable con canal privado, baño privado con agua caliente.
+										(S/.60)
+									</p>
+								</div>
+							</div>
+						</div>
+						<div id="uno">
+							<div class="cuerpo abajo-izquierda" style="color:white; text-align: center;font-size: 2em;"> 
+								<strong>20% Dsct</strong>	 
+							</div>
+						</div>
+					</div>
+				</div>	
+			
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div id="habitacion02" class="carousel slide" data-ride="carousel" data-interval="2000">
+							<ol class="carousel-indicators">
+								<li data-target="#habitacion02" data-slide-to="0" class="active"></li>
+								<li data-target="#habitacion02" data-slide-to="1"></li>
+								<li data-target="#habitacion02" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="../images/cq.jpg" >
+								</div>
+								<div class="item">
+									<img src="../images/cq.jpg">
+								</div>
+								<div class="item">
+									<img src="../images/cq.jpg">
+								</div>
+								<div class="carousel-caption" >
+									<h3 class="row" style="color:white;">HABITACIÓN MATRIMONIAL</h3>
+									<p style="color:white;font-size: 1.3em;">
+										Cama de 2 plazas, TV cable con canal privado, baño privado con agua caliente.
+										(S/.50)
+									</p> 
+									</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+				</div>
+
+				<div class="container row">
+					<div class="col-md-7">
+						<div class="embed-responsive embed-responsive-16by9" style="border-style: solid; border-width: 4px; color:white;">
+							<iframe src="https://www.google.com/maps/d/embed?mid=1_2V07nwncR3SMENPbXf6pA-95JrNtHR7" width="640" height="480"></iframe>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<center>
+							<span class="font-weight-bold sub ">Visitanos</span>
+						</center>
+						<span style="font-size: 1.3em">
+								Hostal dluxo reside en Santiago de Surco, distrito financiero y residencial de la ciudad
+								de Lima. Ubicado a 2 cuadras del parque de la amistad y a 5 cuadras de centros
+								financieros y comerciales.
+						</span>
+						<ol style="font-size: 2em">
+							<br>
+							<li>HOSTAL DLUXO</li>
+							<li>MUSEO DE LA HISTORIA NATURAL</li>
+							<li>UNIVERSIDAD RICARDO PALMA</li>
+							<li>CASINO MAMBOS</li>
+							<li>UNIVERSIDAD PERUANA INTEGRADA</li>
+						</ol>
+					</div>
+				</div>			
+									
+									
+					
+			<br>
+			<br>
+			<br>
+		
+		
+	</div>
+	</div>
+
+	</div>
+<!-- Modal -->		
+<link rel="stylesheet" href="../css/bootraps.css">
+<div class="modal fade" id="modalForm" role="dialog">
+    <div class="modal-dialog" style=" width: 80% !important;">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Cerrar</span>
+                </button>
+                <h1 class="modal-title text-center h2" id="myModalLabel">
+					¡
+					<span style="color:#205bb3;">
+						<script>
+							fecha=new Date();
+							var dias = new Array('Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado');
+							document.write(dias[fecha.getDay()]);
+						</script>
+					</span>, lo tengo!
+				</h1>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+				<form autocomplete="off">
+					<div class="row">
+						<div class="col-sm-5">
+							<form role="form">
+								<div class="form-group">
+									<label for="inputName">establecimiento</label>
+									<select class="form-control">
+										<option value=0 disabled selected>HOSTAL DLUXO</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="inputName">Nombre/Apellidos</label>
+									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
+								</div>
+								<div class="form-group">
+									<label for="inputEmail">Email</label>
+									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+								<div class="form-group">
+									<label for="inputMessage">Mensaje</label>
+									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
+								</div>
+							</form>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+							<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
+							<br>
+						</div>
+						<div class="col-sm-7">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707" allowfullscreen></iframe>			
+							</div>
+						</div>
+						
+						
+					</div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FOOTER-->
+<div class="container-fluid" style="background-color:#0b0b17;">
+		<footer id="footer" class="text-white">
+		    <br>
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-4">
+					
+					<label class="link-1 h4">GRUPO CAPESAC</label>
+					<div class="row">
+					<label>Castañeda Pedrosa SAC es un grupo hotelero con más de quince años de trayectoria,adoptando diversos tipos de ambientes
+						en sus establecimientos acorde a la variedad de clientes para ofrecer la mejor experiencia en cada estadia.
+					</label>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<img  class="lazy tumbails-perso"  data-original="../images/hu2.png" />
+				</div>	
+				<div class="col-sm-4">
+					<label class="link-1 h4">RESERVACIONES</label>
+					<div class="row">
+						<span class="a"><a href="https://api.whatsapp.com/send?phone=51965003620&amp;text=Hola entre a su pagina web y quiero cotizar una reserva."><i class="fab fa-whatsapp fa-lg"></i> +51 965003620</a><br></span>
+						<i class="fas fa-envelope-open fa-lg"></i> reservaciones@capesac.com.pe
+					</div>
+					<div class="row">
+						<br>
+						<img class="lazy xd" data-original="../img/booking.ico" title="Booking">
+						<img class="lazy xd" data-original="../img/hoteles.ico" title="Hoteles">
+						<img class="lazy xd" data-original="../img/trivago.ico" title="Trivago">
+						<img class="lazy xd" data-original="../img/avisor.ico" title="Trip Advisor">
+					</div>
+				</div>	
+				<div class="col-sm-1"></div>
+			</div>
+			<br>
+			<center><a href="https://facebook.com/jepicame" >Powerd by:Pier</a></center>
+		</footer>
+	</div>	
+
+	
+	<!--Iconos Sociales -->		
+		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style a2a_follow" style="left:0px; top:180px;">
+			<a href="https://www.facebook.com/grupocapesac/" class="a2a_button_facebook"></a>
+			<a class="a2a_button_facebook_messenger"></a>
+			<a class="a2a_button_youtube"></a>
+			<a href="https://api.whatsapp.com/send?phone=51965003620&amp;text=Hola entre a su pagina web y quiero cotizar una reserva." class="a2a_button_whatsapp"></a>
+		</div>
+	</div>
+		<script async src="../js/addtoany.js"></script>
+		<script src="../js/jquery-2.1.4.min.js"></script>
+		<script src="../js/hoverIntent.js"></script>
+		<script src="../js/superfish.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.waypoints.min.js"></script>
+		<script src="../js/jquery.countTo.js"></script>
+		<script src="../js/jquery.stellar.min.js"></script>
+		<script src="../js/bootstrap-datepicker.min.js"></script>
+		<script src="../js/classie.js"></script>
+		<script src="../js/selectFx.js"></script>
+		<script src="../js/jquery.flexslider-min.js"></script>
+		<script src="../js/custom.js"></script>
+		
+		<script src="../js/jquery.lazyload.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+		threshold:400,
+        effect : "fadeIn"
+     }); 
+  });
+  </script>
+  
+  <script src="../js/animsition.min.js" charset="utf-8"></script>
+  	<script>
+		$(document).ready(function() {
+			$('.animsition').animsition();
+		});
+  </script>
+	</body>
+</html>
