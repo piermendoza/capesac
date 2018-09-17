@@ -7879,7 +7879,10 @@ figure {
 }
 
 .sf-menu a {
-  color: rgba(255, 255, 255, 0.7);
+
+  color: #7f3c01 !important; 
+
+  /*color: rgba(255, 255, 255, 0.7);*/
   padding: 2.4em 1.3em !important;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -7892,7 +7895,8 @@ figure {
   border-bottom: none !important;
 }
 .sf-menu a:hover, .sf-menu a:focus, .sf-menu a.active {
-  color: #fff !important;
+
+
 }
 
 .sf-menu li,
@@ -7987,7 +7991,7 @@ figure {
   top: 50%;
   margin-top: -7px;
   content: "\e64b";
-  color: rgba(255, 255, 255, 0.4);
+  /*color: rgba(255, 255, 255, 0.4);*/
 }
 #fh5co-primary-menu > li > .sf-with-ul:hover:after, #fh5co-primary-menu > li > .sf-with-ul:focus:after {
   color: #fff !important;
