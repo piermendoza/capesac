@@ -92,11 +92,11 @@
 	$(document).ready(function () {
        
 		function changeOne(){
-			$("#atten").css("font-size", "20px");
+			$(".atten").css("font-size", "20px");
 			$("#text").css("font-weight", " bold");
 		}
 		function changeTwo(){
-			$("#atten").css("font-size", "16px");
+			$(".atten").css("font-size", "16px");
 			$("#text").css("font-weight", " normal");
 		}
 		 setInterval(changeOne, 500);
@@ -223,7 +223,7 @@
                 <a href="https://capesac.com.pe" data-u="caption" data-t="2" style="display:block; position:absolute;top:344px;left:-190px;width:175px;height:58px;max-width:175px;">
                     <img style="width:100%;height:100%;" border="0" src="img/logo.png" />
                 </a>
-                <div id="atten" data-u="caption" data-t="3" style="position:absolute;top:414px;left:205px;width:377px;height:33px;font-size:24px;font-weight:900;color:#000000;line-height:1.2;text-align:center;">Reservar Ahora</div>
+                <div class="atten" data-u="caption" data-t="3" style="position:absolute;top:414px;left:205px;width:377px;height:33px;font-size:24px;font-weight:900;color:#000000;line-height:1.2;text-align:center;">Reservar Ahora</div>
                 <a href="https://capesac.com.pe/hostal/901.html" data-u="caption" data-t="4" style="display:block; position:absolute;top:407px;left:274px;width:240px;height:45px;border:1px solid #000;border-radius:5px;background-clip:padding-box;box-sizing:border-box;"></a>
             </div>
         </div>
@@ -423,7 +423,7 @@
 								 maxDate:'+1970/07/12'
 							});
 						</script>
-						<div id="atten" class="a-col action">
+						<div id="atten" class="a-col action atten">
 							<a href="#">
 							<span> </span>
 								<label id="text">reservar</label>
@@ -435,7 +435,7 @@
 		</div>
 	</div>
 
-	
+
 	<div class="container">
 		<br>
 		<br>
@@ -650,12 +650,55 @@
 				</div>
 		
 		<div class="text-left">
-<!--Title Ofrecemos -->	
 			<br><br>
+<!--Title Ofrecemos 
 			<center>
 				<span class="font-weight-bold sub">OFRECEMOS</span>
 			</center>	
 			<br>
+		-->	
+		
+	
+
+
+			
+	<style>
+	
+			.colorlib-heading {
+			  margin-bottom: 2em;
+			  position: relative; }
+			  .colorlib-heading h1.heading-big {
+				position: absolute;
+				bottom: 0px;
+				left: 10px;
+				color: rgba(0, 0, 0, 0.05);
+				z-index: -1;
+				font-weight: 700;
+				font-size: 60px; }
+				@media screen and (max-width: 768px) {
+				  .colorlib-heading h1.heading-big {
+					font-size: 40px; } }
+			  .colorlib-heading h2 {
+				font-size: 28px;
+				font-weight: 400; }
+				@media screen and (max-width: 768px) {
+				  .colorlib-heading h2 {
+					font-size: 30px; } }
+			  .colorlib-heading.center-heading h1.heading-big {
+				left: 0;
+				right: 0; }
+			
+				</style>
+			
+				
+				<div class="row">
+						<div class="col-md-12 colorlib-heading center-heading text-center animate-box">
+							<h1 class="heading-big">TE OFRECEMOS</h1>
+							<h2 class="span"><b style="color:#ffa658">TE</b> OFRECEMOS</h2>
+						</div>
+					</div>
+
+			<br>		
 <!--Main Ofrecemos-->			
 			<div class="row">
 				<div class="col-sm-12 col-lg-4">
