@@ -7819,6 +7819,7 @@ figure {
   background: transparent;
   padding: 0;
   width: 100%;
+  background: rgba(255, 255, 255, 0.8);
 }
 @media screen and (max-width: 768px) {
   #fh5co-header-section {
@@ -7960,6 +7961,7 @@ figure {
   border-color: transparent;
   border-left-color: #ccc;
 }
+
 
 .sf-arrows ul li > .sf-with-ul:focus:after,
 .sf-arrows ul li:hover > .sf-with-ul:after,
