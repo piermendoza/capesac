@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	
 	<link rel="stylesheet" type="text/css" href="css/animsition.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.datetimepicker.full.min.js"></script>
@@ -322,7 +323,7 @@
 								 	<li><a href="hostal/emporio.html">HOSTAL EMPORIO</a></li>
 								</ul> 
 							</li>
-							<li><a class="link-1" href="#"><i class="fas fa-concierge-bell"></i> SERVICIOS</a></li>
+							<li><a class="link-1" href="#"><i class="fas fa-concierge-bell"></i> CHECKING</a></li>
 							<li><a class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 								<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
@@ -467,7 +468,20 @@
 	</div>
 
 
-	<div class="container">
+	<script>
+		$(document).ready(function(){
+ 
+		// hide our element on page load
+		$('.animate-box').css('opacity', 0);
+
+		$('.animate-box').waypoint(function() {
+			$('.animate-box').addClass('fadeInLeft');
+		}, { offset: '50%' });
+
+		});
+	</script>
+	
+	<div class="container"  style="animation-duration: 1500ms; opacity: 1;">
 		<br>
 		<br>
 		<br>
@@ -475,17 +489,17 @@
 		<br>
 		<br>
 			<center>
-					<div class="row">
-							<div class="col-md-12 colorlib-heading center-heading text-center animate-box">
-								<h1 class="heading-big">NUESTROS ESTABLECIMIENTOS</h1>
-								<h2 class="span"><b style="color:#ffa658">NUESTROS</b> ESTABLECIMIENTOS</h2>
-							</div>
-						</div>
+				<div class="row">
+					<div class="col-md-12 colorlib-heading center-heading text-center animate-box">
+						<h1 class="heading-big">NUESTROS ESTABLECIMIENTOS</h1>
+						<h2 class="span"><b style="color:#ffa658">NUESTROS</b> ESTABLECIMIENTOS</h2>
+					</div>
+				</div>
 			</center>	
 				<br><br>
 				<div class="row">
-					<div class="col-sm-4">
-						<div class="view view-second hol">
+					<div class="col-sm-4 ">
+						<div class="view view-second hol  animate-box">
 							<img class="lazy no-src img-thumbnail" data-original="images/de3.jpg">
 							<div class="mask"></div>
 							<div class="content">
@@ -526,7 +540,7 @@
 						
 
 					<div class="col-sm-4"> 
-						<div class="view view-second hol" id="emporio">
+						<div class="view view-second hol animate-box" id="emporio">
 							<img class="lazy no-src img-thumbnail" data-original="images/ee3.jpg">
 							<div class="mask "></div>
 							<div class="content">
@@ -549,7 +563,7 @@
 						<p class="name-hs">HOSTAL EMPORIO</p>
 					</div>
 					<div class="col-sm-4">
-						<div class="view view-second hol">
+						<div class="view view-second hol animate-box">
 							<img class="lazy no-src img-thumbnail" data-original="images/t.jpg"> 
 							<div class="mask "></div>
 							<div class="content">
@@ -566,7 +580,7 @@
 						<p class="name-hs">HOSTAL LA PARADA</p>
 					</div>
 					<div class="col-sm-4"> 
-						<div class="view view-second hol">
+						<div class="view view-second hol animate-box">
 							<img class="lazy no-src img-thumbnail" data-original="images/cq.jpg">
 							<div class="mask "></div>
 							<div class="content">
@@ -583,7 +597,7 @@
 						<p class="name-hs">HOSTAL CONQUISTADOR</p>
 					</div>
 					<div class="col-sm-4">  
-						<div class="view view-second hol">
+						<div class="view view-second hol animate-box">
 							<img class="lazy no-src img-thumbnail" data-original="images/cos.jpg">
 							<div class="mask "></div>
 							<div class="content">
@@ -600,7 +614,7 @@
 						<p class="name-hs">HOSTAL COSTA AZUL</p>
 					</div>
 					<div class="col-sm-4">  
-						<div class="view view-second hol">
+						<div class="view view-second hol animate-box">
 							<img class="lazy no-src img-thumbnail" data-original="images/x.jpg">
 							<div class="mask "></div>
 							<div class="content">
