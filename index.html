@@ -23,13 +23,14 @@
 	
 	<meta property="og:title" content="Hotel y Hostales con estacionamiento, cafeteria, wifi, etc." />
     <meta property="og:description" content="Grupo hotelero Capesac cuenta con establecimientos en zonas centricas a precios accesibles con cálidas suites, reservaciones@capesac.com.pe o llamar/whatsapp al +51 965003620." />
-  	<meta property="og:url" content="https://capesac.com.pe" />
+	<meta property="og:url" content="https://capesac.com.pe" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:site_name" content="Hotel & Hostales-Grupo Capesac" />
 	<meta property="og:image" content="https://capesac.com.pe/images/logo.png" />
-
+	
 	<link rel="shortcut icon" href="icono.ico">
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
 	<link rel="stylesheet" type="text/css" href="css/superfish.css"/>
 	<link rel="stylesheet" type="text/css" href="css/cs-select.css"/>
 	<link rel="stylesheet" type="text/css" href="css/cs-skin-border.css"/>
@@ -40,7 +41,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	
 	<link rel="stylesheet" type="text/css" href="css/animsition.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/animate.css" />
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.datetimepicker.full.min.js"></script>
@@ -52,7 +52,16 @@
 				$("#uno").hide();
 				}, function(){
 					$("#uno").show();
-				});
+			});
+
+			//inamtion fadeIn and faceOut
+			$('.animate-box').css('opacity', 0);
+
+			$('.animate-box').waypoint(function() {
+				$('.animate-box').addClass('fadeInLeft');
+			}, { 
+				offset: '50%' 	
+			});
 		});
 
 		$(function(){
@@ -136,7 +145,6 @@
 			left: 0;
 			right: 0;
 			}
-				
 		</style>
 
 </head>
@@ -275,7 +283,7 @@
 					<!-- -->
 				</div>
 			</div>	
-    	</div>
+    </div>
 		
 	<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -296,7 +304,7 @@
   logged_out_greeting="Hola, Inicia session en Facebook para ayudarte">
 </div>
 
-	<div  id="fh5co-wrapper">
+	<div style=" overflow:hidden !important;" id="fh5co-wrapper">
 	<div id="fh5co-page">
 	<div id="fh5co-header">
 		<header id="fh5co-header-section">
@@ -466,22 +474,8 @@
 			</div>
 		</div>
 	</div>
-
-
-	<script>
-		$(document).ready(function(){
- 
-		// hide our element on page load
-		$('.animate-box').css('opacity', 0);
-
-		$('.animate-box').waypoint(function() {
-			$('.animate-box').addClass('fadeInLeft');
-		}, { offset: '50%' });
-
-		});
-	</script>
 	
-	<div class="container"  style="animation-duration: 1500ms; opacity: 1;">
+	<div class="container">
 		<br>
 		<br>
 		<br>
@@ -710,52 +704,52 @@
 	</div>		
 <!--Main Ofrecemos-->			
 	<br>		
-			<div class="row">
-				<div class="col-sm-12 col-lg-4 animate-box">
+			<div class="row animate-box">
+				<div class="col-sm-12 col-lg-4">
 					<div class="border rounded-left hola pd">
 						<a class="h6" href="#"><img class="lazy" data-original="img/coffe.png"> Cafeteria</a> 
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 animate-box">
+				<div class="col-sm-12 col-lg-4">
 					<div class="border rounded-right pd hola">
 						<a class="h6" href="#"><img class="lazy" data-original="img/tp.png"> Baños Temperados</a>
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 animate-box">
+				<div class="col-sm-12 col-lg-4 ">
 					<div class="border rounded-right hola pd">
 						<a class="h6" href="#"><img class="lazy" data-original="img/gp.png"> Atención a Grupos</a>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-12 col-lg-4 animate-box">
+			<div class="row animate-box">
+				<div class="col-sm-12 col-lg-4 ">
 					<div class="border rounded-left pd hola">
 						<a class="h6" href="#"><img class="lazy" data-original="img/tv.png"> TV - Cable</a>
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 animate-box">
+				<div class="col-sm-12 col-lg-4">
 					<div class="border pd hola">
 						<a class="h6" href="#"><img class="lazy" data-original="img/est.png"> Estacionamiento</a>
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 animate-box">
+				<div class="col-sm-12 col-lg-4">
 					<div class="border rounded-right pd hola">
 						<a class="h6" href="#"><img class="lazy" data-original="img/visa.png"> Visa Net</a>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-12 col-lg-4 animate-box">
-					<div class="border rounded-left pd hola">
+			<div class="row animate-box">
+				<div class="col-sm-12 col-lg-4">
+					<div class="border rounded-left pd hola ">
 						<a class="h6" href="#"><img class="lazy" data-original="img/wifi.png"> Internet Wi-Fi</a>
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 animate-box">
+				<div class="col-sm-12 col-lg-4">
 					<div class="border pd hola">
 						<a class="h6" href="#"><img class="lazy" data-original="img/pe.png"> Pago Efectivo</a>
 					</div>
 				</div>
-				<div class="col-sm-12 col-lg-4 animate-box">
+				<div class="col-sm-12 col-lg-4">
 					<div class="border pd hola">
 						<a class="h6" href="#"><img class="lazy" data-original="img/priv.png"> Canal Privado</a>
 					</div>
@@ -764,22 +758,22 @@
 			</div><br>
 		</div>
 		
-		<div id="fh5co-counter-section" class="fh5co-counters">
+		<div id="fh5co-counter-section" class="fh5co-counters animate-box">
 			<div class="container">
 				<div class="row text-center">
-					<div class="col-md-3 animate-box">
+					<div class="col-md-3">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="2035" data-speed="5000" data-refresh-interval="50"></span>
 						<span class="fh5co-counter-label">Clientes</span>
 					</div>
-					<div class="col-md-3 animate-box">
+					<div class="col-md-3">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="7" data-speed="5000" data-refresh-interval="50"></span>
 						<span class="fh5co-counter-label">establecimientos</span>
 					</div>
-					<div class="col-md-3 animate-box">
+					<div class="col-md-3">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="1200" data-speed="5000" data-refresh-interval="50"></span>
 						<span class="fh5co-counter-label">Transacciones</span>
 					</div>
-					<div class="col-md-3 animate-box">
+					<div class="col-md-3">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="876" data-speed="5000" data-refresh-interval="50"></span>
 						<span class="fh5co-counter-label">Calificación y revisión</span>
 					</div>
@@ -872,7 +866,7 @@
 		    <br>
 			<div class="row">
 				<div class="col-sm-1"></div>
-				<div class="col-sm-4 animate-box">
+				<div class="col-sm-4">
 					
 					<label class="link-1 h4">GRUPO CAPESAC</label>
 					<div class="row">
@@ -881,17 +875,17 @@
 					</label>
 					</div>
 				</div>
-				<div class="col-sm-2 animate-box">
+				<div class="col-sm-2">
 					<img  class="lazy tumbails-perso"  data-original="images/hu2.png" />
 				</div>	
-				<div class="col-sm-4 animate-box">
+				<div class="col-sm-4">
 					<label class="link-1 h4">RESERVACIONES</label>
 					<div class="row">
 						<span class="a"><a href="https://api.whatsapp.com/send?phone=51965003620&amp;text=Hola entre a su pagina web y quiero cotizar una reserva."><i class="fab fa-whatsapp fa-lg"></i> +51 965003620</a><br></span>
 						<i class="fas fa-envelope-open fa-lg"></i> reservaciones@capesac.com.pe
 					</div>
 					<div class="row">
-						<br>
+					<br>
 						<img class="lazy xd" data-original="img/booking.ico" title="Booking">
 						<img class="lazy xd" data-original="img/hoteles.ico" title="Hoteles">
 						<img class="lazy xd" data-original="img/trivago.ico" title="Trivago">
@@ -912,8 +906,9 @@
 			<a class="a2a_button_youtube"></a>
 			<a href="https://api.whatsapp.com/send?phone=51965003620&amp;text=Hola entre a su pagina web y quiero cotizar una reserva." class="a2a_button_whatsapp"></a>
 		</div>
-	</div>
-		<script async src="js/addtoany.js"></script>
+		
+</div> <!--close-->
+ 		<script async src="js/addtoany.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/hoverIntent.js"></script>
 		<script src="js/superfish.js"></script>
@@ -948,5 +943,6 @@
 			}, 2000);
 		});
   </script>
-	</body>
+	
+</body>
 </html>
