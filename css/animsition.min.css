@@ -16,9 +16,9 @@
     animation-fill-mode: fowards; 
     font-size: 3em;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         .animsition-loading:before{
-            font-size: 1em;
+            font-size: 1.5em;
 
         }    
     }
