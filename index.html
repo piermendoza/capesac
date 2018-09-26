@@ -40,6 +40,50 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<script>
+		/*Establecimiento
+		//[x,0]id
+		//[x,1]nombre
+		//[x,2]descripcion
+		//[x,3]direccionName
+		//[x,4]direccionUrl
+		*/
+
+		/*Temporal
+		//[y,0]nombre
+		*/
+
+		var Establecimiento = {};
+		var Temporal = {};
+
+		//Declarando establecimiento
+		Establecimiento[0,0]=1;
+		Establecimiento[0,1]="HOSTAL DLUXO";
+		Establecimiento[0,2]="Hostal dluxo reside en Santiago de Surco, distrito financiero y residencial de la ciudad de Lima. \n Ubicado a 2 cuadras del parque de la amistad y a 5 cuadras de centros financieros y comerciales.";
+		Establecimiento[0,3]="Av.Caminos del Inca 2376 - Santiago de Surco";
+		Establecimiento[0,4]="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707";
+		
+
+		$(document).ready(function() {
+			$('.cs-options>ul>li').click(function() {
+				Temporal[0,0]=$('.cs-options>ul>.cs-selected>span').text();
+
+
+				$("#titulo").html(Temporal[0,0]);
+
+				for (var i = 0; i < 1; i++) {
+					if(Establecimiento[i,1]==="HOSTAL DLUXO"){
+						$("#dsp").html("<p class='text-left'>"+Establecimiento[i,2]+"</p>");
+						$("#dire").html("<b class='text-left'>"+ Establecimiento[i,3]+"</b>");
+					}
+				}
+				
+			});
+		});		
+	
+	//document.querySelector('.cs-selected>span').innerHTML <!-- style=" width: 80% !important;" 
+	
+
+
 		$(document).ready(function(){
 			$("#emporio").hover(function(){
 				$("#uno").hide();
@@ -412,7 +456,7 @@
 					<form action="#">
 						<div class="a-col">
 							<section>
-								<select class="cs-select cs-skin-border">
+								<select id="hs" class="cs-select cs-skin-border" name="hs">
 									<option value="" disabled selected>ESTABLECIMIENTO</option>
 									<option value="0">HOSTAL DLUXO</option>
 									<option value="5">HOSTAL TU & YO</option>
@@ -426,12 +470,12 @@
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="dateTimeL"/>
+								<input type="text" placeholder="Llegada" value="LLEGADA" name="ini" class="form-control" id="dateTimeL"/>
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="dateTimeS"  />
+								<input type="text" placeholder="Salida" value="SALIDA" name="fin" class="form-control" id="dateTimeS"  />
 										
 							</div>
 						</div>
@@ -448,8 +492,7 @@
 							});
 						</script>
 						<div id="atten" class="a-col action atten">
-							<a href="#">
-							<span> </span>
+							<a href="" data-toggle="modal" data-target="#ReservaForm">
 								<label id="text">reservar</label>
 							</a>
 						</div>
@@ -889,6 +932,132 @@
 		</div>
 		
 </div> <!--close-->
+
+
+<div class="modal fade" id="ReservaForm" role="dialog">
+		<div class="modal-dialog" >
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Cerrar</span>
+					</button>
+					<h1 class="modal-title text-center h2" id="titulo">SELECCIONE ESTABLECIMIENTO Y EL TIEMPO DE ESTADIA</h1>
+				</div>
+				<div  class="modal-body">
+					<div id="dsp"></div>
+					<div id="dire"></div>
+					<br><br>
+					<form>
+						<div class="row">
+							<div class="col-md-8">
+								<div class="form-group">
+									<label>HABITACIÓN</label>
+									<select class="form-control">
+										<option disabled selected>.:SELECCIONAR:.</option>
+										<option value="1">Hbaitación 1</option>
+										<option value="2">Hbaitación 2</option>
+										<option value="3">Hbaitación 3</option>
+										<option value="4">Hbaitación 4</option>
+										<option value="5">Hbaitación 5</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="inputEmail">N° Huespedes</label>
+									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa la cantidad de huespedes"/>
+								</div>
+							</div>
+
+						</div>
+						<!--MOSTRAR IMAGEN POR TIPO DE HABITACION-->
+						<center>
+						<div class="row" style="width:50em;">
+							<div class="col-md-12">
+								<div class="thumbnail">
+									<div id="habitacion02" class="carousel slide" data-ride="carousel" data-interval="2000">
+										<ol class="carousel-indicators">
+											<li data-target="#habitacion02" data-slide-to="0" class="active"></li>
+											<li data-target="#habitacion02" data-slide-to="1"></li>
+											<li data-target="#habitacion02" data-slide-to="2"></li>
+										</ol>
+										<div class="carousel-inner" role="listbox">
+											<div class="item active">
+												<img src="images/cq.jpg">
+											</div>
+											<div class="item">
+												<img src="images/cq.jpg">
+											</div>
+											<div class="item">
+												<img src="images/cq.jpg">
+											</div>
+											<div class="carousel-caption">
+												<h3 class="row" style="color:white;">HABITACIÓN MATRIMONIAL</h3>
+												<p style="color:white;font-size: 1.3em;">
+													Cama de 2 plazas, TV cable con canal privado, baño privado con agua caliente.
+													(S/.50)
+												</p> 
+												</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</center>
+
+
+						<!--INGRESAR DATOS-->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="inputName">Nombre/Apellidos</label>
+									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="inputEmail">N° Dni</label>
+									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+							</div>	
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="inputEmail">E-mail</label>
+									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="inputEmail">N° Telefono</label>
+									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="inputEmail">Fecha de Ingreso</label>
+									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="inputEmail">Fecha de Salida</label>
+									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary submitBtn" >Reservar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
  		<script async src="js/addtoany.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/hoverIntent.js"></script>
@@ -917,22 +1086,34 @@
   	<script>
 		$(document).ready(function() {
 			$('.animsition').animsition();
+
+	
+
 		});
 		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
-			setTimeout(function(){
-				$("#mostrarmodal").modal("show");
 
-				//cargar css dinamicamente
-				$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/animate.css') );
-	
-					//inamtion fadeIn and faceOut
-					$('.animate-box').css('opacity', 0);
-					$('.animate-box').waypoint(function() {
-					$('.animate-box').addClass('fadeInLeft');
-					}, { 
-						offset: '50%' 	
-					});	
-				
+			
+
+		$.get('http://localhost/capesac/public/reserva').done(function( data ) {
+			var yourval = jQuery.parseJSON(JSON.stringify(data));
+
+			console.log(yourval);
+		});
+
+		setTimeout(function(){
+			$("#mostrarmodal").modal("show");
+
+			//cargar css dinamicamente
+			$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/animate.css') );
+
+				//inamtion fadeIn and faceOut
+				$('.animate-box').css('opacity', 0);
+				$('.animate-box').waypoint(function() {
+				$('.animate-box').addClass('fadeInLeft');
+				}, { 
+					offset: '50%' 	
+				});	
+			
 			}, 2000);
 				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style_common.css') );
 				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style2.css') );
@@ -940,7 +1121,8 @@
 				$('head').append( $('<link rel="stylesheet" type="text/css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"/>').attr('href', 'https://use.fontawesome.com/releases/v5.0.10/css/all.css') );
 				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/jquery.datetimepicker.min.css') );	
 		});
+
+		
   </script>
-	
 </body>
 </html>
