@@ -72,7 +72,36 @@
 	</script>
 	<style>
 		.slider{
-    		background-image:url('../images/ee3.jpg');
+    		background-image:url('../images/emporio-portada.jpg');
+		}
+		.colorlib-heading {
+			margin-bottom: 2em;
+			position: relative; 
+		}
+		.colorlib-heading h1.heading-big {
+			position: absolute;
+			bottom: 0px;
+			left: 10px;
+			color: rgba(0, 0, 0, 0.05);
+			z-index: -1;
+			font-weight: 700;
+			font-size: 60px; 
+		}
+		@media screen and (max-width: 768px) {
+			.colorlib-heading h1.heading-big {
+			font-size: 40px; }
+		}
+		.colorlib-heading h2 {
+			font-size: 28px;
+			font-weight: 400; 
+		}
+		@media screen and (max-width: 768px) {
+			.colorlib-heading h2 {
+			font-size: 30px; }
+		}
+		.colorlib-heading.center-heading h1.heading-big {
+			left: 0;
+			right: 0;
 		}
 	</style>
 
@@ -125,7 +154,7 @@
 									<li><a href="costa-azul.html">HOSTAL COSTA AZUL</a></li>
 							    </ul> 
 							</li>
-							<li><a class="link-1" href="#">SERVICIOS</a></li>
+							<li><a class="link-1" href="#">CHECKING</a></li>
 							<li><a class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 									<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
@@ -404,30 +433,32 @@
 				</div>
 
 				<div class="container row">
-					<div class="col-md-7">
+					<div class="col-md-7 animate-box">
 						<div class="embed-responsive embed-responsive-16by9" style="border-style: solid; border-width: 4px; color:white;">
-                            <iframe src="https://www.google.com/maps/d/embed?mid=12AMESvKyZL5XH9JMM8eh5A376l2b0S-N" width="640" height="480"></iframe>
+                            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12AMESvKyZL5XH9JMM8eh5A376l2b0S-N" width="640" height="480"></iframe>
 						</div>
 					</div>
-					<div class="col-md-5">
-						<center>
-							<span class="font-weight-bold sub ">Visitanos</span>
-						</center>
+					<div class="col-md-5 animate-box">
+						<br>
+						<br>
+						<div class="col-md-12 colorlib-heading center-heading text-center">
+							<h1 class="heading-big">VISITANOS</h1>
+							<h2 class="span"><b style="color:#ffa658">V</b>ISITANOS</h2>
+						</div>
+
 						<span style="font-size: 1.3em">
                             Hostales emporio reside en el Rimac, distrito más antiguo, tradicional e histórico de la
                             ciudad de Lima. Ubicado a 1km del centro histórico de Lima y a 4 cuadras de la estación
                             caqueta del metropolitano de Lima, transporte que te lleva a Miraflores y Barranco en 25
                             minutos.
 						</span>
-                    <ol style="font-size: 2em">
+                    <ol style="font-size: 1.7em">
 							<br>
 							<li>HOSTAL EMPORIO</li>
 							<li>BANCO DE LA NACIÓN</li>
 							<li>PLAZA VEA</li>
-							<li>HUMANIDAD SALUD</li>
 							<li>CC. RAMON CASTILLA</li>
 							<li>GRIFO GAZZEL TERPEL</li>
-							<li>G.U.E RICARDO BETÍN</li>
 						</ol>
 					</div>
 				</div>			
@@ -551,9 +582,8 @@
 	<!--Iconos Sociales -->		
 		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style a2a_follow" style="left:0px; top:180px;">
 			<a href="https://www.facebook.com/grupocapesac/" class="a2a_button_facebook"></a>
-			<a class="a2a_button_facebook_messenger"></a>
-			<a class="a2a_button_youtube"></a>
 			<a href="https://api.whatsapp.com/send?phone=51965003620&amp;text=Hola entre a su pagina web y quiero cotizar una reserva." class="a2a_button_whatsapp"></a>
+			<a class="a2a_button_youtube"></a>
 		</div>
 	</div>
 		<script async src="../js/addtoany.js"></script>
@@ -584,6 +614,22 @@
   	<script>
 		$(document).ready(function() {
 			$('.animsition').animsition();
+		});
+		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
+			setTimeout(function(){
+
+				//cargar css dinamicamente
+				$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
+	
+				//inamtion fadeIn and faceOut
+				$('.animate-box').css('opacity', 0);
+				$('.animate-box').waypoint(function() {
+				$('.animate-box').addClass('fadeInLeft');
+				}, { 
+					offset: '50%' 	
+				});	
+				
+			}, 1000);
 		});
   </script>
 	</body>
