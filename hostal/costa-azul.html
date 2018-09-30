@@ -70,7 +70,7 @@
 	
 	
 	</script>
-	
+
 	<style>
 			.slider{
 				background-image:url('../images/costaazul-portada.jpg');
@@ -269,9 +269,12 @@
 		<br>
 		<br>
 		<br>
-		<center>
-			<span class="font-weight-bold sub">Habitaciones</span>
-		</center>
+		<div class="row animate-box">
+			<div class="col-md-12 colorlib-heading center-heading text-center animate-box">
+				<h1 class="heading-big">NUESTRAS HABITACIONES</h1>
+				<h2 class="span"><b style="color:#ffa658">NUESTRAS</b> HABITACIONES</h2>
+			</div>
+		</div>
 		<br>
 		<br>
 			<!-- HABITACIONES TIPOS-->
@@ -300,7 +303,7 @@
 			</style>
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 animate-box">
 					<div class="thumbnail">
 						<div id="habitacion01" class="carousel slide" data-ride="carousel" data-interval="2000">
 							<ol class="carousel-indicators">
@@ -335,7 +338,7 @@
 					</div>
 				</div>	
 			
-				<div class="col-md-6">
+				<div class="col-md-6 animate-box">
 					<div class="thumbnail">
 						<div id="habitacion02" class="carousel slide" data-ride="carousel" data-interval="2000">
 							<ol class="carousel-indicators">
@@ -370,21 +373,24 @@
 				</div>
 
 				<div class="container row">
-					<div class="col-md-7">
+					<div class="col-md-7 animate-box">
 						<div class="embed-responsive embed-responsive-16by9" style="border-style: solid; border-width: 4px; color:white;">
 							<iframe src="https://www.google.com/maps/d/embed?mid=1_2V07nwncR3SMENPbXf6pA-95JrNtHR7" width="640" height="480"></iframe>
 						</div>
 					</div>
-					<div class="col-md-5">
-						<center>
-							<span class="font-weight-bold sub ">Visitanos</span>
-						</center>
+					<div class="col-md-5 animate-box">
+						<br>
+						<br>
+						<div class="col-md-12 colorlib-heading center-heading text-center">
+							<h1 class="heading-big">VISITANOS</h1>
+							<h2 class="span"><b style="color:#ffa658">V</b>ISITANOS</h2>
+						</div>
 						<span style="font-size: 1.3em">
 								Hostal dluxo reside en Santiago de Surco, distrito financiero y residencial de la ciudad
 								de Lima. Ubicado a 2 cuadras del parque de la amistad y a 5 cuadras de centros
 								financieros y comerciales.
 						</span>
-						<ol style="font-size: 2em">
+						<ol style="font-size: 1.7em">
 							<br>
 							<li>HOSTAL DLUXO</li>
 							<li>MUSEO DE LA HISTORIA NATURAL</li>
@@ -543,11 +549,27 @@
   });
   </script>
   
-  <script src="../js/animsition.min.js" charset="utf-8"></script>
+    <script src="../js/animsition.min.js" charset="utf-8"></script>
   	<script>
 		$(document).ready(function() {
 			$('.animsition').animsition();
 		});
-  </script>
-	</body>
+		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
+				setTimeout(function(){
+	
+					//cargar css dinamicamente
+					$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
+		
+					//inamtion fadeIn and faceOut
+					$('.animate-box').css('opacity', 0);
+					$('.animate-box').waypoint(function() {
+					$('.animate-box').addClass('fadeInLeft');
+					}, { 
+						offset: '50%' 	
+					});	
+					
+				}, 1000);
+			});
+    </script>
+</body>
 </html>
