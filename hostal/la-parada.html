@@ -283,7 +283,7 @@
 			
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 animate-box">
 					<div class="thumbnail">
 						<div id="habitacion02" class="carousel slide" data-ride="carousel" data-interval="2000">
 							<ol class="carousel-indicators">
@@ -310,13 +310,13 @@
 				</div>
 
 				<div class="container row">
-					<div class="col-md-7">
+					<div class="col-md-7 animate-box">
 
 						<div class="embed-responsive embed-responsive-16by9" style="border-style: solid; border-width: 4px; color:white;">
 							<iframe src="https://www.google.com/maps/d/embed?mid=1MRpZfoxYbimpdY0v9Ny1o9bf7bETGMuC" width="640" height="480"></iframe>
 						</div>
 					</div>
-					<div class="col-md-5">
+					<div class="col-md-5 animate-box">
 						<br>
 						<br>
 						<div class="col-md-12 colorlib-heading center-heading text-center">
@@ -492,6 +492,23 @@
 		$(document).ready(function() {
 			$('.animsition').animsition();
 		});
+
+		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
+				setTimeout(function(){
+	
+					//cargar css dinamicamente
+					$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
+		
+					//inamtion fadeIn and faceOut
+					$('.animate-box').css('opacity', 0);
+					$('.animate-box').waypoint(function() {
+					$('.animate-box').addClass('fadeInLeft');
+					}, { 
+						offset: '50%' 	
+					});	
+					
+				}, 1000);
+			});
   </script>
 	</body>
 </html>
