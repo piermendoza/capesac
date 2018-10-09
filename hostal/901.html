@@ -554,9 +554,7 @@
 		$(document).ready(function() {
 			$('.animsition').animsition();
 		});
-		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
-				setTimeout(function(){
-	
+		
 					//cargar css dinamicamente
 					$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
 		
@@ -568,8 +566,7 @@
 						offset: '50%' 	
 					});	
 					
-				}, 1000);
-			});
+			
   </script>
 	</body>
 </html>
