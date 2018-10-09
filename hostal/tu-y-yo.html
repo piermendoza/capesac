@@ -73,6 +73,35 @@
 		.slider{
 			background-image:url('../images/tuyyo.jpg');
 		}
+		.colorlib-heading {
+				margin-bottom: 2em;
+				position: relative; 
+			}
+			.colorlib-heading h1.heading-big {
+				position: absolute;
+				bottom: 0px;
+				left: 10px;
+				color: rgba(0, 0, 0, 0.05);
+				z-index: -1;
+				font-weight: 700;
+				font-size: 60px; 
+			}
+			@media screen and (max-width: 768px) {
+				.colorlib-heading h1.heading-big {
+				font-size: 40px; }
+			}
+			.colorlib-heading h2 {
+				font-size: 28px;
+				font-weight: 400; 
+			}
+			@media screen and (max-width: 768px) {
+				.colorlib-heading h2 {
+				font-size: 30px; }
+			}
+			.colorlib-heading.center-heading h1.heading-big {
+				left: 0;
+				right: 0;
+			}
 	</style>
 
 </head>
@@ -239,9 +268,12 @@
 		<br>
 		<br>
 		<br>
-		<center>
-			<span class="font-weight-bold sub">Habitaciones</span>
-		</center>
+		<div class="row animate-box">
+			<div class="col-md-12 colorlib-heading center-heading text-center animate-box">
+				<h1 class="heading-big">NUESTRAS HABITACIONES</h1>
+				<h2 class="span"><b style="color:#ffa658">NUESTRAS</b> HABITACIONES</h2>
+			</div>
+		</div>
 		<br>
 		<br>
 			<!-- HABITACIONES TIPOS-->
