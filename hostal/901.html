@@ -518,6 +518,22 @@
 		$(document).ready(function() {
 			$('.animsition').animsition();
 		});
+		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
+				setTimeout(function(){
+	
+					//cargar css dinamicamente
+					$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
+		
+					//inamtion fadeIn and faceOut
+					$('.animate-box').css('opacity', 0);
+					$('.animate-box').waypoint(function() {
+					$('.animate-box').addClass('fadeInLeft');
+					}, { 
+						offset: '50%' 	
+					});	
+					
+				}, 1000);
+			});
   </script>
 	</body>
 </html>
