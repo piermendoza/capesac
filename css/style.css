@@ -225,10 +225,11 @@ font-size:1.5em;
 font-size:1.3em;
 font-weight: bold;
 }
-/* CUSTON STYLE*/
+/* CUSTON STYLE
+*/
 
 .fondo{
-	background-image: url('../images/fondo.jpg');
+  background-image: url('../images/fonder.jpg');
 }
 
 body {
