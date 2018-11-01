@@ -406,7 +406,7 @@
 									if($('#hs').val()!=null){
 										if($('.ini').val()!='LLEGADA' && $('.fin').val()!='SALIDA'){
 
-											$.get('https://farbe.capesac.com.pe?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.ini').val()).done(function( data ) {
+											$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.ini').val()).done(function( data ) {
 												var yourval = jQuery.parseJSON(JSON.stringify(data));
 
 												console.log(yourval);
