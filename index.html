@@ -78,7 +78,6 @@
 			$('.cs-options>ul>li').click(function() {
 				Temporal[0,0]=$('.cs-options>ul>.cs-selected>span').text();
 
-
 				$("#titulo").html(Temporal[0,0]);
 
 				for (var i = 0; i < 1; i++) {
@@ -406,7 +405,13 @@
 								function validate(){
 									if($('#hs').val()!=null){
 										if($('.ini').val()!='LLEGADA' && $('.fin').val()!='SALIDA'){
-											$('#ReservaForm').modal('show');
+
+											$.get('https://farbe.capesac.com.pe?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.ini').val()).done(function( data ) {
+												var yourval = jQuery.parseJSON(JSON.stringify(data));
+
+												console.log(yourval);
+												$('#ReservaForm').modal('show');
+											});
 										}else{
 											alert('Debe selecionar una fecha valida');
 										}
@@ -898,7 +903,9 @@
 			var yourval = jQuery.parseJSON(JSON.stringify(data));
 
 			console.log(yourval);
-		});*/
+		});
+		
+		*/
 
 		setTimeout(function(){
 			$("#mostrarmodal").modal("show");
@@ -946,10 +953,6 @@
 
 					<!-- Top content -->
 					<div class="top-content">
-							<div class="">
-								
-								<div class="">
-									<div class="">
 										<form role="form" action="" method="post" class="f1">
 											<div class="f1-steps">
 												<div class="f1-progress">
@@ -1046,10 +1049,6 @@
 											</fieldset>
 										
 										</form>
-									</div>
-								</div>
-									
-							</div>
 						</div>
 
 
