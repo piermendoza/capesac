@@ -85,6 +85,8 @@
 					if(Establecimiento[i,1]==="HOSTAL DLUXO"){
 						$("#dsp").html("<p class='text-left'>"+Establecimiento[i,2]+"</p>");
 						$("#dire").html("<b class='text-left'>"+ Establecimiento[i,3]+"</b>");
+					}else{
+
 					}
 				}
 				
@@ -362,11 +364,11 @@
 		<div class="container">
 			<div class="row">
 				<div id="availability">
-					<form action="#">
+					<form>
 						<div class="a-col">
 							<section>
 								<select id="hs" class="cs-select cs-skin-border" name="hs">
-									<option value="" disabled selected>ESTABLECIMIENTO</option>
+									<option disabled selected>ESTABLECIMIENTO</option>
 									<option value="0">HOSTAL DLUXO</option>
 									<option value="5">HOSTAL TU & YO</option>
 									<option value="1">HOSTAL EMPORIO</option>
@@ -379,31 +381,41 @@
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Llegada" value="LLEGADA" name="ini" class="form-control" id="dateTimeL"/>
+								<input type="text" value="LLEGADA" class="form-control ini" required/>
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Salida" value="SALIDA" name="fin" class="form-control" id="dateTimeS"  />
+								<input type="text" value="SALIDA" class="form-control fin" required/>
 										
 							</div>
 						</div>
 						<script>
-							$('#dateTimeL').datetimepicker({
-								 formatDate:'Y/m/d',
-								 minDate:'-1970/01/01',
-								 maxDate:'+1970/07/12'
-							});
-							$('#dateTimeS').datetimepicker({
+							$('.alternate>.input-field>input').datetimepicker({
 								 formatDate:'Y/m/d',
 								 minDate:'-1970/01/01',
 								 maxDate:'+1970/07/12'
 							});
 						</script>
 						<div id="atten" class="a-col action atten">
-							<a href="" data-toggle="modal" data-target="#ReservaForm">
+							<a onclick="validate()">
 								<label id="text">reservar</label>
 							</a>
+
+							<script>
+								function validate(){
+									if($('#hs').val()!=null){
+										if($('.ini').val()!='LLEGADA' && $('.fin').val()!='SALIDA'){
+											$('#ReservaForm').modal('show');
+										}else{
+											alert('Debe selecionar una fecha valida');
+										}
+									}else{
+										alert('Debe selecionar un establecimiento');
+									}
+								}
+							</script>
+						
 						</div>
 					</form>
 				</div>
@@ -924,118 +936,10 @@
 						<span aria-hidden="true">&times;</span>
 						<span class="sr-only">Cerrar</span>
 					</button>
-					<h1 class="modal-title text-center h2" id="titulo">SELECCIONE ESTABLECIMIENTO Y EL TIEMPO DE ESTADIA</h1>
+					<h1 class="modal-title text-center h2" id="titulo"></h1>
 				</div>
 				<div  class="modal-body">
-					<!--
-					<div id="dsp"></div>
-					<div id="dire"></div>
-					<br><br>
-					<form>
-						<div class="row">
-							<div class="col-md-8">
-								<div class="form-group">
-									<label>HABITACIÓN</label>
-									<select class="form-control">
-										<option disabled selected>.:SELECCIONAR:.</option>
-										<option value="1">Hbaitación 1</option>
-										<option value="2">Hbaitación 2</option>
-										<option value="3">Hbaitación 3</option>
-										<option value="4">Hbaitación 4</option>
-										<option value="5">Hbaitación 5</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label for="inputEmail">N° Huespedes</label>
-									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa la cantidad de huespedes"/>
-								</div>
-							</div>
-
-						</div>
-						
-						<center>
-						<div class="row" style="width:50em;">
-							<div class="col-md-12">
-								<div class="thumbnail">
-									<div id="habitacion02" class="carousel slide" data-ride="carousel" data-interval="2000">
-										<ol class="carousel-indicators">
-											<li data-target="#habitacion02" data-slide-to="0" class="active"></li>
-											<li data-target="#habitacion02" data-slide-to="1"></li>
-											<li data-target="#habitacion02" data-slide-to="2"></li>
-										</ol>
-										<div class="carousel-inner" role="listbox">
-											<div class="item active">
-												<img src="images/cq.jpg">
-											</div>
-											<div class="item">
-												<img src="images/cq.jpg">
-											</div>
-											<div class="item">
-												<img src="images/cq.jpg">
-											</div>
-											<div class="carousel-caption">
-												<h3 class="row" style="color:white;">HABITACIÓN MATRIMONIAL</h3>
-												<p style="color:white;font-size: 1.3em;">
-													Cama de 2 plazas, TV cable con canal privado, baño privado con agua caliente.
-													(S/.50)
-												</p> 
-												</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						</center>
-
-
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="inputName">Nombre/Apellidos</label>
-									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="inputEmail">N° Dni</label>
-									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-								</div>
-							</div>	
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="inputEmail">E-mail</label>
-									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="inputEmail">N° Telefono</label>
-									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="inputEmail">Fecha de Ingreso</label>
-									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="inputEmail">Fecha de Salida</label>
-									<input type="number" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-								</div>
-							</div>
-						</div>
-
-					</form>
-					<br>
-					<br>
-					<br>
-
-				
-				-->
+					
 				<link rel="stylesheet" href="assets/css/form-elements.css">
 				<link rel="stylesheet" href="assets/css/style.css">
 
@@ -1101,16 +1005,17 @@
 				
 											<fieldset>
 												<div class="form-group">
-													<label class="sr-only" for="f1-email">Email</label>
-													<input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
+													<input type="text" name="f1-email" placeholder="Nombre/Apellidos" class="f1-email form-control" id="f1-email">
 												</div>
 												<div class="form-group">
-													<label class="sr-only" for="f1-password">Password</label>
-													<input type="password" name="f1-password" placeholder="Password..." class="f1-password form-control" id="f1-password">
+													<input type="password" name="f1-password" placeholder="Número de Dni/Pasaporte" class="f1-password form-control" id="f1-password">
 												</div>
 												<div class="form-group">
-													<label class="sr-only" for="f1-repeat-password">Repeat password</label>
-													<input type="password" name="f1-repeat-password" placeholder="Repeat password..." 
+													<input type="password" name="f1-repeat-password" placeholder="Número de telefono" 
+																		class="f1-repeat-password form-control" id="f1-repeat-password">
+												</div>
+												<div class="form-group">
+													<input type="password" name="f1-repeat-password" placeholder="Correo electronico" 
 																		class="f1-repeat-password form-control" id="f1-repeat-password">
 												</div>
 												<div class="f1-buttons">
