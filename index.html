@@ -51,50 +51,6 @@
 </script>
 
 	<script>
-		/*Establecimiento
-		//[x,0]id
-		//[x,1]nombre
-		//[x,2]descripcion
-		//[x,3]direccionName
-		//[x,4]direccionUrl
-		*/
-
-		/*Temporal
-		//[y,0]nombre
-		*/
-
-		var Establecimiento = {};
-		var Temporal = {};
-
-		//Declarando establecimiento
-		Establecimiento[0,0]=1;
-		Establecimiento[0,1]="HOSTAL DLUXO";
-		Establecimiento[0,2]="Hostal dluxo reside en Santiago de Surco, distrito financiero y residencial de la ciudad de Lima. \n Ubicado a 2 cuadras del parque de la amistad y a 5 cuadras de centros financieros y comerciales.";
-		Establecimiento[0,3]="Av.Caminos del Inca 2376 - Santiago de Surco";
-		Establecimiento[0,4]="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707";
-		
-
-		$(document).ready(function() {
-			$('.cs-options>ul>li').click(function() {
-				Temporal[0,0]=$('.cs-options>ul>.cs-selected>span').text();
-
-				$("#titulo").html(Temporal[0,0]);
-
-				for (var i = 0; i < 1; i++) {
-					if(Establecimiento[i,1]==="HOSTAL DLUXO"){
-						$("#dsp").html("<p class='text-left'>"+Establecimiento[i,2]+"</p>");
-						$("#dire").html("<b class='text-left'>"+ Establecimiento[i,3]+"</b>");
-					}else{
-
-					}
-				}
-				
-			});
-		});		
-	
-	//document.querySelector('.cs-selected>span').innerHTML <!-- style=" width: 80% !important;" 
-	
-
 
 		$(document).ready(function(){
 			$("#emporio").hover(function(){
@@ -369,12 +325,12 @@
 								<select id="hs" class="cs-select cs-skin-border" name="hs">
 									<option disabled selected>ESTABLECIMIENTO</option>
 									<option value="0">HOSTAL DLUXO</option>
-									<option value="5">HOSTAL TU & YO</option>
-									<option value="1">HOSTAL EMPORIO</option>
-									<option value="5">HOTEL URBAN 901</option>
-									<option value="2">HOSTAL LA PARADA</option>
-									<option value="4">HOSTAL COSTA AZUL</option>
-									<option value="3">HOSTAL CONQUISTADOR</option>
+									<option value="1">HOSTAL TU & YO</option>
+									<option value="2">HOSTAL EMPORIO</option>
+									<option value="3">HOTEL URBAN 901</option>
+									<option value="4">HOSTAL LA PARADA</option>
+									<option value="5">HOSTAL COSTA AZUL</option>
+									<option value="6">HOSTAL CONQUISTADOR</option>
 								</select>
 							</section>
 						</div>
@@ -408,8 +364,7 @@
 
 											$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.ini').val()).done(function( data ) {
 												var yourval = jQuery.parseJSON(JSON.stringify(data));
-
-												console.log(yourval);
+												$("#titulo").html(Temporal[0,0]);
 												$('#ReservaForm').modal('show');
 											});
 										}else{
