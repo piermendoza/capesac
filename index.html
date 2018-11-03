@@ -359,6 +359,7 @@
 
 							<script>
 								function validate(){
+									//$('#ReservaForm').modal('show');
 									if($('#hs').val()!=null){
 										if($('.ini').val()!='LLEGADA' && $('.fin').val()!='SALIDA'){
 
@@ -367,8 +368,8 @@
 												if(yourval['hs']!=null){
 													$("#titulo").html(yourval['hs']); 
 
-														var options="<label class='col-md-4' for='paypal'><div class='animate-box'><div class='thumbnail'><div id='habitacion01' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion01' data-slide-to='0' class='active'></li><li data-target='#habitacion01' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'><div class='item active'> <img src='images/cq.jpg' ></div><div class='item'> <img src='images/cq.jpg'></div></div></div></div><div class='radio-input'> <input id='paypal' type='radio' name='payment'> Pay £340.00 with PayPal</div></div> </label>";
 														for(i=0; i<5; i++) {
+														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'><div class='item active'> <img src='images/cq.jpg' ></div><div class='item'> <img src='images/cq.jpg'></div></div></div></div><div class='radio-input'> <input id='paypal"+i+"' type='radio' name='payment'> Pay £340.00 with PayPal </input> </div></div> </label>";
 															$('#ids').before(options);
 														}
 													
@@ -894,7 +895,7 @@
 					offset: '50%' 	
 				});	
 			
-			}, 2000);
+			}, 0000);
 				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style_common.css') );
 				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style2.css') );
 				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/jquery.datetimepicker.min.css') );
@@ -945,7 +946,7 @@
 												</div>
 											</div>
 											
-											<fieldset id="habitaciones">
+											<fieldset>
 													
 
 															  <!--<label for="carde" class="method card">
@@ -967,14 +968,14 @@
 																  Pay £340.00 with PayPal
 																</div>
 															  </label>
-
-															    <label class='col-md-4' for='paypal'>
+															
+															    <label class='col-md-4' for='paypal0'>
 																	<div class='animate-box'>
 																		<div class='thumbnail'>
-																			<div id='habitacion01' class='carousel slide' data-ride='carousel' data-interval='2000'>
+																			<div id='habitacion0' class='carousel slide' data-ride='carousel' data-interval='2000'>
 																				<ol class='carousel-indicators'>
-																				    <li data-target='#habitacion01' data-slide-to='0' class='active'></li>
-																					<li data-target='#habitacion01' data-slide-to='1'></li>
+																				    <li data-target='#habitacion0' data-slide-to='0' class='active'></li>
+																					<li data-target='#habitacion0' data-slide-to='1'></li>
 																				</ol>
 																				<div class='carousel-inner' role='listbox'>
 																					<div class='item active'>
@@ -987,11 +988,12 @@
 																			</div>
 																		</div>
 																		<div class='radio-input'>
-																			<input id='paypal' type='radio' name='payment'> 
+																			<input id='paypal0' type='radio' name='payment'> 
 																			 Pay £340.00 with PayPal
 																		</div>
 																	</div>
-																</label>-->
+																</label>
+															-->
 
 																<div id="ids" class='col-md-12 f1-buttons'><button type='button' class='btn btn-next'>Continuar</button></div>
 											</fieldset>
