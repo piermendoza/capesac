@@ -366,12 +366,13 @@
 											$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.ini').val()).done(function( data ) {
 												var yourval = jQuery.parseJSON(JSON.stringify(data));
 												if(yourval['hs']!=null){
-													$("#titulo").html(yourval['hs']); 
+													$("#titulo").html(yourval['hs']);
 
 													for(i=0; i<yourval['num']; i++) {
-														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'><div class='item active'> <img src='images/cq.jpg' ></div><div class='item'> <img src='images/cq.jpg'></div></div></div></div><div class='radio-input'> <input id='paypal"+i+"' type='radio' name='payment'> Pay £340.00 with PayPal </input> </div></div> </label>";
+														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'><div class='item active'> <img src='images/cq.jpg' ></div><div class='item'> <img src='images/cq.jpg'></div></div></div></div><div class='radio-input'> <input id='paypal"+i+"' type='radio' name='payment'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
 														$('#ids').before(options);
 													}
+													
 													
 
 //$( ".hello" ).clone().appendTo( ".goodbye" );
