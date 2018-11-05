@@ -373,20 +373,17 @@
 													
 													$('#tip').empty();
 
-													for(i=0; i<yourval['num']; i++) {
-														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'><div class='item active'> <img src='images/cq.jpg' ></div><div class='item'> <img src='images/cq.jpg'></div></div></div></div><div class='radio-input'> <input id='paypal"+i+"' type='radio' name='payment'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
+													for(i=0; i<yourval['tp'].length; i++) {
+														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'> <input id='paypal"+i+"' type='radio' name='payment'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
 														$("#tip").append(options);
 													}
-													
-													
-
-//$( ".hello" ).clone().appendTo( ".goodbye" );
-
-
-
-
-
-
+/*
+													for(i=0; i<yourval['ft'].length; i++){9
+														var items="";
+														$("#items0").append(items);
+														$("#items0").append(items);
+														i++;
+													}*/
 													$('#ReservaForm').modal('show');
 												}else{
 													alert('Ocurrio un error inesperado!');
@@ -600,8 +597,8 @@
 					</div>
 				</div>
 				
-		<div class="text-left">
-			<br><br>
+			<br>
+			<br>
 			<br>
 			<br>
 <!--Title Ofrecemos-->
@@ -666,7 +663,6 @@
 				</div>
 				
 			</div><br>
-		</div>
 		
 		<div id="fh5co-counter-section" class="fh5co-counters animate-box">
 			<div class="container">
