@@ -1,11 +1,4 @@
 
-function scroll_to_class(element_class, removed_height) {
-	var scroll_to = $(element_class).offset().top - removed_height;
-	if($(window).scrollTop() != scroll_to) {
-		$('html, body').stop().animate({scrollTop: scroll_to}, 0);
-	}
-}
-
 function bar_progress(progress_line_object, direction) {
 	var number_of_steps = progress_line_object.data('number-of-steps');
 	var now_value = progress_line_object.data('now-value');
@@ -17,12 +10,9 @@ function bar_progress(progress_line_object, direction) {
 		new_value = now_value - ( 100 / number_of_steps );
 	}
 	progress_line_object.attr('style', 'width: ' + new_value + '%;').data('now-value', new_value);
-}
+} 
 
 jQuery(document).ready(function() {
-	
-   
-    
     /*
         Form
     */
@@ -41,13 +31,17 @@ jQuery(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// fields validation
-    	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
+    	parent_fieldset.find('input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="radio"]').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
     			next_step = false;
-    		}
+			}else if(!$('input[type=radio]').is(':checked')){
+				$(this).parents('.radio-input').addClass('input-radio-error');
+    			next_step = false;
+			}
     		else {
     			$(this).removeClass('input-error');
+    			$('.radio-input').removeClass('input-radio-error');
     		}
     	});
     	// fields validation
@@ -61,7 +55,6 @@ jQuery(document).ready(function() {
     			// show next step
 	    		$(this).next().fadeIn();
 	    		// scroll window to beginning of the form
-    			scroll_to_class( $('.f1'), 20 );
 	    	});
     	}
     	
@@ -81,7 +74,6 @@ jQuery(document).ready(function() {
     		// show previous step
     		$(this).prev().fadeIn();
     		// scroll window to beginning of the form
-			scroll_to_class( $('.f1'), 20 );
     	});
     });
     

@@ -49,7 +49,9 @@
 
 .f1-buttons { text-align: right; }
 
-.f1 .input-error { border-color: #98281c; }
+.f1 .input-error { border-color: #98281c;}
+.input-radio-error { color: #98281c;}
+
 
 
 

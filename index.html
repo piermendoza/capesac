@@ -374,7 +374,7 @@
 													$('#tip').empty();
 
 													for(i=0; i<yourval['tp'].length; i++) {
-														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'> <input id='paypal"+i+"' type='radio' name='payment'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
+														var options="<label class='col-md-4' for='paypal"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input id='paypal"+i+"' type='radio' name='payment'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
 														$("#tip").append(options);
 													}
 													$('#ReservaForm').modal('show');
@@ -881,7 +881,7 @@
 
 
 <div class="modal fade" id="ReservaForm" role="dialog">
-		<div class="modal-dialog" style="width: 70% !important">
+		<div class="modal-dialog" style="width: 70% !important;">
 			<div class="modal-content">
 				<div class="">
 					<br>
@@ -919,7 +919,7 @@
 											</div>
 											
 											<fieldset>
-												<div id="tip">		
+												<div id="tip"  style="height: 250px;overflow-y: auto;">		
 
 															  <!--<label for="carde" class="method card">
 																<div class="card-logos">
@@ -966,34 +966,37 @@
 																	</div>
 																</label>
 															-->
-</div>
+														</div>
 																<div id="ids" class='col-md-12 f1-buttons'><button type='button' class='btn btn-next'>Continuar</button></div>
 											</fieldset>
-				
-											<fieldset>
+											<fieldset style="height: 250px;">
+											
 												<div class="form-group">
-													<input type="text" name="f1-email" placeholder="Nombre/Apellidos" class="f1-email form-control" id="f1-email">
+													<input type="text" name="name" placeholder="Nombre/Apellidos" class="f1-email form-control">
 												</div>
 												<div class="form-group">
-													<input type="password" name="f1-password" placeholder="Número de Dni/Pasaporte" class="f1-password form-control" id="f1-password">
+													<input type="text" name="dni" placeholder="Número de Dni/Pasaporte" class="f1-password form-control">
 												</div>
 												<div class="form-group">
-													<input type="password" name="f1-repeat-password" placeholder="Número de telefono" 
-																		class="f1-repeat-password form-control" id="f1-repeat-password">
+													<input type="tel" name="phono" placeholder="Número de telefono" 
+																		class="f1-repeat-password form-control">
 												</div>
 												<div class="form-group">
-													<input type="password" name="f1-repeat-password" placeholder="Correo electronico" 
-																		class="f1-repeat-password form-control" id="f1-repeat-password">
+													<input type="email" name="email" placeholder="Correo electronico" 
+																		class="f1-repeat-password form-control">
 												</div>
+
+											
+												
 												<div class="f1-buttons">
 													<button type="button" class="btn btn-previous mdr">Regresar</button>
 													<button type="button" class="btn btn-next mdr">Continuar</button>
 												</div>
 											</fieldset>
 				
-											<fieldset>
+											<fieldset style="height: 250px;">
 												<div class="form-group">
-													<input type="text" name="f1-facebook" placeholder="Número de huéspedes..." class="f1-facebook form-control" id="f1-facebook">
+													<input type="number" name="f1-facebook" placeholder="Número de huéspedes..." class="f1-facebook form-control" id="f1-facebook">
 												</div>
 												<div class="form-group custom-radio">
 													<!--<input type="text" name="f1-twitter" placeholder="Twitter..." class="f1-twitter form-control" id="f1-twitter">-->
