@@ -349,70 +349,43 @@
 						</div>
 						<script>
 						
+						        $.datetimepicker.setLocale('es');
+
 								$('#ini').datetimepicker({
-								format:'Y/m/d H:m',
-								minDate:'-1969/12/31',
-								/*maxDate:'+1970/07/12',
-								onShow:function( ct ){
-								this.setOptions({
-									maxDate:jQuery('#fin').val()?jQuery('#fin').val():false
-								})
-								}*/
+									format:'Y/m/d H:m',
+									minDate:'+1970/01/02',
+									startDate:'+1970/01/02',
+									defaultDate:'+1970/01/02'
+									
 								});
 
 								$('#fin').datetimepicker({
-											format:'Y/m/d H:m',
-											onShow:function( ct ){
-												this.setOptions({
-													minDate:$('#ini').val()?$('#ini').val():false,
-													minTime:$('#ini').val()?$('#ini').val():false
-												})
-											}
-										});
+									format:'Y/m/d H:m',
+									onShow:function( ct ){
+										var fecha = new Date($('#ini').val());
+										var dias = 1; // Número de días a agregar
+										fecha.setDate(fecha.getDate() + dias);
 
-
-								$('#fin').click(function(){
-									if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
-										alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
-										$('#fin').datetimepicker('destroy');
-									}else{
-										
+										this.setOptions({
+											minDate:fecha?fecha:false,
+										})
 									}
 								});
-								
 
-						/*
-								$('#ini').datepicker({
-								onSelect:function(dateText,inst){
-									var selectedDate = new Date(dateText),
-										endDate = new Date(selectedDate.getTime());
 
-									$('#fin').datepicker({
-										setDate:dateText,
-										option:{
-											minDate:endDate
+									$('#fin').click(function(){
+										if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
+											alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
+											$("#fin").attr('disabled','disabled');
+											$("#fin").val('SALIDA');
 										}
 									});
-								}
-							});
 
-							$('#ini').datetimepicker({
-								formatDate:'Y/m/d',
-								minDate:'-1970/01/01',
-								maxDate:'+1970/07/12',
-								/*
-								onSelect:function(date,inst){
-									var selectedDate = new Date(dateText),
-									endDate = new Date(selectedDate.getTime());
+									$('#ini').click(function(){
+										$("#fin").removeAttr('disabled');
+									});
 
-								$('#end').datepicker({
-									setDate:dateText,
-									option:{
-										minDate:endDate
-									}
-								});
-								}
-							});*/
+
 
 						</script>
 						<div id="atten" class="a-col action atten">
