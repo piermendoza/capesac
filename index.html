@@ -338,26 +338,87 @@
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" value="LLEGADA" class="form-control ini" required/>
+								<input id="ini" type="text" value="LLEGADA" class="form-control ini"/>
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" value="SALIDA" class="form-control fin" required/>
+								<input id="fin" type="text" value="SALIDA" class="form-control fin"/>
 										
-							</div>
+							</div> 
 						</div>
 						<script>
-							$('.alternate>.input-field>input').datetimepicker({
-								 formatDate:'Y/m/d',
-								 minDate:'-1970/01/01',
-								 maxDate:'+1970/07/12'
+						
+								$('#ini').datetimepicker({
+								format:'Y/m/d H:m',
+								minDate:'-1969/12/31',
+								/*maxDate:'+1970/07/12',
+								onShow:function( ct ){
+								this.setOptions({
+									maxDate:jQuery('#fin').val()?jQuery('#fin').val():false
+								})
+								}*/
+								});
+
+								$('#fin').datetimepicker({
+											format:'Y/m/d H:m',
+											onShow:function( ct ){
+												this.setOptions({
+													minDate:$('#ini').val()?$('#ini').val():false,
+													minTime:$('#ini').val()?$('#ini').val():false
+												})
+											}
+										});
+
+
+								$('#fin').click(function(){
+									if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
+										alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
+										$('#fin').datetimepicker('destroy');
+									}else{
+										
+									}
+								});
+								
+
+						/*
+								$('#ini').datepicker({
+								onSelect:function(dateText,inst){
+									var selectedDate = new Date(dateText),
+										endDate = new Date(selectedDate.getTime());
+
+									$('#fin').datepicker({
+										setDate:dateText,
+										option:{
+											minDate:endDate
+										}
+									});
+								}
 							});
+
+							$('#ini').datetimepicker({
+								formatDate:'Y/m/d',
+								minDate:'-1970/01/01',
+								maxDate:'+1970/07/12',
+								/*
+								onSelect:function(date,inst){
+									var selectedDate = new Date(dateText),
+									endDate = new Date(selectedDate.getTime());
+
+								$('#end').datepicker({
+									setDate:dateText,
+									option:{
+										minDate:endDate
+									}
+								});
+								}
+							});*/
+
 						</script>
 						<div id="atten" class="a-col action atten">
 							<a style="cursor:pointer;" onclick="validate()">
 								<label id="text">reservar</label>
-							</a>
+							</a>  
 
 							<script>
 								function validate(){
@@ -365,7 +426,7 @@
 									if($('#hs').val()!=null){
 										if($('.ini').val()!='LLEGADA' && $('.fin').val()!='SALIDA'){
 
-											$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.ini').val()).done(function( data ) {
+											$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()+'&i='+$('.ini').val()+'&f='+$('.fin').val()).done(function( data ) {
 												var yourval = jQuery.parseJSON(JSON.stringify(data));
 
 												if(yourval['hs']!=null){
@@ -943,7 +1004,7 @@
 															
 															    <label class='col-md-4' for='paypal0'>
 																	<div class='animate-box'>
-																		<div class='thumbnail'>
+																		<div class='thumbnail'>3
 																			<div id='habitacion0' class='carousel slide' data-ride='carousel' data-interval='2000'>
 																				<ol class='carousel-indicators'>
 																				    <li data-target='#habitacion0' data-slide-to='0' class='active'></li>
