@@ -65,11 +65,14 @@
 			if(window.matchMedia('(max-width: 992px)').matches ){
 				$('.ocultar').hide();
 				$('.desph').hide();
+				$('.slide>.carousel-inner').css("height", "auto");
 			}else{
 
 				$(".desph").css("font-size", "1.3em");
 				$(".desph").css("font-style", "italic");
 				$(".ocultar").css("font-size", "1.2em");
+
+				$('.slide>.carousel-inner').css("height", "350px");
 			}
 
 		});
@@ -159,7 +162,7 @@
 										<li data-target="#habitacion02" data-slide-to="1"></li>
 										<li data-target="#habitacion02" data-slide-to="2"></li>
 									</ol>
-									<div class="carousel-inner" role="listbox" style="height: 350px;">
+									<div class="carousel-inner" role="listbox"> 
 										<div class="item active">
 											<img src="img/fondo901.jpg">
 										</div>
