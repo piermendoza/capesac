@@ -415,6 +415,11 @@
 															$("#tip").append(options);
 														}
 														$('#ReservaForm').modal('show');
+														
+														$('#hst').val($('#hs').val());
+														$('#ing').val($('#ini').val());
+														$('#sal').val($('#fin').val());
+
 													}else{
 														alert('Ocurrio un error inesperado!');
 													}
@@ -940,6 +945,11 @@
 					<!-- Top content -->
 					<div class="top-content" >
 										<form id="reservs" role="form" class="f1">
+
+											<input id="hst" name="hs" type="hidden" value="">
+											<input id="ing" name="ing" type="hidden" value="">
+											<input id="sal" name="sal" type="hidden" value="">
+
 											<div class="f1-steps">
 												<div class="f1-progress">
 													<div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
@@ -979,10 +989,10 @@
 													<input type="email" name="mail" placeholder="Correo electronico" class="form-control">
 												</div>
 												<div class="form-group">
-													<input type="number" name="num1" placeholder="Número de adultos..." class="form-control"  min=1 max=50>
+													<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control"  min=1 max=50>
 												</div>
 												<div class="form-group">
-													<input type="number" name="num2" placeholder="Número de infantes..." class="form-control"  min=0 max=40>
+													<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control"  min=0 max=30>
 												</div>
 												</div>
 
@@ -1006,35 +1016,35 @@
 												<label for="paypale1" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale1" type="radio" name="payment">
+														<input id="paypale1" type="radio" name="payment" value="0">
 														Trasferencia Bancaria
 													</div>
 												</label>
 												<label for="paypale2" class="method">
 													<img src="img/mastercard_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale2" type="radio" name="payment">
+														<input id="paypale2" type="radio" name="payment" value="1">
 														Deposito Bancario
 													</div>
 												</label>
 												<label for="paypale3" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale3" type="radio" name="payment">
+														<input id="paypale3" type="radio" name="payment" value="2">
 														Pago Efectivo
 													</div>
 												</label>
 												<label for="paypale4" class="method">
 													<img src="img/mastercard_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale4" type="radio" name="payment">
+														<input id="paypale4" type="radio" name="payment" value="3">
 														Giro Bancario
 													</div>
 												</label>
 												<label for="paypale5" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale5" type="radio" name="payment">
+														<input id="paypale5" type="radio" name="payment" value="4">
 														Visa
 													</div>
 												</label>
@@ -1054,20 +1064,13 @@
 
 										<script>
 											function send(){
-												var est=$('#hs').val();
-												var inicio=$('#ini').val();
-												var salida=$('#fin').val();
-												var tipo=$( "#reservs" ).serializeArray();
-												/*
-												if($('input[name=hbtu]').is(':checked')){
-													tipo=$('input[name=hbtu]').val();
-													alert(tipo);
-												}*/ 
+												
+												var tipo=$('#reservs').serializeArray();
 											$.ajax({
 												type: "POST",
 												dataType: 'JSON',
 												url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
-												data:{hs:est,ini:inicio,fin:salida,data:tipo},
+												data:tipo,
 												success: function (result) { 
 													alert(result);
 												}
