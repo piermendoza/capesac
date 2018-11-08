@@ -81,13 +81,15 @@ jQuery(document).ready(function() {
     $('.f1').on('submit', function(e) {
     	
     	// fields validation
-    	$(this).find('input[type="text"],input[type="number"], input[type="password"], textarea').each(function() {
-    		if( $(this).val() == "" ) {
-    			e.preventDefault();
-    			$(this).addClass('input-error');
-			}else {                                                                
-    			$(this).removeClass('input-error');
-    		}
+    	$(this).find('input[type="radio"]').each(function() {
+			
+			if(!$('input[type=radio]').is(':checked')){
+				$(this).parents('.radio-input').addClass('input-radio-error');
+    			next_step = false;
+			}else{
+				$(this).removeClass('input-radio-error');
+			}
+
     	});
     	// fields validation
     	
