@@ -411,7 +411,7 @@
 														$('#tip').empty();
 
 														for(i=0; i<yourval['tp'].length; i++) {
-															var options="<label class='col-md-4' for='hbt"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input id='hbt"+i+"' type='radio' name='hbt'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
+															var options="<label class='col-md-4' for='hbt"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input  value='"+i+"' id='hbt"+i+"' type='radio' name='hbtu'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
 															$("#tip").append(options);
 														}
 														$('#ReservaForm').modal('show');
@@ -939,7 +939,7 @@
 
 					<!-- Top content -->
 					<div class="top-content" >
-										<form role="form" class="f1">
+										<form id="reservs" role="form" class="f1">
 											<div class="f1-steps">
 												<div class="f1-progress">
 													<div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
@@ -1057,11 +1057,17 @@
 												var est=$('#hs').val();
 												var inicio=$('#ini').val();
 												var salida=$('#fin').val();
+												var tipo=$( "#reservs" ).serializeArray();
+												/*
+												if($('input[name=hbtu]').is(':checked')){
+													tipo=$('input[name=hbtu]').val();
+													alert(tipo);
+												}*/ 
 											$.ajax({
 												type: "POST",
 												dataType: 'JSON',
 												url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
-												data:{hs: 'asdasd',ini:'asdasd',fin:'perconaa'},
+												data:{hs:est,ini:inicio,fin:salida,data:tipo},
 												success: function (result) { 
 													alert(result);
 												}
