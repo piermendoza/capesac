@@ -977,22 +977,22 @@
 											
 												<div style="height: 216px;overflow-y: auto;">
 												<div class="form-group">
-													<input type="text" name="name" placeholder="Nombre/Apellidos" class="form-control">
+													<input type="text" name="name" placeholder="Nombre/Apellidos" class="form-control" required>
 												</div>
 												<div class="form-group">
-													<input type="text" name="dni" placeholder="Número de Dni/Pasaporte" class="form-control">
+													<input type="text" name="dni" placeholder="Número de Dni/Pasaporte" class="form-control" required>
 												</div>
 												<div class="form-group">
-													<input type="tel" name="phono" placeholder="Número de telefono" class="form-control">
+													<input type="tel" name="phono" placeholder="Número de telefono" class="form-control" required>
 												</div>
 												<div class="form-group">
-													<input type="email" name="mail" placeholder="Correo electronico" class="form-control">
+													<input type="text" name="mail" placeholder="Correo electronico" class="form-control" required>
 												</div>
 												<div class="form-group">
-													<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control"  min=1 max=50>
+													<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control"  min=1 max=50 required> 
 												</div>
 												<div class="form-group">
-													<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control"  min=0 max=30>
+													<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control"  min=0 max=30 required>
 												</div>
 												</div>
 
@@ -1016,35 +1016,35 @@
 												<label for="paypale1" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale1" type="radio" name="payment" value="0">
+														<input id="paypale1" type="radio" name="payment" value="0" required>
 														Trasferencia Bancaria
 													</div>
 												</label>
 												<label for="paypale2" class="method">
 													<img src="img/mastercard_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale2" type="radio" name="payment" value="1">
+														<input id="paypale2" type="radio" name="payment" value="1" required>
 														Deposito Bancario
 													</div>
 												</label>
 												<label for="paypale3" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale3" type="radio" name="payment" value="2">
+														<input id="paypale3" type="radio" name="payment" value="2" required>
 														Pago Efectivo
 													</div>
 												</label>
 												<label for="paypale4" class="method">
 													<img src="img/mastercard_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale4" type="radio" name="payment" value="3">
+														<input id="paypale4" type="radio" name="payment" value="3" required>
 														Giro Bancario
 													</div>
 												</label>
 												<label for="paypale5" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale5" type="radio" name="payment" value="4">
+														<input id="paypale5" type="radio" name="payment" value="4" required>
 														Visa
 													</div>
 												</label>
