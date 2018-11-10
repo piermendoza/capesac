@@ -416,7 +416,7 @@
 														}
 														$('#ReservaForm').modal('show');
 														
-														$('#hst').val($('#hs').val());
+														$('#hst').val($('#hs').val()); 
 														$('#ing').val($('#ini').val());
 														$('#sal').val($('#fin').val());
 
@@ -902,23 +902,26 @@
 			$("#mostrarmodal").modal("show");
 
 			//cargar css dinamicamente
-			$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/animate.css') );
-
-				//inamtion fadeIn and faceOut
-				$('.animate-box').css('opacity', 0);
-				$('.animate-box').waypoint(function() {
-				$('.animate-box').addClass('fadeInLeft');
-				}, { 
-					offset: '50%' 	
-				});	
 			
-			}, 0000);
-				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style_common.css') );
-				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style2.css') );
-				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/jquery.datetimepicker.min.css') );
-				$('head').append( $('<link rel="stylesheet" type="text/css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"/>').attr('href', 'https://use.fontawesome.com/releases/v5.0.10/css/all.css') );
-				$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/jquery.datetimepicker.min.css') );	
+			
+			}, 5000);	
 		});
+
+		$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/animate.css') );
+
+		//inamtion fadeIn and faceOut
+		$('.animate-box').css('opacity', 0);
+		$('.animate-box').waypoint(function() {
+		$('.animate-box').addClass('fadeInLeft');
+		}, { 
+			offset: '50%' 	
+		});	
+
+		$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style_common.css') );
+		$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/style2.css') );
+		$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/jquery.datetimepicker.min.css') );
+		$('head').append( $('<link rel="stylesheet" type="text/css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"/>').attr('href', 'https://use.fontawesome.com/releases/v5.0.10/css/all.css') );
+		$('head').append( $('<link rel="stylesheet" type="text/css"/>').attr('href', 'css/jquery.datetimepicker.min.css') );
 
 		
   </script>
@@ -944,7 +947,7 @@
 
 					<!-- Top content -->
 					<div class="top-content" >
-										<form id="reservs" role="form" class="f1">
+										<form id="reservsf" role="form" class="f1" onSubmit="return false;">
 
 											<input id="hst" name="hs" type="hidden" value="">
 											<input id="ing" name="ing" type="hidden" value="">
@@ -977,22 +980,22 @@
 											
 												<div style="height: 216px;overflow-y: auto;">
 												<div class="form-group">
-													<input type="text" name="name" placeholder="Nombre/Apellidos" class="form-control" required>
+													<input type="text" name="name" placeholder="Nombre/Apellidos" class="form-control" >
 												</div>
 												<div class="form-group">
-													<input type="text" name="dni" placeholder="Número de Dni/Pasaporte" class="form-control" required>
+													<input type="text" name="dni" placeholder="Número de Dni/Pasaporte" class="form-control" >
 												</div>
 												<div class="form-group">
-													<input type="tel" name="phono" placeholder="Número de telefono" class="form-control" required>
+													<input type="tel" name="phono" placeholder="Número de telefono" class="form-control" >
 												</div>
 												<div class="form-group">
-													<input type="text" name="mail" placeholder="Correo electronico" class="form-control" required>
+													<input type="text" name="mail" placeholder="Correo electronico" class="form-control" >
 												</div>
 												<div class="form-group">
-													<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control"  min=1 max=50 required> 
+													<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control"  min=1 max=50> 
 												</div>
 												<div class="form-group">
-													<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control"  min=0 max=30 required>
+													<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control"  min=0 max=30>
 												</div>
 												</div>
 
@@ -1016,35 +1019,35 @@
 												<label for="paypale1" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale1" type="radio" name="payment" value="0" required>
+														<input id="paypale1" type="radio" name="payment" value="0">
 														Trasferencia Bancaria
 													</div>
 												</label>
 												<label for="paypale2" class="method">
 													<img src="img/mastercard_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale2" type="radio" name="payment" value="1" required>
+														<input id="paypale2" type="radio" name="payment" value="1">
 														Deposito Bancario
 													</div>
 												</label>
 												<label for="paypale3" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale3" type="radio" name="payment" value="2" required>
+														<input id="paypale3" type="radio" name="payment" value="2">
 														Pago Efectivo
 													</div>
 												</label>
 												<label for="paypale4" class="method">
 													<img src="img/mastercard_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale4" type="radio" name="payment" value="3" required>
+														<input id="paypale4" type="radio" name="payment" value="3">
 														Giro Bancario
 													</div>
 												</label>
 												<label for="paypale5" class="method">
 													<img src="img/paypal_logo.png"/>
 													<div class="radio-input">
-														<input id="paypale5" type="radio" name="payment" value="4" required>
+														<input id="paypale5" type="radio" name="payment" value="4">
 														Visa
 													</div>
 												</label>
@@ -1055,24 +1058,24 @@
 												
 												<div class="f1-buttons">
 													<button type="button" class="btn btn-previous mdr">Regresar</button>
-													<button onclick="send()" class="btn btn-submit mdr">Reservar</button>
+													<button onclick="return send()" class="btn btn-submit mdr">Reservar</button>
 												</div>
 										
 											</fieldset>
 										
 										</form>
-
+ 
 										<script>
 											function send(){
-												
-												var tipo=$('#reservs').serializeArray();
+												var tipo=$('#reservsf').serializeArray();
+												alert('pasa algo');
 											$.ajax({
 												type: "POST",
-												dataType: 'JSON',
 												url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
+												dataType: 'JSON',
 												data:tipo,
-												success: function (result) { 
-													alert(result);
+												success: function (results) { 
+													alert(results);
 												}
 											});
 

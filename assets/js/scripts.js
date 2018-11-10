@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
     */
     $('.f1 fieldset:first').fadeIn('slow');
     
-    $('.f1 input[type="text"], .f1 input[type="password"], .f1 textarea').on('focus', function() {
+    $('.f1 input[type="text"]').on('focus', function() {
     	$(this).removeClass('input-error');
     });
     
@@ -31,7 +31,7 @@ jQuery(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// fields validation
-    	parent_fieldset.find('input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="radio"]').each(function() {
+    	parent_fieldset.find('input[type="text"], input[type="tel"], input[type="number"], input[type="radio"]').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
     			next_step = false;
