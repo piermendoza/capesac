@@ -411,7 +411,7 @@
 														$('#tip').empty();
 
 														for(i=0; i<yourval['tp'].length; i++) {
-															var options="<label class='col-md-4' for='hbt"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input  value='"+i+"' id='hbt"+i+"' type='radio' name='hbtu'>Habitación "+yourval['tp'][i]+"</div></div> </label>";
+															var options="<label class='col-md-4' for='hbt"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input  value='"+i+"' id='hbt"+i+"' type='radio' name='hbtu'>Habitación "+yourval['tp'][i]['descripcion']+"</div></div> </label>";
 															$("#tip").append(options);
 														}
 														$('#ReservaForm').modal('show');
@@ -1093,3 +1093,4 @@
 	
 </body>
 </html>
+     
