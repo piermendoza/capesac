@@ -2,8 +2,7 @@
 <html lang="es">
 	<head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Hostal en Lima | Dluxo - El Rimac </title>
+	<title>Hostal en Lima | Dluxo - Santiago de Surco </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 
@@ -22,7 +21,15 @@
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/jquery.datetimepicker.full.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
+	
+	<meta name="revisit-after" content="1 days">
+	<meta name="classification" content="Business">
+	<meta name="audience" content="All">
+	<meta name="robots" content="ALL">
+	<meta name="distribution" content="Global">
+	<meta name="language" content="Spanish">
+	<meta name="rating" content="General">
+
 	<script>
 		$(function(){
 		
@@ -543,24 +550,21 @@
   	<script>
 		$(document).ready(function() {
 			$('.animsition').animsition();
+			//cargar css dinamicamente
+			$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
+
+			//inamtion fadeIn and faceOut
+			$('.animate-box').css('opacity', 0);
+			$('.animate-box').waypoint(function() {
+			$('.animate-box').addClass('fadeInLeft');
+			}, { 
+				offset: '50%' 	
+			});	
 		});
 
-		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
-			setTimeout(function(){
-
-				//cargar css dinamicamente
-				$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/animate.css') );
-	
-				//inamtion fadeIn and faceOut
-				$('.animate-box').css('opacity', 0);
-				$('.animate-box').waypoint(function() {
-				$('.animate-box').addClass('fadeInLeft');
-				}, { 
-					offset: '50%' 	
-				});	
+		
 				
-			}, 1000);
-		});
+			
   </script>
 	</body>
 </html>
