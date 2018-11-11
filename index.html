@@ -78,15 +78,20 @@
 						
 	$(function(){
 			
+				var sst=1;
+				
 				$(window).scroll(function(){
 					if ($(window).scrollTop() < 557 || window.matchMedia('(max-width: 768px)').matches){
 						$("#reserv").css("position", "static");
 						$('.espacio').show();
 						$("#reserv").hide();
 					}else{
-						
-						$("#mapHT").attr('src','https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15608.605739786404!2d-77.0396154!3d-12.0330937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4159e6442718aa04!2sHotel+Urban+901!5e0!3m2!1ses-419!2spe!4v1537646632075');
-						$("#mostrarmodal").modal("show"); 
+						if(sst==1){
+							$("#mapHT").attr('src','https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15608.605739786404!2d-77.0396154!3d-12.0330937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4159e6442718aa04!2sHotel+Urban+901!5e0!3m2!1ses-419!2spe!4v1537646632075');
+							$("#mostrarmodal").modal("show");
+							sst=sst+1;
+						}
+
 						$("#reserv").show();
 						$("#reserv").css("position", "fixed");
 						$("#reserv").css("top", "2%");
