@@ -1065,24 +1065,59 @@
 										
 										</form>
  
+										
 										<script>
 											function send(){
-												var tipo=$('#reservsf').serializeArray();
-											$.ajax({
-												type: "POST",
-												url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
-												dataType: 'JSON',
-												data:tipo,
-												success:'success',
-												success: function (json) { 
-													alert(json); 
-													$('#ReservaForm').modal('hide');
-													$('input[type="text"],input[type="tel"], input[type="number"]').val('');
-												},error : function(xhr, status) {
-      						  						alert('Error inesperado');
-    											}
-											});
 
+												$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+ 
+													if (estado == 'success') {
+														var tipo=$('#reservsf').serializeArray();
+														console.log(tipo);
+														swal({
+														title: "CONFIRMACIÓN",
+														text: "Establecimiento "+tipo[0]['value']+"\n Habitación "+tipo[3]['value']+"\n Fecha de Llegada "+tipo[1]['value']+"\n Fecha de Salida "+tipo[2]['value']+"\n Nombre "+tipo[4]['value']+"\n N° Documento "+tipo[5]['value']+"\n Telefono "+tipo[6]['value']+"\n Correo "+tipo[7]['value'] +"\n N° Adultos "+tipo[8]['value']+"\n N° Niños "+tipo[9]['value']+"\n Metodo de Pago "+tipo[10]['value'],
+														icon: "warning",
+														//buttons: true,
+														buttons: ["Cancelar", "Confirmar"],
+														dangerMode: true,
+														})
+														.then((willDelete) => {
+														if (willDelete) {
+															
+
+
+															$.ajax({
+																type: "POST",
+																url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
+																dataType: 'JSON',
+																data:tipo,
+																success:'success',
+																success: function (json) { 
+																	//alert(json); 
+																	$('#ReservaForm').modal('hide');
+																	$('input[type="text"],input[type="tel"], input[type="number"]').val('');
+																},error : function(xhr, status) {
+																	alert('Error inesperado');
+																}
+															});
+ 
+
+															swal("La reserva se realizo con exito!", {
+															icon: "success",
+															});
+														}
+														});
+												}
+												else{
+													alert("Error al cargar la librería sweealert");
+												}
+												});
+
+												
+												
+					
+											
 											} 
 										</script>
 						</div> 
@@ -1091,6 +1126,7 @@
 					 <script src="assets/js/retina-1.1.0.min.js"></script>
 					 <script src="assets/js/scripts.js"></script>
 	
+					 
 				</div>	
 			</div>	
 		</div>	
