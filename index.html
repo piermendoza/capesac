@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="google-site-verification" content="CWOgMEdNdcOMMbRGrxdRBck9w1BfL2Eo9IfTj7NgqC0" />
-	<title>Hotel & Hostales en Lima - Grupo Capesac</title>
+	<title>Hotel y Hostales en Lima - Grupo Capesac</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<meta property="og:url" coxntent="https://capesac.com.pe" />
@@ -12,7 +12,7 @@
 	<meta property="og:type" content="website" />
     <meta property="og:description" content="Grupo hotelero Capesac cuenta con establecimientos en zonas centricas a precios accesibles con cálidas suites, reservaciones@capesac.com.pe o llamar/whatsapp al +51 965003620." />
 	<meta property="og:locale" content="es_ES" />
-	<meta property="og:site_name" content="Hotel & Hostales-Grupo Capesac" />
+	<meta property="og:site_name" content="Hotel y Hostales-Grupo Capesac" />
 	<meta property="og:image" content="https://capesac.com.pe/images/logo.png" />
 	
 	<meta name="description" content="Establecimientos en zonas centricas a precios accesibles con cálidas suites, reservaciones@capesac.com.pe o llamar/whatsapp al +51 965003620."/>	
@@ -221,7 +221,7 @@
 								<a href="#" class="link-1 fh5co-sub-ddown"> ESTABLECIMIENTOS</a>
 								<ul class="fh5co-sub-menu">
 									<li><a href="hostal/dluxo.html">HOSTAL DLUXO</a></li>
-									<li><a href="hostal/tu-y-yo.html">HOSTAL TU & YO</a></li>
+									<li><a href="hostal/tu-y-yo.html">HOSTAL TU Y YO</a></li>
 									<li><a href="hostal/901.html">HOTEL URBAN 901</a></li>
 									<li><a href="hostal/la-parada.html">HOSTAL LA PARADA</a></li>
 									<li><a href="hostal/conquistador.html">HOSTAL CONQUISTADOR</a></li>
@@ -289,7 +289,7 @@
 										</div> 
 										<div class="col-sm-2 img-contenedor">
 											<a href="hostal/tu-y-yo.html">
-												<img class="hol img-thumbnail" src="images/tymin.jpg" alt="Hostal en Lima - Tu & Yo">HOSTAL TU & YO
+												<img class="hol img-thumbnail" src="images/tymin.jpg" alt="Hostal en Lima - Tu y Yo">HOSTAL TU Y YO
 											</a>
 										</div>
 									</b>
@@ -329,7 +329,7 @@
 								<select id="hs" class="cs-select cs-skin-border">
 									<option disabled selected>ESTABLECIMIENTO</option>
 									<option value="1">HOSTAL DLUXO</option>
-									<option value="2">HOSTAL TU & YO</option>
+									<option value="2">HOSTAL TU Y YO</option>
 									<option value="3">HOSTAL EMPORIO</option>
 									<option value="4">HOTEL URBAN 901</option>
 									<option value="5">HOSTAL LA PARADA</option>
@@ -581,7 +581,7 @@
 							<img class="lazy no-src img-thumbnail" data-original="images/ty.jpg">
 							<div class="mask "></div>
 							<div class="content">
-								<h2 class="title-hs">Hostal Tu & Yo</h2>
+								<h2 class="title-hs">Hostal Tu y Yo</h2>
 								<p style="padding: 4em;">
 									<a class="resalt" id="6">
 										<i class="fas fa-map-marker-alt fa-lg"></i>
@@ -591,7 +591,7 @@
 								</p>		
 							</div>
 						</div>
-						<p class="name-hs">HOSTAL TU & YO</p>
+						<p class="name-hs">HOSTAL TU Y YO</p>
 					</div>
 				</div>
 
@@ -768,7 +768,7 @@
 										<option value="2">Hostal La Parada</option>
 										<option value="3">Hostal Conquistador</option>
 										<option value="4">Hostal Costa Azul</option>
-										<option value="5">Hostal Tu & Yo</option>
+										<option value="5">Hostal Tu y Yo</option>
 										<option value="5">Hostal 901</option>
 									</select>
 								</div>
@@ -1096,7 +1096,15 @@
 																success: function (json) { 
 																	//alert(json); 
 																	$('#ReservaForm').modal('hide'); 
-																	$('input[type="text"],input[type="tel"], input[type="number"]').val('');
+																	
+																	$('#reservsf').find('input[type="text"], input[type="tel"], input[type="number"]').each(function() {
+																		$(this).val('');
+																	});
+ 
+																	$('#ini').val('LLEGADA');
+																	$('#fin').val('SALIDA');
+
+    			
 																},error : function(xhr, status) {
 																	alert('Error inesperado');
 																}
