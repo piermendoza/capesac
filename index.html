@@ -79,7 +79,7 @@
 	$(function(){
 			
 				var sst=1;
-				
+
 				$(window).scroll(function(){
 					if ($(window).scrollTop() < 557 || window.matchMedia('(max-width: 768px)').matches){
 						$("#reserv").css("position", "static");
@@ -1103,7 +1103,9 @@
 																success: function (json) { 
 																	$('#ReservaForm').modal('hide');
 
-																	swal("La reserva se realizo con exito!", {
+																	swal({
+																	title:"La reserva se realizo con exito!", 
+																	text:json['msj']+"\n"+json['inst'],
 																	icon: "success",
 																	buttons:{
 																		defeat:"OK"
