@@ -61,7 +61,7 @@
 
 		$(function(){
 		
-			if(window.matchMedia('(max-width: 992px)').matches ){
+			if(window.matchMedia('(max-width: 992px)').matches){
 				$('.ocultar').hide();
 				$('.desph').hide();
 				$('.slide>.carousel-inner').css("height", "auto");
@@ -84,6 +84,7 @@
 						$('.espacio').show();
 						$("#reserv").hide();
 					}else{
+						$("#mostrarmodal").modal("show"); 
 						$("#reserv").show();
 						$("#reserv").css("position", "fixed");
 						$("#reserv").css("top", "2%");
@@ -886,17 +887,7 @@
 	
 
 		});
-		$(window).load(function() {//Espearar 02 segundos cuando se termino de cargar toda la pagina
-
-			
-		/* CONSUMIR JSON SISTEMA RESERVAS
-		$.get('http://localhost/capesac/public/reserva').done(function( data ) {
-			var yourval = jQuery.parseJSON(JSON.stringify(data));
-
-			console.log(yourval);
-		});
-		
-		*/
+	/*	$(window).load(function() {
 
 		setTimeout(function(){
 			$("#mostrarmodal").modal("show");
@@ -904,8 +895,8 @@
 			//cargar css dinamicamente
 			
 			
-			}, 5000);	
-		});
+			}, 10000);	
+		});*/
 
 		$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/animate.css') );
 
@@ -1002,7 +993,7 @@
 											
 												
 												<div class="f1-buttons">
-													<button type="button" class="btn btn-previous mdr">Regresar</button>
+													<button id="tabfi" type="button" class="btn btn-previous mdr">Regresar</button>
 													<button type="button" class="btn btn-next mdr">Continuar</button>
 												</div>
 											</fieldset>
@@ -1057,7 +1048,7 @@
 													  
 												
 												<div class="f1-buttons">
-													<button type="button" class="btn btn-previous mdr">Regresar</button>
+													<button  id="tabin" type="button" class="btn btn-previous mdr">Regresar</button>
 													<button onclick="return send()" class="btn btn-submit mdr">Reservar</button>
 												</div>
 										
@@ -1094,16 +1085,9 @@
 																data:tipo,
 																success:'success',
 																success: function (json) { 
-																	//alert(json); 
 																	$('#ReservaForm').modal('hide'); 
+																	window.setTimeout('location.reload()', 1000);
 																	
-																	$('#reservsf').find('input[type="text"], input[type="tel"], input[type="number"]').each(function() {
-																		$(this).val('');
-																	});
- 
-																	$('#ini').val('LLEGADA');
-																	$('#fin').val('SALIDA');
-
     			
 																},error : function(xhr, status) {
 																	alert('Error inesperado');
