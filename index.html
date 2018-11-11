@@ -1073,16 +1073,19 @@
 												url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
 												dataType: 'JSON',
 												data:tipo,
-												success: function (results) { 
-													alert(results);
+												success:'success',
+												success: function (json) { 
+													alert(json); 
 													$('#ReservaForm').modal('hide');
 													$('input[type="text"],input[type="tel"], input[type="number"]').val('');
-												}
+												},error : function(xhr, status) {
+      						  						alert('Error inesperado');
+    											}
 											});
 
 											} 
 										</script>
-						</div>
+						</div> 
 					
 					 <script src="assets/js/jquery.backstretch.min.js"></script>
 					 <script src="assets/js/retina-1.1.0.min.js"></script>
