@@ -1073,42 +1073,60 @@
  
 													if (estado == 'success') {
 														var tipo=$('#reservsf').serializeArray();
-														console.log(tipo);
+
 														swal({
 														title: "CONFIRMACIÓN", 
 														text: "Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+tipo[3]['value']+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), 
 														icon: "warning",
 														//buttons: true,
-														buttons: ["Cancelar", "Confirmar"],
+														buttons:{
+															cancel:"Cancelar",
+															defeat:"Confirmar"
+														},
 														dangerMode: true,
-														})
-														.then((willDelete) => {
-														if (willDelete) {
-															
+														}).then((value) => {
+														switch (value) {
+														
+															case "defeat":
 
-
-															$.ajax({
+																$.ajax({
 																type: "POST",
 																url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
 																dataType: 'JSON',
 																data:tipo,
 																success:'success',
 																success: function (json) { 
-																	$('#ReservaForm').modal('hide'); 
-																	window.setTimeout('location.reload()', 1000);
+																	$('#ReservaForm').modal('hide');
+
+																	swal("La reserva se realizo con exito!", {
+																	icon: "success",
+																	buttons:{
+																		defeat:"OK"
+																	},
+																	}).then((value) => {
+																		window.setTimeout('location.reload()', 1000);
+																		
+																	});
 																	
     			
-																},error : function(xhr, status) {
-																	alert('Error inesperado');
-																}
-															});
- 
+																	},error : function(xhr, status) {
+																		alert('Error inesperado');
+																	}
+																});
+	
 
-															swal("La reserva se realizo con exito!", {
-															icon: "success",
-															});
+																
+
+															break;
+														
+															case "cancel":
+															break;
+														
+															default:
+															
 														}
 														});
+
 												}
 												else{
 													alert("Error al cargar la librería sweealert");
