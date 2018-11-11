@@ -1075,6 +1075,8 @@
 												data:tipo,
 												success: function (results) { 
 													alert(results);
+													$('#ReservaForm').modal('hide');
+													$('input[type="text"],input[type="tel"], input[type="number"]').val('');
 												}
 											});
 
