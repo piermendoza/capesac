@@ -1103,16 +1103,15 @@
 																success: function (json) { 
 																	$('#ReservaForm').modal('hide');
 
-																	swal({
+																	swal({ 
 																	title:"La reserva se realizo con exito!", 
-																	text:json['msj']+"\n"+json['inst'],
+																	text:"\n"+json['msj']+"\n Para realizar el pago mediante "+json['tp']+"\n"+json['inst'],
 																	icon: "success",
 																	buttons:{
 																		defeat:"OK"
 																	},
 																	}).then((value) => {
 																		window.setTimeout('location.reload()', 1000);
-																		
 																	});
 																	
     			
@@ -1120,10 +1119,7 @@
 																		alert('Error inesperado');
 																	}
 																});
-	
-
-																
-
+																	
 															break;
 														
 															case "cancel":
