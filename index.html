@@ -237,7 +237,7 @@
 								 	<li><a href="hostal/emporio.html">HOSTAL EMPORIO</a></li>
 								</ul> 
 							</li>
-							<li><a class="link-1">CHECKING</a></li>
+							<li><a onclick="checking()" class="link-1">CHECKING</a></li>
 							<li><a onclick="contact()" class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 								<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
@@ -1126,6 +1126,58 @@
 					
 											
 											} 
+
+											function checking(){
+												$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+ 
+													if (estado == 'success') {
+														swal({
+													text: 'Search for a movie. e.g. "La La Land".',
+													content: "input",
+													button: {
+														text: "Search!",
+														closeModal: false,
+													},
+													})
+													.then(name => {
+													if (!name) throw null;
+													
+													return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+													})
+													.then(results => {
+													return results.json();
+													})
+													.then(json => {
+													const movie = json.results[0];
+													
+													if (!movie) {
+														return swal("No movie was found!");
+													}
+													
+													const name = movie.trackName;
+													const imageURL = movie.artworkUrl100;
+													
+													swal({
+														title: "Top result:",
+														text: name,
+														icon: imageURL,
+													});
+													})
+													.catch(err => {
+													if (err) {
+														swal("Oh noes!", "The AJAX request failed!", "error");
+													} else {
+														swal.stopLoading();
+														swal.close();
+													}
+													});
+													}else{
+													alert("Error al cargar la librería sweealert");
+												}
+												});
+
+												
+											}
 										</script>
 						</div> 
 					
