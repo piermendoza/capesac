@@ -769,15 +769,15 @@
 							<form role="form">
 								<div class="form-group">
 									<label for="inputName">Nombre/Apellidos</label>
-									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
+									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido..."/>
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email..."/>
 								</div>
 								<div class="form-group">
 									<label for="inputMessage">Mensaje</label>
-									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
+									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje..."></textarea>
 								</div>
 							</form>
 						</div>
@@ -1127,7 +1127,7 @@
 											
 											} 
 
-											function checking(){
+											function checking(){ 
 												//Esta es la version 2
 												$.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js", function (data, estado) {
  
@@ -1136,8 +1136,8 @@
 															const {value: formValues} = await swal({
 															title: 'Checking',
 															html:
-																'<input id="swal-input1" class="swal2-input" placeholder="Número de Dni/Pasaporte...">' +
-																'<input type="password" id="swal-input2" class="swal2-input" placeholder="Codigo Checking...">',
+																'<input id="swal-input1" class="swal2-input"  placeholder="Ingresa tu Dni/Pasaporte..." requiered >' +
+																'<input id="swal-input2" class="swal2-input type="password"  placeholder="Ingresa codigo Checking..." requiered>',
 															focusConfirm: false,
 															preConfirm: () => {
 																return [
@@ -1147,12 +1147,16 @@
 															}
 															})
 
-															if (formValues) {
-															swal(json.stringify(formValues))
+															if (formValues!=null) {
+																swal(formValues[0]) 
+															}else{
+																alert('error');
 															}
-															})() 
+															})().catch(swal.noop);
+
+															
 													}else{
-													alert("Error al cargar la librería sweealert");
+													alert("Error al cargar la librería sweealert2");
 												}
 												});
 
