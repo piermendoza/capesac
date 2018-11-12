@@ -1156,7 +1156,10 @@
 																	success:'success',
 																	success: function (json) {
 																		
-																		swal(json['msj']) 
+																		swal({
+																			title:"VERIFICACION EXITOSA!",
+																			text:json['msj']+"\n \n RECUERDA:si tienes inconveniente al llegar al establecimiento comunicate con nosotros"
+																		}) 
 																		
 																	},error : function(xhr, status) {
 																		swal({
