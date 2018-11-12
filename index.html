@@ -1128,49 +1128,29 @@
 											} 
 
 											function checking(){
-												$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+												//Esta es la version 2
+												$.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js", function (data, estado) {
  
 													if (estado == 'success') {
-														swal({
-													text: 'Search for a movie. e.g. "La La Land".',
-													content: "input",
-													button: {
-														text: "Search!",
-														closeModal: false,
-													},
-													})
-													.then(name => {
-													if (!name) throw null;
-													
-													return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
-													})
-													.then(results => {
-													return results.json();
-													})
-													.then(json => {
-													const movie = json.results[0];
-													
-													if (!movie) {
-														return swal("No movie was found!");
-													}
-													
-													const name = movie.trackName;
-													const imageURL = movie.artworkUrl100;
-													
-													swal({
-														title: "Top result:",
-														text: name,
-														icon: imageURL,
-													});
-													})
-													.catch(err => {
-													if (err) {
-														swal("Oh noes!", "The AJAX request failed!", "error");
-													} else {
-														swal.stopLoading();
-														swal.close();
-													}
-													});
+														(async function getFormValues () {
+															const {value: formValues} = await swal({
+															title: 'Checking',
+															html:
+																'<input id="swal-input1" class="swal2-input" placeholder="Número de Dni/Pasaporte...">' +
+																'<input type="password" id="swal-input2" class="swal2-input" placeholder="Codigo Checking...">',
+															focusConfirm: false,
+															preConfirm: () => {
+																return [
+																document.getElementById('swal-input1').value,
+																document.getElementById('swal-input2').value
+																]
+															}
+															})
+
+															if (formValues) {
+															swal(json.stringify(formValues))
+															}
+															})() 
 													}else{
 													alert("Error al cargar la librería sweealert");
 												}
