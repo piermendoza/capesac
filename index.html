@@ -1136,8 +1136,8 @@
 															const {value: formValues} = await swal({
 															title: 'Checking',
 															html:
-																'<input id="swal-input1" class="swal2-input"  placeholder="Ingresa tu Dni/Pasaporte..." requiered >' +
-																'<input id="swal-input2" class="swal2-input type="password"  placeholder="Ingresa codigo Checking..." requiered>',
+																'<input id="swal-input1" class="swal2-input"  placeholder="Ingresa tu Dni/Pasaporte...">' +
+																'<input id="swal-input2" class="swal2-input type="password"  placeholder="Ingresa codigo Checking...">',
 															focusConfirm: false,
 															preConfirm: () => {
 																return [
@@ -1147,10 +1147,16 @@
 															}
 															})
 
-															if (formValues!=null) {
+															if (formValues[0]!="" && formValues[1]!="") {
 																swal(formValues[0]) 
 															}else{
-																alert('error');
+																swal({
+																	type: 'error',
+																	title: 'Oops...',
+																	text: 'Campos vacios!',
+																	footer: '<a style="color:blue" onclick="contact()" data-toggle="modal" data-target="#modalForm">Problemas?</a>',
+																	timer: 3000
+																})
 															}
 															})().catch(swal.noop);
 
