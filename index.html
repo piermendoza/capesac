@@ -768,19 +768,6 @@
 						<div class="col-sm-5">
 							<form role="form">
 								<div class="form-group">
-									<label for="inputName">Establecimiento</label>
-									<select class="form-control"> 
-										<option disabled selected>Seleccionar hostal</option>
-										<option value="1">Hostal Dluxo</option>
-										<option value="2">Hostal Emporio</option>
-										<option value="3">Hostal La Parada</option>
-										<option value="4">Hostal Conquistador</option>
-										<option value="5">Hostal Costa Azul</option>
-										<option value="6">Hostal Tu y Yo</option>
-										<option value="7">Hostal 901</option>
-									</select>
-								</div>
-								<div class="form-group">
 									<label for="inputName">Nombre/Apellidos</label>
 									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
 								</div>
@@ -793,16 +780,10 @@
 									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
 								</div>
 							</form>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-							<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
-							<br>
 						</div>
 						<div class="col-sm-7">
 							<div class="embed-responsive embed-responsive-16by9">
-							
-								
 								<iframe id="MapContact" class="embed-responsive-item" src="" allowfullscreen></iframe>			
-								
 							</div>
 						</div>
 						
@@ -815,7 +796,11 @@
 						$('#MapContact').attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003');
 					}
 				</script>
-            </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
+			</div>
         </div>
     </div>
 </div>
