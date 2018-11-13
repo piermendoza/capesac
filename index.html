@@ -40,124 +40,36 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126464082-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-126464082-1');
-</script>
-
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126464082-1"></script>
 	<script>
-
-		$(document).ready(function(){
-			$("#emporio").hover(function(){
-				$("#uno").hide();
-				}, function(){
-					$("#uno").show();
-			});
-		});
-
-		$(function(){
-		
-			if(window.matchMedia('(max-width: 992px)').matches){
-				$('.ocultar').hide();
-				$('.desph').hide();
-				$('.slide>.carousel-inner').css("height", "auto");
-			}else{
-
-				$(".desph").css("font-size", "1.3em");
-				$(".desph").css("font-style", "italic");
-				$(".ocultar").css("font-size", "1.2em");
-
-				$('.slide>.carousel-inner').css("height", "350px");
-			}
-
-		});
-						
-	$(function(){
-			
-				var sst=1;
-
-				$(window).scroll(function(){
-					if ($(window).scrollTop() < 557 || window.matchMedia('(max-width: 768px)').matches){
-						$("#reserv").css("position", "static");
-						$('.espacio').show();
-						$("#reserv").hide();
-					}else{
-						if(sst==1){
-							$("#mapHT").attr('src','https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15608.605739786404!2d-77.0396154!3d-12.0330937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4159e6442718aa04!2sHotel+Urban+901!5e0!3m2!1ses-419!2spe!4v1537646632075');
-							$("#mostrarmodal").modal("show");
-							sst=sst+1;
-						}
-
-						$("#reserv").show();
-						$("#reserv").css("position", "fixed");
-						$("#reserv").css("top", "2%");
-					}
-					
-					
-				});
-			});
-	$(document).ready(function () {
-       
-		function changeOne(){
-			$(".atten").css("font-size", "20px");
-			$("#text").css("font-weight", " bold");
-		}
-		function changeTwo(){
-			$(".atten").css("font-size", "16px");
-			$("#text").css("font-weight", " normal");
-		}
-		 setInterval(changeOne, 500);
-		 setInterval(changeTwo, 700);
-    });	
-	
-	
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-126464082-1');
 	</script>
-	<!--para Subtitulos-->
-	<style>
-
-		.slider{
-  			background-image:url('images/x.jpg');
-		}
-			.colorlib-heading {
-				margin-bottom: 2em;
-				position: relative; 
-			}
-			.colorlib-heading h1.heading-big {
-				position: absolute;
-				bottom: 0px;
-				left: 10px;
-				color: rgba(0, 0, 0, 0.05);
-				z-index: -1;
-				font-weight: 700;
-				font-size: 60px; 
-			}
-			@media screen and (max-width: 768px) {
-				.colorlib-heading h1.heading-big {
-				font-size: 40px; }
-			}
-			.colorlib-heading h2 {
-			font-size: 28px;
-			font-weight: 400; 
-			}
-			@media screen and (max-width: 768px) {
-				.colorlib-heading h2 {
-				font-size: 30px; }
-			}
-			.colorlib-heading.center-heading h1.heading-big {
-			left: 0;
-			right: 0;
-			}
-		</style>
-
 </head>
 <body class="fondo">
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat"
+		attribution="setup_tool"
+		page_id="612830009060086"
+		logged_in_greeting="Hola! Como podemos ayudarte"
+		logged_out_greeting="Hola, Inicia session en Facebook para ayudarte">
+	</div>
+	
 	<div class="animsition">
-
-
 		<div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -190,25 +102,6 @@
 				</div>
 			</div>	
     </div>
-		
-	<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution="setup_tool"
-  page_id="612830009060086"
-  logged_in_greeting="Hola! Como podemos ayudarte"
-  logged_out_greeting="Hola, Inicia session en Facebook para ayudarte">
-</div>
 
 	<div style=" overflow:hidden !important;" id="fh5co-wrapper">
 	<div id="fh5co-page">
@@ -1089,8 +982,113 @@
 											</fieldset>
 										
 										</form>
- 
+
 										
+	
+	<!--para Subtitulos-->
+	<style>
+
+			.slider{
+				  background-image:url('images/x.jpg');
+			}
+				.colorlib-heading {
+					margin-bottom: 2em;
+					position: relative; 
+				}
+				.colorlib-heading h1.heading-big {
+					position: absolute;
+					bottom: 0px;
+					left: 10px;
+					color: rgba(0, 0, 0, 0.05);
+					z-index: -1;
+					font-weight: 700;
+					font-size: 60px; 
+				}
+				@media screen and (max-width: 768px) {
+					.colorlib-heading h1.heading-big {
+					font-size: 40px; }
+				}
+				.colorlib-heading h2 {
+				font-size: 28px;
+				font-weight: 400; 
+				}
+				@media screen and (max-width: 768px) {
+					.colorlib-heading h2 {
+					font-size: 30px; }
+				}
+				.colorlib-heading.center-heading h1.heading-big {
+				left: 0;
+				right: 0;
+				}
+			</style>
+ 
+										<script>
+
+												$(document).ready(function(){
+													$("#emporio").hover(function(){
+														$("#uno").hide();
+														}, function(){
+															$("#uno").show();
+													});
+												});
+										
+												$(function(){
+												
+													if(window.matchMedia('(max-width: 992px)').matches){
+														$('.ocultar').hide();
+														$('.desph').hide();
+														$('.slide>.carousel-inner').css("height", "auto");
+													}else{
+										
+														$(".desph").css("font-size", "1.3em");
+														$(".desph").css("font-style", "italic");
+														$(".ocultar").css("font-size", "1.2em");
+										
+														$('.slide>.carousel-inner').css("height", "350px");
+													}
+										
+												});
+																
+											$(function(){
+													
+														var sst=1;
+										
+														$(window).scroll(function(){
+															if ($(window).scrollTop() < 557 || window.matchMedia('(max-width: 768px)').matches){
+																$("#reserv").css("position", "static");
+																$('.espacio').show();
+																$("#reserv").hide();
+															}else{
+																if(sst==1){
+																	$("#mapHT").attr('src','https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15608.605739786404!2d-77.0396154!3d-12.0330937!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4159e6442718aa04!2sHotel+Urban+901!5e0!3m2!1ses-419!2spe!4v1537646632075');
+																	$("#mostrarmodal").modal("show");
+																	sst=sst+1;
+																}
+										
+																$("#reserv").show();
+																$("#reserv").css("position", "fixed");
+																$("#reserv").css("top", "2%");
+															}
+															
+															
+														});
+													});
+											$(document).ready(function () {
+											   
+												function changeOne(){
+													$(".atten").css("font-size", "20px");
+													$("#text").css("font-weight", " bold");
+												}
+												function changeTwo(){
+													$(".atten").css("font-size", "16px");
+													$("#text").css("font-weight", " normal");
+												}
+												 setInterval(changeOne, 500);
+												 setInterval(changeTwo, 700);
+											});	
+											
+											
+											</script>
 										<script>
 											function send(){
 
