@@ -36,7 +36,7 @@
 	<link rel="stylesheet" type="text/css" href="css/animsition.min.css" />
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery.datetimepicker.full.min.js"></script>
+	<script src="js/jquery.datetimepicker.full.min.js"></script> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -805,17 +805,18 @@
 		$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
 
 		if (estado == 'success') {
-			var tipo=$('#formContact').serializeArray();
+			var data=$('#formContact').serializeArray();
 
 			$.ajax({
 			type: "GET",
 			url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
 			dataType: 'JSON',
-			data:tipo,
+			data:data,
 			success:'success',
 			success: function (json) { 
 				$('#modalForm').modal('hide'); 
-
+				$("#formContact>.form-group>input").val('');
+				$("#formContact>.form-group>textarea").val('');
 				swal({ 
 				title:"MENSAJE ENVIADO", 
 				text:json['msj'],
