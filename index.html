@@ -68,7 +68,7 @@
 		logged_in_greeting="Hola! Como podemos ayudarte"
 		logged_out_greeting="Hola, Inicia session en Facebook para ayudarte">
 	</div>
-	
+
 	<div class="animsition">
 		<div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 			<div class="modal-dialog">
@@ -90,15 +90,12 @@
 										</div>
 										<div class="item">
 											<div class="embed-responsive embed-responsive-16by9">
-											
 												<iframe id="mapHT" src="" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-												
 											</div>
 										</div>  
 									</div>
 								</div>
 							</div>
-
 				</div>
 			</div>	
     </div>
@@ -250,93 +247,11 @@
 										
 							</div> 
 						</div>
-						<script>
 						
-						        $.datetimepicker.setLocale('es');
-
-								$('#ini').datetimepicker({
-									format:'Y/m/d H:m',
-									minDate:'+1970/01/02',  
-									startDate:'+1970/01/02',
-									defaultDate:'+1970/01/02'
-									
-								});
-
-								$('#fin').datetimepicker({
-									format:'Y/m/d H:m',
-									onShow:function( ct ){
-										var fecha = new Date($('#ini').val());
-										var dias = 1; // Número de días a agregar
-										fecha.setDate(fecha.getDate() + dias);
-
-										this.setOptions({ 
-											minDate:fecha?fecha:false,
-											startDate:fecha,
-											defaultDate:fecha
-										})
-									}
-								});
-
-
-									$('#fin').click(function(){
-										if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
-											alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
-											$("#fin").attr('disabled','disabled');
-											$("#fin").val('SALIDA');
-										}
-									});
-
-									$('#ini').click(function(){
-										$("#fin").removeAttr('disabled');
-									});
-
-
-
-						</script>
 						<div id="atten" class="a-col action atten">
 							<a style="cursor:pointer;" onclick="validate()">
 								<label id="text">reservar</label>
 							</a>  
-
-							<script>
-								function validate(){
-									if($('#hs').val()!=null){
-										if($('#ini').val().length==16 && $('#fin').val().length==16){
-											if($('#ini').val()<$('#fin').val()){
-												$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()).done(function( data ) {
-													var yourval = jQuery.parseJSON(JSON.stringify(data));
-
-													if(yourval['hs']!=null){
-														$("#titulo").html(yourval['hs']);
-														
-														$('#tip').empty();
-
-														for(i=0; i<yourval['tp'].length; i++) {
-															var options="<label class='col-md-4' for='hbt"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input  value='"+yourval['tp'][i]['descripcion']+"' id='hbt"+i+"' type='radio' name='hbtu'>Habitación "+yourval['tp'][i]['descripcion']+"</div></div> </label>";
-															$("#tip").append(options);
-														}
-														$('#ReservaForm').modal('show');
-														
-														$('#hst').val($('#hs').val()); 
-														$('#ing').val($('#ini').val());
-														$('#sal').val($('#fin').val());
-
-													}else{
-														alert('Ocurrio un error inesperado!');
-													}
-												});
-											}else{
-												alert('Debe selecionar una fecha valida');
-											}
-										}else{
-											alert('Debe selecionar una fecha valida');
-										}
-									}else{
-										alert('Debe selecionar un establecimiento');
-									}
-								}
-							</script>
-						
 						</div>
 					</form>
 				</div>
@@ -378,28 +293,6 @@
 						</div>
 						<p class="name-hs">HOSTAL DLUXO</p>
 					</div>
-
-					<style>		
-						#uno {
-							position: absolute;
-							top: 0;
-							right:0;
-						}
-						.cuerpo {
-							width: 100px;
-							height: 40px;
-							background: red;
-						}
-						.abajo-izquierda:before {
-							content: "";
-							position: absolute;
-							bottom: -20px;
-							border-width: 25px 25px 0;
-							border-style: solid;
-							border-color: red transparent transparent;
-						}
-					</style>
-						
 
 					<div class="col-sm-4"> 
 						<div class="view view-second hol animate-box" id="emporio">
@@ -495,33 +388,6 @@
 						<p class="name-hs">HOSTAL TU Y YO</p>
 					</div>
 				</div>
-
-				<script>
-					$(".row>.col-sm-4>.view-second>.content>p>.resalt").click(function(e) {
-						e.preventDefault(); 
-						var idMap=$(this).attr('id'); 
-							
-							if(idMap=="1") {
-								$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707'); 
-								$("#modalAddress").modal("show");
-							}else if(idMap=="2"){
-								$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3902.155344430489!2d-77.039819!3d-12.0328244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf30d81d47bf%3A0x1ae6a48cb26ee51!2sAv.+Francisco+Pizarro+911%2C+Cercado+de+Lima+15094!5e0!3m2!1ses-419!2spe!4v1529291179063'); 
-								$("#modalAddress").modal("show"); 
-							}else if(idMap=="3"){
-								$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.5619254994813!2d-77.03388280071303!3d-12.0264607342237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf388386cd65%3A0xaefd081107c390fa!2sAv.+Samuel+Alcazar+888%2C+R%C3%ADmac+15094!5e0!3m2!1ses-419!2spe!4v1529296409789'); 
-								$("#modalAddress").modal("show");
-							}else if(idMap=="4"){
-								$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1626566400514!2d-77.04258498518759!3d-12.032320691476942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf30dc5040fb%3A0x8941a5d56b9319!2sAv.+Francisco+Pizarro+1011%2C+Cercado+de+Lima+15094!5e0!3m2!1ses-419!2spe!4v1529291436158'); 
-								$("#modalAddress").modal("show");
-							}else if(idMap=="5"){
-								$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5985849164554!2d-77.03033928518714!3d-12.07111649145112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d07c1019%3A0x34b548a6458ab07e!2sAv.+Manco+C%C3%A1pac+1090%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529291319350'); 
-								$("#modalAddress").modal("show");
-							}else if(idMap=="6"){
-								$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003'); 
-								$("#modalAddress").modal("show");
-							}
-					});
-				</script>
 				
 	
 				<div class="modal fade" id="modalAddress"> 
@@ -684,56 +550,10 @@
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 				<button type="button" class="btn btn-primary" onclick="sendMsj();">Contactar</button>
 			</div>
-			
         </div>
     </div>
 </div>
 
-<script>
-	function contact(){
-		$('#MapContact').attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003');
-	}
-
-	function sendMsj(){
-		$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
-
-		if (estado == 'success') {
-			var data=$('#formContact').serializeArray();
-
-			$.ajax({
-			type: "GET",
-			url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
-			dataType: 'JSON',
-			data:data,
-			success:'success',
-			success: function (json) { 
-				$('#modalForm').modal('hide'); 
-				$("#formContact>.form-group>input").val('');
-				$("#formContact>.form-group>textarea").val('');
-				swal({ 
-				title:"MENSAJE ENVIADO", 
-				text:json['msj'],
-				icon: "success",
-				buttons:{
-					defeat:"OK"
-					}
-				})
-			},error : function(xhr, status) {
-					swal({
-						type: 'error',
-						title: 'Oops...',
-						text: 'Error al intentar contactarse'
-					})
-				}
-			});
-			 }else{
-				 alert("Error al cargar la librería sweealert");
-			}
-		});
-
-	}
-</script>
-	
 <!--Main Footer -->	
 <div class="container-fluid" style="background-color:#0b0b17;">
 		<footer id="footer" class="text-white">
@@ -861,7 +681,6 @@
 					
 				<link rel="stylesheet" href="assets/css/form-elements.css">
 				<link rel="stylesheet" href="assets/css/style.css">
-
 
 					<!-- Top content -->
 					<div class="top-content" >
@@ -1021,6 +840,182 @@
 				right: 0;
 				}
 			</style>
+			<style>		
+					#uno {
+						position: absolute;
+						top: 0;
+						right:0;
+					}
+					.cuerpo {
+						width: 100px;
+						height: 40px;
+						background: red;
+					}
+					.abajo-izquierda:before {
+						content: "";
+						position: absolute;
+						bottom: -20px;
+						border-width: 25px 25px 0;
+						border-style: solid;
+						border-color: red transparent transparent;
+					}
+				</style>
+
+<script>
+		function contact(){
+			$('#MapContact').attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003');
+		}
+	
+		function sendMsj(){
+			$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+	
+			if (estado == 'success') {
+				var data=$('#formContact').serializeArray();
+	
+				$.ajax({
+				type: "GET",
+				url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
+				dataType: 'JSON',
+				data:data,
+				success:'success',
+				success: function (json) { 
+					$('#modalForm').modal('hide'); 
+					$("#formContact>.form-group>input").val('');
+					$("#formContact>.form-group>textarea").val('');
+					swal({ 
+					title:"MENSAJE ENVIADO", 
+					text:json['msj'],
+					icon: "success",
+					buttons:{
+						defeat:"OK"
+						}
+					})
+				},error : function(xhr, status) {
+						swal({
+							type: 'error',
+							title: 'Oops...',
+							text: 'Error al intentar contactarse'
+						})
+					}
+				});
+				 }else{
+					 alert("Error al cargar la librería sweealert");
+				}
+			});
+	
+		}
+	</script>
+		
+			<script>
+				$(".row>.col-sm-4>.view-second>.content>p>.resalt").click(function(e) {
+					e.preventDefault(); 
+					var idMap=$(this).attr('id'); 
+						
+						if(idMap=="1") {
+							$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707'); 
+							$("#modalAddress").modal("show");
+						}else if(idMap=="2"){
+							$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3902.155344430489!2d-77.039819!3d-12.0328244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf30d81d47bf%3A0x1ae6a48cb26ee51!2sAv.+Francisco+Pizarro+911%2C+Cercado+de+Lima+15094!5e0!3m2!1ses-419!2spe!4v1529291179063'); 
+							$("#modalAddress").modal("show"); 
+						}else if(idMap=="3"){
+							$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.5619254994813!2d-77.03388280071303!3d-12.0264607342237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf388386cd65%3A0xaefd081107c390fa!2sAv.+Samuel+Alcazar+888%2C+R%C3%ADmac+15094!5e0!3m2!1ses-419!2spe!4v1529296409789'); 
+							$("#modalAddress").modal("show");
+						}else if(idMap=="4"){
+							$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1626566400514!2d-77.04258498518759!3d-12.032320691476942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf30dc5040fb%3A0x8941a5d56b9319!2sAv.+Francisco+Pizarro+1011%2C+Cercado+de+Lima+15094!5e0!3m2!1ses-419!2spe!4v1529291436158'); 
+							$("#modalAddress").modal("show");
+						}else if(idMap=="5"){
+							$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5985849164554!2d-77.03033928518714!3d-12.07111649145112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d07c1019%3A0x34b548a6458ab07e!2sAv.+Manco+C%C3%A1pac+1090%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529291319350'); 
+							$("#modalAddress").modal("show");
+						}else if(idMap=="6"){
+							$("#iframeMapLocation").attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003'); 
+							$("#modalAddress").modal("show");
+						}
+				});
+			</script>
+			
+
+<script>
+						
+		$.datetimepicker.setLocale('es');
+
+		$('#ini').datetimepicker({
+			format:'Y/m/d H:m',
+			minDate:'+1970/01/02',  
+			startDate:'+1970/01/02',
+			defaultDate:'+1970/01/02'
+			
+		});
+
+		$('#fin').datetimepicker({
+			format:'Y/m/d H:m',
+			onShow:function( ct ){
+				var fecha = new Date($('#ini').val());
+				var dias = 1; // Número de días a agregar
+				fecha.setDate(fecha.getDate() + dias);
+
+				this.setOptions({ 
+					minDate:fecha?fecha:false,
+					startDate:fecha,
+					defaultDate:fecha
+				})
+			}
+		});
+
+
+			$('#fin').click(function(){
+				if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
+					alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
+					$("#fin").attr('disabled','disabled');
+					$("#fin").val('SALIDA');
+				}
+			});
+
+			$('#ini').click(function(){
+				$("#fin").removeAttr('disabled');
+			});
+
+
+
+</script>
+
+<script>
+		function validate(){
+			if($('#hs').val()!=null){
+				if($('#ini').val().length==16 && $('#fin').val().length==16){
+					if($('#ini').val()<$('#fin').val()){
+						$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()).done(function( data ) {
+							var yourval = jQuery.parseJSON(JSON.stringify(data));
+
+							if(yourval['hs']!=null){
+								$("#titulo").html(yourval['hs']);
+								
+								$('#tip').empty();
+
+								for(i=0; i<yourval['tp'].length; i++) {
+									var options="<label class='col-md-4' for='hbt"+i+"'><div class='animate-box'><div class='thumbnail'><div id='habitacion"+i+"' class='carousel slide' data-ride='carousel' data-interval='2000'><ol class='carousel-indicators'><li data-target='#habitacion"+i+"' data-slide-to='0' class='active'></li><li data-target='#habitacion"+i+"' data-slide-to='1'></li></ol><div class='carousel-inner' role='listbox'> <div class='item active'> <img src='images/"+yourval['ft'][i*2]+"' ></div><div class='item'> <img src='images/"+yourval['ft'][(i*2)+1]+"'></div> </div></div></div><div class='radio-input'><input  value='"+yourval['tp'][i]['descripcion']+"' id='hbt"+i+"' type='radio' name='hbtu'>Habitación "+yourval['tp'][i]['descripcion']+"</div></div> </label>";
+									$("#tip").append(options);
+								}
+								$('#ReservaForm').modal('show');
+								
+								$('#hst').val($('#hs').val()); 
+								$('#ing').val($('#ini').val());
+								$('#sal').val($('#fin').val());
+
+							}else{
+								alert('Ocurrio un error inesperado!');
+							}
+						});
+					}else{
+						alert('Debe selecionar una fecha valida');
+					}
+				}else{
+					alert('Debe selecionar una fecha valida');
+				}
+			}else{
+				alert('Debe selecionar un establecimiento');
+			}
+		}
+	</script>
  
 										<script>
 
