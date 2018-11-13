@@ -35,7 +35,7 @@
 	<link async rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link async rel="stylesheet" type="text/css" href="css/animsition.min.css"/>
 	
-	<script src="js/jquery-3.3.1.min.js" async="async"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.datetimepicker.full.min.js" async="async"></script> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" async="async"></script>
 
@@ -253,6 +253,50 @@
 								<label id="text">reservar</label>
 							</a>  
 						</div>
+						
+<script>
+						
+		$.datetimepicker.setLocale('es');
+
+		$('#ini').datetimepicker({
+			format:'Y/m/d H:m',
+			minDate:'+1970/01/02',  
+			startDate:'+1970/01/02',
+			defaultDate:'+1970/01/02'
+			
+		});
+
+		$('#fin').datetimepicker({
+			format:'Y/m/d H:m',
+			onShow:function( ct ){
+				var fecha = new Date($('#ini').val());
+				var dias = 1; // Número de días a agregar
+				fecha.setDate(fecha.getDate() + dias);
+
+				this.setOptions({ 
+					minDate:fecha?fecha:false,
+					startDate:fecha,
+					defaultDate:fecha
+				})
+			}
+		});
+
+
+			$('#fin').click(function(){
+				if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
+					alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
+					$("#fin").attr('disabled','disabled');
+					$("#fin").val('SALIDA');
+				}
+			});
+
+			$('#ini').click(function(){
+				$("#fin").removeAttr('disabled');
+			});
+
+
+
+</script>
 					</form>
 				</div>
 			</div>
@@ -498,7 +542,7 @@
 
 	</div>
 <!-- Modal--> 		
-	<link async rel="stylesheet" href="css/bootraps.css" onload="this.rel='stylesheets'">
+	<link async rel="stylesheet" href="css/bootraps.css">
 <div class="modal fade" id="modalForm" role="dialog">
     <div class="modal-dialog" style=" width: 80% !important;">
         <div class="modal-content">
@@ -679,8 +723,8 @@
 				</div>
 				<div  class="modal-body">
 					
-				<link async rel="stylesheet" href="assets/css/form-elements.css" onload="this.rel='stylesheets'">
-				<link async rel="stylesheet" href="assets/css/style.css" onload="this.rel='stylesheets'">
+				<link async rel="stylesheet" href="assets/css/form-elements.css">
+				<link async rel="stylesheet" href="assets/css/style.css">
 
 					<!-- Top content -->
 					<div class="top-content" >
@@ -934,49 +978,6 @@
 			</script>
 			
 
-<script>
-						
-		$.datetimepicker.setLocale('es');
-
-		$('#ini').datetimepicker({
-			format:'Y/m/d H:m',
-			minDate:'+1970/01/02',  
-			startDate:'+1970/01/02',
-			defaultDate:'+1970/01/02'
-			
-		});
-
-		$('#fin').datetimepicker({
-			format:'Y/m/d H:m',
-			onShow:function( ct ){
-				var fecha = new Date($('#ini').val());
-				var dias = 1; // Número de días a agregar
-				fecha.setDate(fecha.getDate() + dias);
-
-				this.setOptions({ 
-					minDate:fecha?fecha:false,
-					startDate:fecha,
-					defaultDate:fecha
-				})
-			}
-		});
-
-
-			$('#fin').click(function(){
-				if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
-					alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
-					$("#fin").attr('disabled','disabled');
-					$("#fin").val('SALIDA');
-				}
-			});
-
-			$('#ini').click(function(){
-				$("#fin").removeAttr('disabled');
-			});
-
-
-
-</script>
 
 <script>
 		function validate(){
