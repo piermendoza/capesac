@@ -763,21 +763,20 @@
             
             <!-- Modal Body -->
             <div class="modal-body">
-				<form autocomplete="off">
 					<div class="row">
 						<div class="col-sm-5">
-							<form role="form">
+							<form id="formContact" role="form" onSubmit="return false;">
 								<div class="form-group">
 									<label for="inputName">Nombre/Apellidos</label>
-									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido..."/>
+									<input name="name" type="text" class="form-control" style="height: 34px;" placeholder="Ingresa tu nombre/apellido..." required/>
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email..."/>
+									<input name="mail" type="email" class="form-control" placeholder="Ingresa tu email..." required/>
 								</div>
 								<div class="form-group">
 									<label for="inputMessage">Mensaje</label>
-									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje..."></textarea>
+									<textarea name="msj" class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje..." required></textarea>
 								</div>
 							</form>
 						</div>
@@ -786,25 +785,60 @@
 								<iframe id="MapContact" class="embed-responsive-item" src="" allowfullscreen></iframe>			
 							</div>
 						</div>
-						
-						
 					</div>
-				</form>
-
-				<script>
-					function contact(){
-						$('#MapContact').attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003');
-					}
-				</script>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
+				<button type="button" class="btn btn-primary" onclick="sendMsj();">Contactar</button>
 			</div>
+			
         </div>
     </div>
 </div>
 
+<script>
+	function contact(){
+		$('#MapContact').attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.599336342985!2d-77.03054078518716!3d-12.071064891451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c893d203ca5d%3A0x5f8d8e65b3794055!2sAv.+Manco+C%C3%A1pac+1080%2C+La+Victoria+15033!5e0!3m2!1ses-419!2spe!4v1529289445003');
+	}
+
+	function sendMsj(){
+		$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+
+		if (estado == 'success') {
+			var tipo=$('#formContact').serializeArray();
+
+			$.ajax({
+			type: "GET",
+			url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
+			dataType: 'JSON',
+			data:tipo,
+			success:'success',
+			success: function (json) { 
+				$('#modalForm').modal('hide'); 
+
+				swal({ 
+				title:"La reserva se realizo con exito!", 
+				text:json['msj'],
+				icon: "success",
+				buttons:{
+					defeat:"OK"
+					}
+				})
+			},error : function(xhr, status) {
+					swal({
+						type: 'error',
+						title: 'Oops...',
+						text: 'Error al intentar contactarse'
+					})
+				}
+			});
+			 }else{
+				 alert("Error al cargar la librería sweealert");
+			}
+		});
+
+	}
+</script>
 	
 <!--Main Footer -->	
 <div class="container-fluid" style="background-color:#0b0b17;">
@@ -1101,7 +1135,11 @@
 																	
     			
 																	},error : function(xhr, status) {
-																		alert('Error inesperado');
+																		swal({
+																			type: 'error',
+																			title: 'Oops...',
+																			text: 'Error al intentar realizar la reservacion'
+																		})
 																	}
 																});
 																	
