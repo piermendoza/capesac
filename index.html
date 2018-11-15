@@ -130,7 +130,7 @@
 								 	<li><a href="hostal/emporio.html">HOSTAL EMPORIO</a></li>
 								</ul> 
 							</li>
-							<li><a onclick="checking()" class="link-1">CHECKING</a></li>
+							<li><a id="checking" onclick="checking()" class="link-1">CHECKING</a></li>
 							<li><a onclick="contact()" class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 								<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
@@ -909,6 +909,7 @@
 				</style>
 
 <script>
+	
 		function contact(){
 			$('#MapContact').attr('src','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1626566400514!2d-77.04258498518759!3d-12.032320691476942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf30dc5040fb%3A0x8941a5d56b9319!2sAv.+Francisco+Pizarro+1011%2C+Cercado+de+Lima+15094!5e0!3m2!1ses-419!2spe!4v1529291436158');
 		}
@@ -1021,9 +1022,17 @@
 		}
 	</script>
  
-										<script>
+								<script>
 
 												$(document).ready(function(){
+													//add checking for url idsplay panel
+													var url=window.location.href;
+													var hash=url.substring(url.indexOf("#")+1);
+
+													if(hash=="checking"){
+														checking();
+													}
+
 													$("#emporio").hover(function(){
 														$("#uno").hide();
 														}, function(){
