@@ -154,8 +154,8 @@
 									<li><a href="emporio.html">HOSTAL EMPORIO</a></li>
 								</ul> 
 							</li>
-							<li><a class="link-1" href="#">SERVICIOS</a></li>
-							<li><a class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
+							<li><a onclick="checking()" class="link-1">CHECKING</a></li>
+							<li><a onclick="contact()" class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 									<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
 									<ul class="fh5co-sub-menu">
@@ -405,68 +405,60 @@
 <!-- Modal -->		
 <link rel="stylesheet" href="../css/bootraps.css">
 <div class="modal fade" id="modalForm" role="dialog">
-    <div class="modal-dialog" style=" width: 80% !important;">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Cerrar</span>
-                </button>
-                <h1 class="modal-title text-center h2" id="myModalLabel">
-					¡
-					<span style="color:#205bb3;">
-						<script>
-							fecha=new Date();
-							var dias = new Array('Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado');
-							document.write(dias[fecha.getDay()]);
-						</script>
-					</span>, lo tengo!
-				</h1>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class="modal-body">
-				<form autocomplete="off">
-					<div class="row">
-						<div class="col-sm-5">
-							<form role="form">
-								<div class="form-group">
-									<label for="inputName">establecimiento</label>
-									<select class="form-control">
-										<option value=0 disabled selected>HOSTAL DLUXO</option>
-									</select>
+		<div class="modal-dialog" style=" width: 80% !important;">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Cerrar</span>
+					</button>
+					<h1 class="modal-title text-center h2" id="myModalLabel">
+						¡
+						<span style="color:#205bb3;">
+							<script>
+								fecha=new Date();
+								var dias = new Array('Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado');
+								document.write(dias[fecha.getDay()]);
+							</script>
+						</span>, precios accesibles en cálidas suites!
+					</h1>
+				</div>
+				
+				<!-- Modal Body -->
+				<div class="modal-body"> 
+						<div class="row">
+							<div class="col-sm-5">
+								<form id="formContact" role="form" onSubmit="return false;">
+									<div class="form-group">
+										<label for="inputName">Nombre/Apellidos</label>
+										<input name="name" type="text" class="form-control" style="height: 34px;" placeholder="Ingresa tu nombre/apellido..." required/>
+									</div>
+									<div class="form-group">
+										<label for="inputEmail">Email</label>
+										<input name="mail" type="email" class="form-control" placeholder="Ingresa tu email..." required/>
+									</div>
+									<div class="form-group">
+										<label for="inputMessage">Mensaje</label>
+										<textarea name="msj" class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje..." required></textarea>
+									</div>
+								</form>
+							</div>
+							<div class="col-sm-7">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe id="MapContact" class="embed-responsive-item" src="" allowfullscreen></iframe>			
 								</div>
-								<div class="form-group">
-									<label for="inputName">Nombre/Apellidos</label>
-									<input type="text" class="form-control" style="height: 34px;" id="inputName" placeholder="Ingresa tu nombre/apellido"/>
-								</div>
-								<div class="form-group">
-									<label for="inputEmail">Email</label>
-									<input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
-								</div>
-								<div class="form-group">
-									<label for="inputMessage">Mensaje</label>
-									<textarea class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje"></textarea>
-								</div>
-							</form>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-							<button type="button" class="btn btn-primary submitBtn" onclick="">Contactar</button>
-							<br>
-						</div>
-						<div class="col-sm-7">
-							<div class="embed-responsive embed-responsive-16by9">
-								<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6750511882556!2d-76.9859360851866!3d-12.134371591408962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8739000a08b%3A0x41dc0d68aa2777f6!2sAv.+Caminos+del+Inca+2376%2C+Lima+15039!5e0!3m2!1ses-419!2spe!4v1529290956707" allowfullscreen></iframe>			
 							</div>
 						</div>
-						
-						
-					</div>
-				</form>
-            </div>
-        </div>
-    </div>
-</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary" onclick="sendMsj();">Contactar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <!--FOOTER-->
 <div class="container-fluid" style="background-color:#0b0b17;">
 		<footer id="footer" class="text-white">
@@ -559,6 +551,126 @@
 					
 			}, 1000);
 		});
+
+		function contact(){
+			$('#MapContact').attr('src','https://www.google.com/maps/d/embed?mid=1S7MedkmdntUaSA4oqnsS5QknnVTQy46R'); 
+		}
+
+		function sendMsj(){
+			$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+	
+			if (estado == 'success') {
+				var data=$('#formContact').serializeArray();
+	
+				$.ajax({
+				type: "GET",
+				url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
+				dataType: 'JSON',
+				data:data,
+				success:'success',
+				success: function (json) { 
+					$('#modalForm').modal('hide'); 
+					$("#formContact>.form-group>input").val('');
+					$("#formContact>.form-group>textarea").val('');
+					swal({ 
+					title:"MENSAJE ENVIADO", 
+					text:json['msj'],
+					icon: "success",
+					buttons:{
+						defeat:"OK"
+						}
+					})
+				},error : function(xhr, status) {
+						swal({
+							type: 'error',
+							title: 'Oops...',
+							text: 'Error al intentar contactarse'
+						})
+					}
+				});
+				 }else{
+					 alert("Error al cargar la librería sweealert");
+				}
+			});
+	
+		}
+
+		function checking(){ 
+		//Esta es la version 2
+		$.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js", function (data, estado) {
+
+			if (estado == 'success') {
+				(async function getFormValues () {
+					const {value: formValues} = await swal({
+					title: 'Checking',
+					html:
+						'<input id="swal-input1" class="swal2-input"  placeholder="Ingresa tu Dni/Pasaporte...">' +
+						'<input id="swal-input2" class="swal2-input type="password"  placeholder="Ingresa codigo Checking...">',
+					focusConfirm: false,
+					preConfirm: () => {
+						return [
+						document.getElementById('swal-input1').value,
+						document.getElementById('swal-input2').value
+						]
+					}
+					})
+
+					if (formValues[0]!="" && formValues[1]!="") {
+						$.ajax({
+							type: "GET", 
+							url: 'https://farbe.capesac.com.pe/chatBot/public/tipo',
+							dataType: 'JSON',
+							data:{doc:formValues[0],code:formValues[1]},
+							success:'success',
+							success: function (json) {
+								if(json['id']==1){
+									swal({
+										title:"VERIFICACION EXITOSA!", 
+										text:json['msj'],
+										footer:" RECUERDA:si tienes inconveniente al llegar al establecimiento comunicate con nosotros"
+									})
+								}else if(json['id']==2){
+									swal({
+										title: 'ESPERA...',
+										text:json['msj'],
+										type: 'warning',
+									})
+									
+								}else if(json['id']==3){
+									swal({
+										type: 'error',
+										title: 'Oops...',
+										text:json['msj'] 
+									})
+								}
+
+									
+								
+							},error : function(xhr, status) {
+								swal({
+									type: 'error',
+									title: 'Oops...',
+									text: 'Error al intentar realiza la verificación'
+								})
+							}
+						});	
+
+					}else{
+						swal({
+							type: 'error',
+							title: 'Oops...',
+							text: 'Campos vacios!'
+						})
+					}
+					})().catch(swal.noop);
+
+					
+			}else{
+			alert("Error al cargar la librería sweealert2");
+		}
+		});
+
+		}
   </script>
 	</body>
 </html>
