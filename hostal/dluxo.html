@@ -225,31 +225,31 @@
 		<div class="container">
 			<div class="row">
 				<div id="availability">
-					<form action="#">
+					<form id="reservsf" action="#">
 						<div class="a-col">
 							<section>
-								<select class="cs-select cs-skin-border">
-									<option value="1"  disabled selected>HOSTAL DLUXO</option>
+								<select id="hs" name="hs" class="cs-select cs-skin-border">
+									<option value="1" selected>HOSTAL DLUXO</option>
 								</select>
 							</section>
 						</div>
 						<div class="a-col alternate">
 								<div class="input-field">
-									<input id="ini" type="text" value="LLEGADA" class="form-control"/>
+									<input name="ini" id="ini" type="text" value="LLEGADA" class="form-control"/>
 								</div>
 							</div>
 							<div class="a-col alternate">
 								<div class="input-field">
-									<input id="fin" type="text" value="SALIDA" class="form-control"/>
+									<input name="fin" id="fin" type="text" value="SALIDA" class="form-control"/>
 											
 								</div> 
 							</div>
 						<div class="a-col alternate">
 							<section>
-								<select class="cs-select cs-skin-border">
+								<select id="est" name="est"class="cs-select cs-skin-border">
 									<option disabled selected>HABITACIÓN</option>
-									<option value="4">HABITACIÓN PREMIUM</option>
-									<option value="1">HABITACIÓN MATRIMONIAL</option>
+									<option value=4>HABITACIÓN PREMIUM</option>
+									<option value=1>HABITACIÓN MATRIMONIAL</option> 
 								</select>
 							</section>
 						</div>
@@ -294,7 +294,97 @@
 									});
 						
 						
-						
+									function validate(){
+										$.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js", function (data, estado) {
+											if (estado == 'success') {
+												if($('#ini').val().length==16 && $('#fin').val().length==16){
+												if($('#ini').val()<$('#fin').val()){
+													if($('#est').val() != null && $('#est').val()<5 ){
+
+
+
+
+
+														(async function getFruit () {
+															const {value: fruit} = await swal({
+															title: 'Select field validation',
+															input: 'select',
+															inputOptions: {
+																'apples': 'Apples',
+																'bananas': 'Bananas',
+																'grapes': 'Grapes',
+																'oranges': 'Oranges'
+															},
+															inputPlaceholder: 'Select a fruit',
+															showCancelButton: true,
+															inputValidator: (value) => {
+																return new Promise((resolve) => {
+																if (value === 'oranges') {
+																	resolve()
+																} else {
+																	resolve('You need to select oranges :)')
+																}
+																})
+															}
+															})
+
+															if (fruit) {
+															swal('You selected: ' + fruit)
+															}
+
+															})()
+														/*
+														var tipo=$('#reservsf').serializeArray();
+
+														swal({
+														title: "CONFIRMACIÓN", 
+														text: "Establecimiento: \n"+tipo[0].value+"\n", 
+														icon: "warning",
+														buttons:{
+															cancel:"Cancelar",
+															defeat:"Confirmar"
+														},
+														dangerMode: true,
+														}).then((value) => {
+														switch (value) {
+														
+															case "defeat":
+															break;
+														
+															case "cancel":
+															break;
+														
+															default:	
+														}
+														});
+
+														*/
+													}else{
+														swal({
+															type: 'error',
+															title: 'Oops...',
+															text: 'Debe selecionar el tipo de habitación'
+														})
+													}
+												}else{
+													swal({
+														type: 'error',
+														title: 'Oops...',
+														text: 'Debe selecionar una fecha valida'
+													})
+												}
+											}else{
+												swal({
+													type: 'error',
+													title: 'Oops...',
+													text: 'Debe selecionar una fecha valida'
+												})
+											}
+											}else{
+												alert("Error al cargar la librería sweealert");
+											}
+										});	
+									}
 						</script>
 						<div id="atten" class="a-col action" style="cursor:pointer;">
 							<a href="#" onclick="validate()">
