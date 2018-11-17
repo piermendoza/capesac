@@ -229,44 +229,75 @@
 						<div class="a-col">
 							<section>
 								<select class="cs-select cs-skin-border">
-									<option value="0"  disabled selected>HOSTAL DLUXO</option>
+									<option value="1"  disabled selected>HOSTAL DLUXO</option>
 								</select>
 							</section>
 						</div>
-						<div class="a-col calendar">
-							<div class="input-field">
-								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="dateTimeL"/>
+						<div class="a-col alternate">
+								<div class="input-field">
+									<input id="ini" type="text" value="LLEGADA" class="form-control"/>
+								</div>
 							</div>
-						</div>
-						<div class="a-col calendar">
-							<div class="input-field">
-								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="dateTimeS"  />
-										
+							<div class="a-col alternate">
+								<div class="input-field">
+									<input id="fin" type="text" value="SALIDA" class="form-control"/>
+											
+								</div> 
 							</div>
-						</div>
 						<div class="a-col alternate">
 							<section>
 								<select class="cs-select cs-skin-border">
 									<option disabled selected>HABITACIÓN</option>
-									<option value="0">HABITACIÓN PREMIUM</option>
+									<option value="4">HABITACIÓN PREMIUM</option>
 									<option value="1">HABITACIÓN MATRIMONIAL</option>
 								</select>
 							</section>
 						</div>
 						<script>
-							$('#dateTimeL').datetimepicker({
-								 formatDate:'Y/m/d',
-								 minDate:'-1970/01/01',
-								 maxDate:'+1970/07/12'
+						
+								$.datetimepicker.setLocale('es');
+						
+								$('#ini').datetimepicker({
+									format:'Y/m/d H:m',
+									minDate:'+1970/01/02',  
+									startDate:'+1970/01/02',
+									defaultDate:'+1970/01/02'
+									
 								});
-								$('#dateTimeS').datetimepicker({
-									formatDate:'Y/m/d',
-									minDate:'-1970/01/01',
-									maxDate:'+1970/07/12'
+						
+								$('#fin').datetimepicker({
+									format:'Y/m/d H:m',
+									onShow:function( ct ){
+										var fecha = new Date($('#ini').val());
+										var dias = 1; // Número de días a agregar
+										fecha.setDate(fecha.getDate() + dias);
+						
+										this.setOptions({ 
+											minDate:fecha?fecha:false,
+											startDate:fecha,
+											defaultDate:fecha
+										})
+									}
 								});
-								</script>
-						<div id="atten" class="a-col action">
-							<a href="#">
+						
+						
+									$('#fin').click(function(){
+										if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
+											alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
+											$("#fin").attr('disabled','disabled');
+											$("#fin").val('SALIDA');
+										}
+									});
+						
+									$('#ini').click(function(){
+										$("#fin").removeAttr('disabled');
+									});
+						
+						
+						
+						</script>
+						<div id="atten" class="a-col action" style="cursor:pointer;">
+							<a href="#" onclick="validate()">
 								<span> </span>
 								<label id="text">reservar</label>
 							</a>
