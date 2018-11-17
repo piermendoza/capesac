@@ -318,16 +318,11 @@
 															inputPlaceholder: 'seleccionar',
 															showCancelButton: true,
 															inputValidator: (value) => {
-																return new Promise((resolve) => {
-																/*
-																if (value === '4') {
+																return new Promise((resolve) => {						
 																	resolve()
-																} else {
-																	resolve('Giro NbancariO XD')
-																}*/ 
 																})
 															}
-															})
+															}) 
 
 															if (payment) {
 																var tipo=$('#reservsf').serializeArray();
@@ -352,7 +347,7 @@
 																
 																	default:	
 																}
-																});
+																}); 
 															}
 
 															})()
@@ -385,7 +380,7 @@
 									}
 						</script>
 						<div id="atten" class="a-col action" style="cursor:pointer;">
-							<a href="#" onclick="validate()">
+							<a onclick="validate()">
 								<span> </span>
 								<label id="text">reservar</label>
 							</a>
