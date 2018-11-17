@@ -306,59 +306,57 @@
 
 
 														(async function getFruit () {
-															const {value: fruit} = await swal({
-															title: 'Select field validation',
+															const {value: payment} = await swal({
+															title: 'METODO DE PAGO',
 															input: 'select',
 															inputOptions: {
-																'apples': 'Apples',
-																'bananas': 'Bananas',
-																'grapes': 'Grapes',
-																'oranges': 'Oranges'
+																'1': 'Trasferencia Bancaria',
+																'2': 'Deposito Bancario',
+																'3': 'Pago Efectivo',
+																'4': 'Giro Bancario'
 															},
-															inputPlaceholder: 'Select a fruit',
+															inputPlaceholder: 'seleccionar',
 															showCancelButton: true,
 															inputValidator: (value) => {
 																return new Promise((resolve) => {
-																if (value === 'oranges') {
+																/*
+																if (value === '4') {
 																	resolve()
 																} else {
-																	resolve('You need to select oranges :)')
-																}
+																	resolve('Giro NbancariO XD')
+																}*/ 
 																})
 															}
 															})
 
-															if (fruit) {
-															swal('You selected: ' + fruit)
+															if (payment) {
+																var tipo=$('#reservsf').serializeArray();
+
+																swal({
+																title: "CONFIRMACIÓN", 
+																text: "Establecimiento: \n"+payment+"\n"+tipo[0].value+"\n", 
+																icon: "warning",
+																buttons:{
+																	cancel:"Cancelar",
+																	defeat:"Confirmar"
+																},
+																dangerMode: true,
+																}).then((value) => {
+																switch (value) {
+																
+																	case "defeat":
+																	break;
+																
+																	case "cancel":
+																	break;
+																
+																	default:	
+																}
+																});
 															}
 
 															})()
-														/*
-														var tipo=$('#reservsf').serializeArray();
-
-														swal({
-														title: "CONFIRMACIÓN", 
-														text: "Establecimiento: \n"+tipo[0].value+"\n", 
-														icon: "warning",
-														buttons:{
-															cancel:"Cancelar",
-															defeat:"Confirmar"
-														},
-														dangerMode: true,
-														}).then((value) => {
-														switch (value) {
-														
-															case "defeat":
-															break;
-														
-															case "cancel":
-															break;
-														
-															default:	
-														}
-														});
-
-														*/
+													
 													}else{
 														swal({
 															type: 'error',
