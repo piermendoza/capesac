@@ -636,6 +636,17 @@
 		</footer>
 	</div>	
 
+
+	
+<script>
+		$('.openBtn').on('click',function(){
+			$('.modal-body').load('emporio.html',function(){
+				$('#myModal').modal({show:true});
+			});
+		});
+		</script>
+
+		
 	
 	<!--Iconos Sociales -->		
 		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style a2a_follow" style="left:0px; top:180px;">
@@ -831,12 +842,5 @@
     </div>
 </div>
 
-<script>
-		$('.openBtn').on('click',function(){
-			$('.modal-body').load('emporio.html',function(){
-				$('#myModal').modal({show:true});
-			});
-		});
-		</script>
 	</body>
 </html>
