@@ -300,11 +300,6 @@
 												if($('#ini').val().length==16 && $('#fin').val().length==16){
 												if($('#ini').val()<$('#fin').val()){
 													if($('#est').val() != null && $('#est').val()<5 ){
-
-
-
-
-
 														(async function getFruit () {
 															const {value: payment} = await swal({
 															title: 'METODO DE PAGO',
@@ -818,7 +813,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Modal with Dynamic Content</h4>
+				<h4 class="modal-title">Modal with Dynamic Content</h4>
+				
+				<object type="text/html" data="https://capesac.com.pe" width="100%" height="100%">
+				</object>
             </div>
             <div class="modal-body">
 
@@ -832,9 +830,9 @@
 
 <script>
 		//$('.openBtn').on('click',function(){
-		//	$('.modal-body').load('emporio.html',function(){
+		//$('.modal-body').load('https://capesac.com.pe',function(){
 				$('#myModal').modal('show'); 
-		///	});
+		//});
 	//	});
 </script>
 	</body>

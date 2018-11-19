@@ -1024,21 +1024,23 @@
  
 								<script>
 
-												$(document).ready(function(){
-													//add checking for url idsplay panel
-													var url=window.location.href;
-													var hash=url.substring(url.indexOf("#")+1);
+								$(document).ready(function(){
+									//add checking for url idsplay panel
+									var url=window.location.href;
+									var hash=url.substring(url.indexOf("#")+1);
 
-													if(hash=="checking"){
-														checking();
-													}
-
-													$("#emporio").hover(function(){
-														$("#uno").hide();
-														}, function(){
-															$("#uno").show();
-													});
-												});
+									if(hash=="checking"){
+										checking();
+									}else if(hash=="md"){
+										$('#ReservaForm').modal('show');
+									}
+									
+									$("#emporio").hover(function(){
+										$("#uno").hide();
+										}, function(){
+											$("#uno").show();
+									});
+								});
 										
 												$(function(){
 												
