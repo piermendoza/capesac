@@ -50,29 +50,26 @@
 				$('.desph').hide();
 				$('.carousel-caption').hide();
 			}else{
-
 				$(".desph").css("font-size", "1.5em");
 				$(".desph").css("font-style", "italic");
 				$(".ocultar").css("font-size", "1.5em");
 			}
 
-		});
-						
-	$(function(){
-			
-				$(window).scroll(function(){
-					if ($(window).scrollTop() < 576 || window.matchMedia('(max-width: 768px)').matches){
-						$("#reserv").css("position", "static");
-						$('.espacio').hide();
-					}else{					
-						$('.espacio').show();
-						$("#reserv").css("position", "fixed");
-						$("#reserv").css("top", "0%");
-					}
-					
-					
-				});
+			$(window).scroll(function(){
+				if ($(window).scrollTop() < 576 || window.matchMedia('(max-width: 768px)').matches){
+					$("#reserv").css("position", "static");
+					$('.espacio').hide();
+				}else{					
+					$('.espacio').show();
+					$("#reserv").css("position", "fixed");
+					$("#reserv").css("top", "0%");
+				}
+				
+				
 			});
+
+		});
+		
 	$(document).ready(function () {
        
 		function changeOne(){
@@ -220,7 +217,7 @@
 	<br>
 	<br>
 </div>
-
+ 
 	<div id="reserv" class="wrap">
 		<div class="container">
 			<div class="row">
@@ -308,53 +305,6 @@
 														$('#hbtu').val($('#est option:selected').text());
 
 														$('#myModal').modal('show'); 
-														/*
-														(async function getFruit () {
-															const {value: payment} = await swal({
-															title: 'METODO DE PAGO',
-															input: 'select',
-															inputOptions: {
-																'1': 'Trasferencia Bancaria',
-																'2': 'Deposito Bancario',
-																'3': 'Pago Efectivo',
-																'4': 'Giro Bancario'
-															},
-															inputPlaceholder: 'seleccionar',
-															showCancelButton: true,
-															inputValidator: (value) => {
-																return new Promise((resolve) => {						
-																	resolve()
-																})
-															}
-															}) 
-
-															if (payment) {
-																var tipo=$('#reservsf').serializeArray();
-
-																swal({
-																title: "CONFIRMACIÓN", 
-																html: "Establecimiento:"+payment+"\ <br> Hostal Dluxo <br>"+tipo[1].value+" <br> "+tipo[2].value+" <br> "+tipo[3].value+"<br>", 
-																icon: "warning",
-																buttons:{
-																	cancel:"Cancelar",
-																	defeat:"Confirmar"
-																},
-																dangerMode: true,
-																}).then((value) => {
-																switch (value) {
-																
-																	case "defeat":
-																	break;
-																
-																	case "cancel":
-																	break;
-																
-																	default:	
-																}
-																}); 
-															}
-
-															})()*/
 													
 													}else{
 														swal({
