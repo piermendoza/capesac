@@ -225,31 +225,31 @@
 		<div class="container">
 			<div class="row">
 				<div id="availability">
-					<form id="reservsf" action="#">
+					<form action="#">
 						<div class="a-col">
 							<section>
-								<select id="hs" name="hs" class="cs-select cs-skin-border">
+								<select id="hs" class="cs-select cs-skin-border">
 									<option value="1" selected>HOSTAL DLUXO</option>
 								</select>
 							</section>
 						</div>
 						<div class="a-col alternate">
 								<div class="input-field">
-									<input name="ini" id="ini" type="text" value="LLEGADA" class="form-control"/>
+									<input id="ini" type="text" value="LLEGADA" class="form-control"/>
 								</div>
 							</div>
 							<div class="a-col alternate">
 								<div class="input-field">
-									<input name="fin" id="fin" type="text" value="SALIDA" class="form-control"/>
+									<input id="fin" type="text" value="SALIDA" class="form-control"/>
 											
 								</div> 
 							</div>
 						<div class="a-col alternate">
 							<section>
-								<select id="est" name="est" class="cs-select cs-skin-border">
+								<select id="est" class="cs-select cs-skin-border">
 									<option disabled selected>HABITACIÓN</option>
-									<option value=4>HABITACIÓN PREMIUM</option>
-									<option value=1>HABITACIÓN MATRIMONIAL</option> 
+									<option value=4> PREMIUM</option>
+									<option value=1> MATRIMONIAL</option> 
 								</select>
 							</section>
 						</div>
@@ -300,6 +300,12 @@
 												if($('#ini').val().length==16 && $('#fin').val().length==16){
 												if($('#ini').val()<$('#fin').val()){
 													if($('#est').val() != null && $('#est').val()<5 ){
+														
+
+														$('#hst').val($('#hs').val()); 
+														$('#ing').val($('#ini').val());
+														$('#sal').val($('#fin').val());
+														$('#hbtu').val($('#est option:selected').text());
 
 														$('#myModal').modal('show'); 
 														/*
@@ -352,23 +358,23 @@
 													
 													}else{
 														swal({
-															type: 'error',
 															title: 'Oops...',
-															text: 'Debe selecionar el tipo de habitación'
+															text: 'Debe selecionar el tipo de habitación',
+															icon:"error"
 														})
 													}
 												}else{
 													swal({
-														type: 'error',
 														title: 'Oops...',
-														text: 'Debe selecionar una fecha valida'
+														text: 'Debe selecionar una fecha valida',
+														icon:"error"
 													})
 												}
 											}else{
 												swal({
-													type: 'error',
 													title: 'Oops...',
-													text: 'Debe selecionar una fecha valida'
+													text: 'Debe selecionar una fecha valida',
+													icon:"error"
 												})
 											}
 											}else{
@@ -756,20 +762,21 @@
 									swal({
 										title:"VERIFICACION EXITOSA!", 
 										text:json['msj'],
+										icon:"succes",
 										footer:" RECUERDA:si tienes inconveniente al llegar al establecimiento comunicate con nosotros"
 									})
 								}else if(json['id']==2){
 									swal({
 										title: 'ESPERA...',
 										text:json['msj'],
-										type: 'warning',
+										icon: 'warning',
 									})
 									
 								}else if(json['id']==3){
 									swal({
-										type: 'error',
 										title: 'Oops...',
-										text:json['msj'] 
+										text:json['msj'],
+										icon:"error"
 									})
 								}
 
@@ -777,18 +784,18 @@
 								
 							},error : function(xhr, status) {
 								swal({
-									type: 'error',
 									title: 'Oops...',
-									text: 'Error al intentar realiza la verificación'
+									text: 'Error al intentar realiza la verificación',
+									icon:"error"
 								})
 							}
 						});	
 
 					}else{
 						swal({
-							type: 'error',
 							title: 'Oops...',
-							text: 'Campos vacios!'
+							text: 'Campos vacios!',
+							icon:"error"
 						})
 					}
 					})().catch(swal.noop);
@@ -814,28 +821,30 @@
 				<h4 class="modal-title text-center">Hostal Dluxo</h4>
             </div>
             <div class="modal-body">
-					<input id="hst" name="hs" type="hidden" value="">
-					<input id="ing" name="ing" type="hidden" value="">
-					<input id="sal" name="sal" type="hidden" value="">
+				<form id="reservsf" role="form" onSubmit="return false;">
+					<input id="hst" name="hs" type="hidden">
+					<input id="ing" name="ing" type="hidden">
+					<input id="sal" name="sal" type="hidden">
+					<input id="hbtu" name="hbtu" type="hidden">
 				
 					
 					<div class="form-group">
-							<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control" >
+							<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control" required/>
 					</div>
 					<div class="form-group">
-							<input type="text" name="name" placeholder="Número de Dni/Pasaporte..." class="form-control" >
+							<input type="text" name="dni" placeholder="Número de Dni/Pasaporte..." class="form-control" required/>
 					</div>
 					<div class="form-group">
-							<input type="text" name="name" placeholder="Número de telefono..." class="form-control" >
+							<input type="text" name="phono" placeholder="Número de telefono..." class="form-control" required/>
 					</div>
 					<div class="form-group">
-							<input type="text" name="name" placeholder="Correo electronico..." class="form-control" >
+							<input type="text" name="mail" placeholder="Correo electronico..." class="form-control" required/>
 					</div>
 					<div class="form-group">
-							<input type="number" name="name" placeholder="Número de adultos..." class="form-control" >
+							<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control" required/>
 					</div>
 					<div class="form-group">
-							<input type="number" name="name" placeholder="Número de infantes..." class="form-control" >
+							<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control" required/>
 					</div>
 					
 					<label>Metodo de pago</label> 
@@ -877,22 +886,89 @@
 							</label>
 						</center><br>   
 
-
+				</form>
             </div>
             <div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary" onclick="">Reservar</button>
+					<button type="button" class="btn btn-primary" onclick="return send()">Solicitar reserva</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-		//$('.openBtn').on('click',function(){
-		//$('.modal-body').load('https://capesac.com.pe',function(){
-				
-		//});
-	//	});
+		function send(){
+
+$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+
+	if (estado == 'success') {
+		var tipo=$('#reservsf').serializeArray();
+
+		swal({
+		title: "CONFIRMACIÓN", 
+		text: "Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+$("#est option[value="+tipo[3]['value']+"]").text().toLowerCase()+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), 
+		icon: "warning",
+		//buttons: true,
+		buttons:{
+			cancel:"Cancelar",
+			defeat:"Confirmar"
+		},
+		dangerMode: true,
+		}).then((value) => {
+		switch (value) {
+		
+			case "defeat": 
+
+				$.ajax({
+				type: "POST",
+				url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
+				dataType: 'JSON',
+				data:tipo,
+				success:'success',
+				success: function (json) { 
+					$('#ReservaForm').modal('hide');
+
+					swal({ 
+					title:"La solicitud de reserva se envio con exito!", 
+					text:"\n"+json['msj']+"*\n \n \n Para realizar el pago mediante "+json['tp']+"\n"+json['inst']+"\n \n \n *En breves momentos recibira un correo electronico con la indicaciones para realizar el checking y el codigo de reserva.",
+					icon: "success",
+					buttons:{
+						defeat:"OK"
+					},
+					}).then((value) => {
+						window.setTimeout('location.reload()', 1000);
+					});
+					
+
+					},error : function(xhr, status) {
+						swal({
+							title: 'Oops...',
+							text: 'Error al intentar realizar la reservacion',
+							icon: "error",
+						})
+					}
+				});
+					
+			break;
+		
+			case "cancel":
+			break;
+		
+			default:	
+		}
+		});
+
+}
+else{
+	alert("Error al cargar la librería sweealert");
+}
+});
+
+
+
+
+
+} 
 </script>
 	</body>
 </html>
