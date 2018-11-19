@@ -801,11 +801,6 @@
 			
   </script>
 
-
-
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-success openBtn">Open Modal</button>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -814,15 +809,33 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
 				<h4 class="modal-title">Modal with Dynamic Content</h4>
-				
-				<object type="text/html" data="https://capesac.com.pe/#md" width="100%" height="100%">
-				</object>
             </div>
             <div class="modal-body">
 
+					<div class="form-group">
+							<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control" >
+					</div>
+					<div class="form-group">
+							<input type="text" name="name" placeholder="Número de Dni/Pasaporte..." class="form-control" >
+					</div>
+					<div class="form-group">
+							<input type="text" name="name" placeholder="Número de Telefono..." class="form-control" >
+					</div>
+					<div class="form-group">
+							<input type="text" name="name" placeholder="Correo electronico..." class="form-control" >
+					</div>
+					<div class="form-group">
+							<input type="number" name="name" placeholder="Número de adultos..." class="form-control" >
+					</div>
+					<div class="form-group">
+							<input type="number" name="name" placeholder="Número de infantes..." class="form-control" >
+					</div>
+
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary" onclick="">Reservar</button>
             </div>
         </div>
     </div>

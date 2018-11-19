@@ -842,7 +842,7 @@
 												
 												<div class="f1-buttons">
 													<button  id="tabin" type="button" class="btn btn-previous mdr">Regresar</button>
-													<button onclick="return send()" class="btn btn-submit mdr">Reservar</button>
+													<button onclick="return send()" class="btn btn-submit mdr">Solicitar reserva</button>
 												</div>
 										
 											</fieldset>
@@ -1031,9 +1031,6 @@
 
 									if(hash=="checking"){
 										checking();
-									}else if(hash=="md"){
-										$('#ReservaForm').modal('show');
-										$('body').hide();
 									}
 									
 									$("#emporio").hover(function(){
@@ -1133,7 +1130,7 @@
 																	$('#ReservaForm').modal('hide');
 
 																	swal({ 
-																	title:"La reserva se realizo con exito!", 
+																	title:"La solicitud de reserva se envio con exito!", 
 																	text:"\n"+json['msj']+"*\n \n \n Para realizar el pago mediante "+json['tp']+"\n"+json['inst']+"\n \n \n *En breves momentos recibira un correo electronico con la indicaciones para realizar el checking y el codigo de reserva.",
 																	icon: "success",
 																	buttons:{
