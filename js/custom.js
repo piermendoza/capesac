@@ -97,14 +97,6 @@ $(function(){
       });
    };
 
-   var counter = function() {
-      $('.js-counter').countTo({
-         formatter: function (value, options) {
-         return value.toFixed(options.decimals);
-       },
-      });
-   };
-
    var contentWayPoint = function() {
       var i = 0;
       $('.animate-box').waypoint( function( direction ) {
@@ -228,7 +220,6 @@ $(function(){
       mobileMenuOutsideClick();
       parallax();
       fullHeight();
-      counter();
    });
 
 });
