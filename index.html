@@ -819,7 +819,7 @@
 													<div class="radio-input">
 														<input id="paypale3" type="radio" name="payment" value="3">
 														Pago Efectivo
-													</div>
+													</div> 
 												</label>
 												<label for="paypale4" class="method">
 													<img src="img/mastercard_logo.png"/>
@@ -1131,7 +1131,7 @@
 
 																	swal({ 
 																	title:"La solicitud de reserva se envio con exito!", 
-																	text:"\n"+json['msj']+"*\n \n \n Para realizar el pago mediante "+json['tp']+"\n"+json['inst']+"\n \n \n *En breves momentos recibira un correo electronico con la indicaciones para realizar el checking y el codigo de reserva.",
+																	text:json['msj']+"\n \n En breves momentos recibira un correo electronico con indicaciones para realizar el checking. \n \n Ademas para hacer el pago mediante "+json['tp']+"\n"+json['inst'],
 																	icon: "success",
 																	buttons:{
 																		defeat:"OK"

@@ -906,7 +906,7 @@ $.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (dat
 
 		swal({
 		title: "CONFIRMACIÓN", 
-		text: "Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+$("#est option[value="+tipo[3]['value']+"]").text().toLowerCase()+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), 
+		text: "Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+tipo[3]['value'].toLowerCase()+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), 
 		icon: "warning",
 		//buttons: true,
 		buttons:{
@@ -930,12 +930,12 @@ $.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (dat
 
 					swal({ 
 					title:"La solicitud de reserva se envio con exito!", 
-					text:"\n"+json['msj']+"*\n \n \n Para realizar el pago mediante "+json['tp']+"\n"+json['inst']+"\n \n \n *En breves momentos recibira un correo electronico con la indicaciones para realizar el checking y el codigo de reserva.",
+					text:json['msj']+"\n \n En breves momentos recibira un correo electronico con indicaciones para realizar el checking. \n \n Ademas para hacer el pago mediante "+json['tp']+"\n"+json['inst'],
 					icon: "success",
 					buttons:{
 						defeat:"OK"
 					},
-					}).then((value) => {
+					}).then((value) => { 
 						window.setTimeout('location.reload()', 1000);
 					});
 					
