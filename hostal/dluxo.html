@@ -300,6 +300,9 @@
 												if($('#ini').val().length==16 && $('#fin').val().length==16){
 												if($('#ini').val()<$('#fin').val()){
 													if($('#est').val() != null && $('#est').val()<5 ){
+
+														$('#myModal').modal('show'); 
+														/*
 														(async function getFruit () {
 															const {value: payment} = await swal({
 															title: 'METODO DE PAGO',
@@ -345,7 +348,7 @@
 																}); 
 															}
 
-															})()
+															})()*/
 													
 													}else{
 														swal({
@@ -619,7 +622,7 @@
 					<div class="row">
 						<br>
 						<a href="https://www.booking.com/hotel/pe/dluxo.es.html"><img class="lazy xd" data-original="../img/booking.ico" title="Booking"></a>
-						<img class="lazy xd" data-original="../img/hoteles.ico" title="Hoteles">
+						<a href="https://www.hoteles.com/ho690569088/hostal-dluxo-surco-peru/"><img class="lazy xd" data-original="../img/hoteles.ico" title="Hoteles"> </a>
 						<img class="lazy xd" data-original="../img/trivago.ico" title="Trivago">
 						<img class="lazy xd" data-original="../img/avisor.ico" title="Trip Advisor">
 					</div>
@@ -811,15 +814,11 @@
 				<h4 class="modal-title text-center">Hostal Dluxo</h4>
             </div>
             <div class="modal-body">
-					<div class="form-group">
-						<select class="form-control">
-							<option disabled selected>habitación</option>
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select> 
-					</div>
+					<input id="hst" name="hs" type="hidden" value="">
+					<input id="ing" name="ing" type="hidden" value="">
+					<input id="sal" name="sal" type="hidden" value="">
+				
+					
 					<div class="form-group">
 							<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control" >
 					</div>
@@ -827,7 +826,7 @@
 							<input type="text" name="name" placeholder="Número de Dni/Pasaporte..." class="form-control" >
 					</div>
 					<div class="form-group">
-							<input type="text" name="name" placeholder="Número de Telefono..." class="form-control" >
+							<input type="text" name="name" placeholder="Número de telefono..." class="form-control" >
 					</div>
 					<div class="form-group">
 							<input type="text" name="name" placeholder="Correo electronico..." class="form-control" >
@@ -839,6 +838,44 @@
 							<input type="number" name="name" placeholder="Número de infantes..." class="form-control" >
 					</div>
 					
+					<label>Metodo de pago</label> 
+					<center>
+							<label for="paypale1" class="method">
+								<img src="../img/paypal_logo.png"/>
+								<div class="radio-input">
+									<input id="paypale1" type="radio" name="payment" value="1">
+									Trasferencia Bancaria
+								</div>
+							</label>
+							<label for="paypale2" class="method">
+								<img src="../img/mastercard_logo.png"/>
+								<div class="radio-input">
+									<input id="paypale2" type="radio" name="payment" value="2">
+									Deposito Bancario
+								</div>
+							</label>
+							<label for="paypale3" class="method">
+								<img src="../img/paypal_logo.png"/>
+								<div class="radio-input">
+									<input id="paypale3" type="radio" name="payment" value="3">
+									Pago Efectivo
+								</div>
+							</label>
+							<label for="paypale4" class="method">
+								<img src="../img/mastercard_logo.png"/>
+								<div class="radio-input">
+									<input id="paypale4" type="radio" name="payment" value="4">
+									Giro Bancario
+								</div>
+							</label>
+							<label for="paypale5" class="method">
+								<img src="../img/paypal_logo.png"/>
+								<div class="radio-input">
+									<input id="paypale5" type="radio" name="payment" value="5">
+									Visa
+								</div>
+							</label>
+						</center><br>   
 
 
             </div>
@@ -853,7 +890,7 @@
 <script>
 		//$('.openBtn').on('click',function(){
 		//$('.modal-body').load('https://capesac.com.pe',function(){
-				$('#myModal').modal('show'); 
+				
 		//});
 	//	});
 </script>
