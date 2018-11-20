@@ -69,7 +69,7 @@
 			});
 
 		});
-		
+
 	$(document).ready(function () {
        
 		function changeOne(){
@@ -521,15 +521,15 @@
 							<form id="formContact" role="form" onSubmit="return false;">
 								<div class="form-group">
 									<label for="inputName">Nombre/Apellidos</label>
-									<input name="name" type="text" class="form-control" style="height: 34px;" placeholder="Ingresa tu nombre/apellido..." required/>
+									<input name="name" type="text" class="form-control" style="height: 34px;" placeholder="Ingresa tu nombre/apellido..."/>
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input name="mail" type="email" class="form-control" placeholder="Ingresa tu email..." required/>
+									<input name="mail" type="email" class="form-control" placeholder="Ingresa tu email..."/>
 								</div>
 								<div class="form-group">
 									<label for="inputMessage">Mensaje</label>
-									<textarea name="msj" class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje..." required></textarea>
+									<textarea name="msj" class="form-control" id="inputMessage" placeholder="Ingresa tu mensaje..."></textarea>
 								</div>
 							</form>
 						</div>
@@ -771,33 +771,33 @@
             </div>
             <div class="modal-body">
 				<form id="reservsf" role="form" onSubmit="return false;">
-					<input id="hst" name="hs" type="hidden">
-					<input id="ing" name="ing" type="hidden">
-					<input id="sal" name="sal" type="hidden">
-					<input id="hbtu" name="hbtu" type="hidden">
-				
 					
 					<div class="form-group">
-							<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control" required/>
+							<input id="hst" name="hs" type="hidden">
+							<input id="ing" name="ing" type="hidden">
+							<input id="sal" name="sal" type="hidden">
+							<input id="hbtu" name="hbtu" type="hidden">
+							<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control"/>
 					</div>
 					<div class="form-group">
-							<input type="text" name="dni" placeholder="Número de Dni/Pasaporte..." class="form-control" required/>
+							<input type="text" name="dni" placeholder="Número de Dni/Pasaporte..." class="form-control"/>
 					</div>
 					<div class="form-group">
-							<input type="text" name="phono" placeholder="Número de telefono..." class="form-control" required/>
+							<input type="tel" name="phono" placeholder="Número de telefono..." class="form-control"/>
 					</div>
 					<div class="form-group">
-							<input type="text" name="mail" placeholder="Correo electronico..." class="form-control" required/>
+							<input type="text" name="mail" placeholder="Correo electronico..." class="form-control"/>
 					</div>
 					<div class="form-group">
-							<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control" required/>
+							<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control" min=1 max=900/>
 					</div>
 					<div class="form-group">
-							<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control" required/>
+							<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control" min=0 max=900/>
 					</div>
-					
+
 					<label>Metodo de pago</label> 
-					<center>
+					<div>
+						<center>
 							<label for="paypale1" class="method">
 								<img src="../img/paypal_logo.png"/>
 								<div class="radio-input">
@@ -833,7 +833,9 @@
 									Visa
 								</div>
 							</label>
-						</center><br>   
+						</center>
+					</div>
+					<br>   
 
 				</form>
             </div>
@@ -845,14 +847,42 @@
     </div>
 </div>
 
-<script>
-		function send(){
 
-$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado) {
+<style>
+		.input-error { border-color: #98281c;}
+		.input-radio-error { color: #98281c;}
+	</style>
+
+
+<script>
+	function send(){
+
+	$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado){
 
 	if (estado == 'success') {
-		var tipo=$('#reservsf').serializeArray();
+		
+		var parent_fieldset = $('#reservsf>div');
+		var next_step = true;
 
+		// fields validation 
+		parent_fieldset.find('input[type="text"], input[type="tel"], input[type="number"], input[type="radio"]').each(function(){
+			if( $(this).val() == ""){
+				$(this).addClass('input-error');
+				next_step = false; 
+			}else if(!$('center>label>div>input[type=radio]').is(':checked')){
+				$(this).parents('.radio-input').addClass('input-radio-error');
+    			next_step = false;
+			}else{ 
+				$(this).removeClass('input-error');
+				$('.radio-input').removeClass('input-radio-error');
+			} 
+		});	
+
+		if(next_step){
+
+		
+		var tipo=$('#reservsf').serializeArray();
+	
 		swal({
 		title: "CONFIRMACIÓN", 
 		text: "Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+tipo[3]['value'].toLowerCase()+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), 
@@ -865,9 +895,7 @@ $.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (dat
 		dangerMode: true,
 		}).then((value) => {
 		switch (value) {
-		
 			case "defeat": 
-
 				$.ajax({
 				type: "POST",
 				url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
@@ -876,7 +904,6 @@ $.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (dat
 				success:'success',
 				success: function (json) { 
 					$('#ReservaForm').modal('hide');
-
 					swal({ 
 					title:"La solicitud de reserva se envio con exito!", 
 					text:json['msj']+"\n \n En breves momentos recibira un correo electronico con indicaciones para realizar el checking. \n \n Ademas para hacer el pago mediante "+json['tp']+"\n"+json['inst'],
@@ -887,8 +914,6 @@ $.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (dat
 					}).then((value) => { 
 						window.setTimeout('location.reload()', 1000);
 					});
-					
-
 					},error : function(xhr, status) {
 						swal({
 							title: 'Oops...',
@@ -897,17 +922,14 @@ $.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (dat
 						})
 					}
 				});
-					
 			break;
-		
 			case "cancel":
-			break;
-		
+				break;
 			default:	
 		}
 		});
-
-}
+	}
+	}
 else{
 	alert("Error al cargar la librería sweealert");
 }
