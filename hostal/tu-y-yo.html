@@ -6,6 +6,27 @@
 	<title>Hostal en Lima | Tu y Yo - La Victoria </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
+	<meta property="og:url" coxntent="https://capesac.com.pe/hostal/tu-y-yo.html"/>
+	<meta property="og:title" content="Hostal en Lima, ideal para escursiones y viajeros de paso"/>
+	<meta property="og:type" content="website" />
+    <meta property="og:description" content="Ubicado en el distrito comercial emergente de La Victoria, con habitaciones desde S/30." />
+	<meta property="og:locale" content="es_PE"/>
+	<meta property="og:site_name" content="Hostal Tu y Yo"/>
+	<meta property="og:image" content="https://capesac.com.pe/images/tuyyo-portada.jpg"/>
+	 
+	<meta name="description" content="Ubicado en el distrito comercial emergente de La Victoria, con habitaciones desde S/30." />
+	<meta name="keywords" content="hostales,hostal,lima,perú,cadena,santiago,surco,dluxo,barato,precios,precios comodos,hotel cerca,hotel para turistas,turistas,capesac" />
+	<meta name="news_keywords" content="Hostales en Lima-Perú">
+	<meta name="abstract" content="Hostales en Santiago de Surco - Lima - Perú">
+	<meta name="resource-type" content="document">
+	<meta name="revisit-after" content="1 days">
+	<meta name="classification" content="Business">  
+	<meta name="audience" content="All">
+	<meta name="robots" content="ALL">
+	<meta name="distribution" content="Global">
+	<meta name="language" content="Spanish">
+	<meta name="rating" content="General">
+
 	<link rel="shortcut icon" href="../icono.ico">
 	<link rel="stylesheet" type="text/css" href="../css/superfish.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/cs-select.css"/>
@@ -153,8 +174,8 @@
 									<li><a href="emporio.html">HOSTAL EMPORIO</a></li>
 								</ul> 
 							</li>
-							<li><a onclick="checking()" class="link-1">CHECKING</a></li>
-							<li><a onclick="contact()" class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
+							<li style="cursor:pointer;"><a onclick="checking()" class="link-1">CHECKING</a></li>
+							<li style="cursor:pointer;"><a onclick="contact()" class="link-1"  data-toggle="modal" data-target="#modalForm">CONTACTO</a></li>
 							<li>
 									<a href="#" class="link-1 fh5co-sub-ddown">IDIOMA</a>
 									<ul class="fh5co-sub-menu">
@@ -209,43 +230,114 @@
 						<div class="a-col">
 							<section>
 								<select class="cs-select cs-skin-border">
-									<option value="0"  disabled selected>HOSTAL TU Y YO</option>
+									<option value="2" selected>HOSTAL TU Y YO</option>
 								</select>
 							</section>
 						</div>
-						<div class="a-col calendar">
+						<div class="a-col alternate">
 							<div class="input-field">
-								<input type="text" placeholder="Llegada" value="LLEGADA" class="form-control" id="dateTimeL"/>
-							</div>
-						</div>
-						<div class="a-col calendar">
-							<div class="input-field">
-								<input type="text" placeholder="Salida" value="SALIDA" class="form-control" id="dateTimeS"  />
-										
+								<input id="ini" type="text" value="LLEGADA" class="form-control"/>
 							</div>
 						</div>
 						<div class="a-col alternate">
+							<div class="input-field">
+								<input id="fin" type="text" value="SALIDA" class="form-control"/>
+										
+							</div> 
+						</div>
+						<div class="a-col alternate">
 							<section>
-								<select class="cs-select cs-skin-border">
+								<select id="est" class="cs-select cs-skin-border">
 									<option disabled selected>HABITACIÓN</option>
-									<option value="0">HABITACIÓN MATRIMONIAL</option>
+									<option value="1">MATRIMONIAL</option>
 								</select>
 							</section>
 						</div>
 						<script>
-							$('#dateTimeL').datetimepicker({
-								 formatDate:'Y/m/d',
-								 minDate:'-1970/01/01',
-								 maxDate:'+1970/07/12'
+						
+								$.datetimepicker.setLocale('es');
+						
+								$('#ini').datetimepicker({
+									format:'Y/m/d H:m',
+									minDate:'+1970/01/02',  
+									startDate:'+1970/01/02',
+									defaultDate:'+1970/01/02'
+									
 								});
-								$('#dateTimeS').datetimepicker({
-									formatDate:'Y/m/d',
-									minDate:'-1970/01/01',
-									maxDate:'+1970/07/12'
+						
+								$('#fin').datetimepicker({
+									format:'Y/m/d H:m',
+									onShow:function( ct ){
+										var fecha = new Date($('#ini').val());
+										var dias = 1; // Número de días a agregar
+										fecha.setDate(fecha.getDate() + dias);
+						
+										this.setOptions({ 
+											minDate:fecha?fecha:false,
+											startDate:fecha,
+											defaultDate:fecha
+										})
+									}
 								});
-								</script>
-						<div id="atten" class="a-col action">
-							<a href="#">
+						
+						
+									$('#fin').click(function(){
+										if($('#ini').val()=="LLEGADA" || $('#ini').val()==""){
+											alert('SELECIONE UNA FECHA VALIDA DE LLEGADA');
+											$("#fin").attr('disabled','disabled');
+											$("#fin").val('SALIDA');
+										}
+									});
+						
+									$('#ini').click(function(){
+										$("#fin").removeAttr('disabled');
+									});
+						
+						
+									function validate(){
+										$.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js", function (data, estado) {
+											if (estado == 'success') {
+												if($('#ini').val().length==16 && $('#fin').val().length==16){
+												if($('#ini').val()<$('#fin').val()){
+													if($('#est').val() != null && $('#est').val()<5 ){
+														
+
+														$('#hst').val($('#hs').val()); 
+														$('#ing').val($('#ini').val());
+														$('#sal').val($('#fin').val());
+														$('#hbtu').val($('#est option:selected').text());
+
+														$('#myModal').modal('show'); 
+													
+													}else{
+														swal({
+															title: 'Oops...',
+															text: 'Debe selecionar el tipo de habitación',
+															type:"error"
+														})
+													}
+												}else{
+													swal({
+														title: 'Oops...',
+														text: 'Debe selecionar una fecha valida',
+														type:"error"
+													})
+												}
+											}else{
+												swal({
+													title: 'Oops...',
+													text: 'Debe selecionar una fecha valida',
+													type:"error"
+												})
+											}
+											}else{
+												alert("Error al cargar la librería sweealert");
+											}
+										});	
+									}
+						</script>
+						<div id="atten" class="a-col action" style="cursor:pointer;">
+							<a onclick="validate()">
 								<span> </span>
 								<label id="text">reservar</label>
 							</a>
@@ -640,5 +732,188 @@
 		});
 		}
   </script>
+
+  
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title text-center">Hostal Tu y Yo</h4>
+				</div>
+				<div class="modal-body">
+					<form id="reservsf" role="form" onSubmit="return false;">
+						
+						<div class="form-group">
+								<input id="hst" name="hs" type="hidden">
+								<input id="ing" name="ing" type="hidden">
+								<input id="sal" name="sal" type="hidden">
+								<input id="hbtu" name="hbtu" type="hidden">
+								<input type="text" name="name" placeholder="Nombre/Apellidos..." class="form-control"/>
+						</div>
+						<div class="form-group">
+								<input type="text" name="dni" placeholder="Número de Dni/Pasaporte..." class="form-control"/>
+						</div>
+						<div class="form-group">
+								<input type="tel" name="phono" placeholder="Número de telefono..." class="form-control"/>
+						</div>
+						<div class="form-group">
+								<input type="text" name="mail" placeholder="Correo electronico..." class="form-control"/>
+						</div>
+						<div class="form-group">
+								<input type="number" name="num_ad" placeholder="Número de adultos..." class="form-control" min=1 max=900/>
+						</div>
+						<div class="form-group">
+								<input type="number" name="num_ni" placeholder="Número de infantes..." class="form-control" min=0 max=900/>
+						</div>
+	
+						<label>Metodo de pago</label> 
+						<div>
+							<center>
+								<label for="paypale1" class="method">
+									<img src="../img/paypal_logo.png"/>
+									<div class="radio-input">
+										<input id="paypale1" type="radio" name="payment" value="1">
+										Trasferencia Bancaria
+									</div>
+								</label>
+								<label for="paypale2" class="method">
+									<img src="../img/mastercard_logo.png"/>
+									<div class="radio-input">
+										<input id="paypale2" type="radio" name="payment" value="2">
+										Deposito Bancario
+									</div>
+								</label>
+								<label for="paypale3" class="method">
+									<img src="../img/paypal_logo.png"/>
+									<div class="radio-input">
+										<input id="paypale3" type="radio" name="payment" value="3">
+										Pago Efectivo
+									</div>
+								</label>
+								<label for="paypale4" class="method">
+									<img src="../img/mastercard_logo.png"/>
+									<div class="radio-input">
+										<input id="paypale4" type="radio" name="payment" value="4">
+										Giro Bancario
+									</div>
+								</label>
+								<label for="paypale5" class="method">
+									<img src="../img/paypal_logo.png"/>
+									<div class="radio-input">
+										<input id="paypale5" type="radio" name="payment" value="5">
+										Visa
+									</div>
+								</label>
+							</center>
+						</div>
+						<br>   
+	
+					</form>
+				</div>
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="button" class="btn btn-primary" onclick="return send()">Solicitar reserva</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<style>
+			.input-error { border-color: #98281c;}
+			.input-radio-error { color: #98281c;}
+		</style>
+	
+	
+	<script>
+		function send(){
+	
+		$.getScript("https://unpkg.com/sweetalert/dist/sweetalert.min.js", function (data, estado){
+	
+		if (estado == 'success') {
+			
+			var parent_fieldset = $('#reservsf>div');
+			var next_step = true;
+	
+			// fields validation 
+			parent_fieldset.find('input[type="text"], input[type="tel"], input[type="number"], input[type="radio"]').each(function(){
+				if( $(this).val() == ""){
+					$(this).addClass('input-error');
+					next_step = false; 
+				}else if(!$('center>label>div>input[type=radio]').is(':checked')){
+					$(this).parents('.radio-input').addClass('input-radio-error');
+					next_step = false;
+				}else{ 
+					$(this).removeClass('input-error');
+					$('.radio-input').removeClass('input-radio-error');
+				} 
+			});	
+	
+			if(next_step){
+	
+			
+			var tipo=$('#reservsf').serializeArray();
+		
+			swal({
+			title: "CONFIRMACIÓN", 
+			text: "Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+tipo[3]['value'].toLowerCase()+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), 
+			icon: "warning",
+			//buttons: true,
+			buttons:{
+				cancel:"Cancelar",
+				defeat:"Confirmar"
+			},
+			dangerMode: true,
+			}).then((value) => {
+			switch (value) {
+				case "defeat": 
+					$.ajax({
+					type: "POST",
+					url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
+					dataType: 'JSON',
+					data:tipo,
+					success:'success',
+					success: function (json) { 
+						$('#ReservaForm').modal('hide');
+						swal({ 
+						title:"La solicitud de reserva se envio con exito!", 
+						text:json['msj']+"\n \n En breves momentos recibira un correo electronico con indicaciones para realizar el checking. \n \n Ademas para hacer el pago mediante "+json['tp']+"\n"+json['inst'],
+						icon: "success",
+						buttons:{
+							defeat:"OK"
+						},
+						}).then((value) => { 
+							window.setTimeout('location.reload()', 1000);
+						});
+						},error : function(xhr, status) {
+							swal({
+								title: 'Oops...',
+								text: 'Error al intentar realizar la reservacion',
+								type: "error",
+							})
+						}
+					});
+				break;
+				case "cancel":
+					break;
+				default:	
+			}
+			});
+		}
+		}
+	else{
+		alert("Error al cargar la librería sweealert");
+	}
+	});
+	
+	
+	
+	
+	
+	} 
+	</script>
 	</body>
 </html>
