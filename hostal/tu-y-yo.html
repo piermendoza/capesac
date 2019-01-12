@@ -622,7 +622,7 @@
 	
 				$.ajax({
 				type: "GET",
-				url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
+				url: 'https://farbe.capesac.com.pe/contact',
 				dataType: 'JSON',
 				data:data,
 				success:'success',
@@ -676,7 +676,7 @@
 					if (formValues[0]!="" && formValues[1]!="") {
 						$.ajax({
 							type: "GET", 
-							url: 'https://farbe.capesac.com.pe/chatBot/public/tipo',
+							url: 'https://farbe.capesac.com.pe/tipo',
 							dataType: 'JSON',
 							data:{doc:formValues[0],code:formValues[1]},
 							success:'success',
@@ -869,7 +869,7 @@
 				case "defeat": 
 					$.ajax({
 					type: "POST",
-					url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
+					url: 'https://farbe.capesac.com.pe/reser',
 					dataType: 'JSON',
 					data:tipo,
 					success:'success',

@@ -905,7 +905,7 @@
 	
 				$.ajax({
 				type: "GET",
-				url: 'https://farbe.capesac.com.pe/chatBot/public/contact',
+				url: 'https://farbe.capesac.com.pe/contact',
 				dataType: 'JSON',
 				data:data,
 				success:'success',
@@ -971,7 +971,7 @@
 			if($('#hs').val()!=null){
 				if($('#ini').val().length==16 && $('#fin').val().length==16){
 					if($('#ini').val()<$('#fin').val()){
-						$.get('https://farbe.capesac.com.pe/chatBot/public/tipo?h='+$('#hs').val()).done(function( data ) {
+						$.get('https://farbe.capesac.com.pe/tipo?h='+$('#hs').val()).done(function( data ) {
 							var yourval = jQuery.parseJSON(JSON.stringify(data));
 
 							if(yourval['hs']!=null){
@@ -1105,7 +1105,7 @@
 
 																$.ajax({
 																type: "POST",
-																url: 'https://farbe.capesac.com.pe/chatBot/public/reser',
+																url: 'https://farbe.capesac.com.pe/reser',
 																dataType: 'JSON',
 																data:tipo,
 																success:'success',
@@ -1170,14 +1170,14 @@
 																return [
 																document.getElementById('swal-input1').value,
 																document.getElementById('swal-input2').value
-																]
+																]	
 															}
 															})
 
 															if (formValues[0]!="" && formValues[1]!="") {
 																$.ajax({
 																	type: "GET", 
-																	url: 'https://farbe.capesac.com.pe/chatBot/public/tipo',
+																	url: 'https://farbe.capesac.com.pe/tipo',
 																	dataType: 'JSON',
 																	data:{doc:formValues[0],code:formValues[1]},
 																	success:'success',
