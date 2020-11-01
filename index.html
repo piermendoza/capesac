@@ -42,6 +42,10 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126464082-1"></script>
 	<script>
+		$(document).ready(function() {
+			$('.animsition').animsition();
+		});
+		
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
@@ -651,6 +655,7 @@
 
  		<script async src="js/addtoany.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
+	  	<script src="js/animsition.min.js"></script>
 		<script src="js/hoverIntent.js"></script>
 		<script src="js/superfish.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -672,14 +677,9 @@
   });
   </script>
   
-  <script src="js/animsition.min.js" charset="utf-8"></script>
+
   	<script>
-		$(document).ready(function() {
-			$('.animsition').animsition();
-
-	
-
-		});
+		
 	/*	$(window).load(function() {
 
 		setTimeout(function(){
