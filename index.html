@@ -1101,39 +1101,11 @@
 														},
 														dangerMode: true,
 														}).then((value) => {
+															
 														switch (value) {
 														
 															case "defeat":
-
-																$.ajax({
-																type: "POST",
-																url: 'https://farbe.capesac.com.pe/reser',
-																dataType: 'JSON',
-																data:tipo,
-																success:'success',
-																success: function (json) { 
-																	$('#ReservaForm').modal('hide');
-
-																	swal({ 
-																	title:"La solicitud de reserva se envio con exito!", 
-																	text:json['msj']+"\n \n En breves momentos recibira un correo electronico con indicaciones para realizar el checking. \n \n Ademas para hacer el pago mediante "+json['tp']+"\n"+json['inst'],
-																	icon: "success",
-																	buttons:{
-																		defeat:"OK"
-																	},
-																	}).then((value) => {
-																		window.setTimeout('location.reload()', 1000);
-																	});
-																	
-    			
-																	},error : function(xhr, status) {
-																		swal({
-																			type: 'error',
-																			title: 'Oops...',
-																			text: 'Error al intentar realizar la reservacion'
-																		})
-																	}
-																});
+window.open('https://api.whatsapp.com/send?phone=51965003620&text=Hola%20entre%20a%20su%20pagina%20web%20y%20quiero%20cotizar%20una%20reserva.', '_blank');
 																	
 															break;
 														
