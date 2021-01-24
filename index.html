@@ -969,12 +969,13 @@
 								url_hs='/json/h7.json';
 								break;
 						 }      
-						
+						console.log(url_hs);
 						$.ajax({
 							type: "GET",
 							url:url_hs,
-							//dataType: 'JSON',
-							success: function (data) { 
+							dataType: 'JSON',
+							success: function (data) {
+								console.log(data);
 								let yourval = jQuery.parseJSON(JSON.stringify(data));
 								$("#titulo").html(yourval['hs']);
 								
