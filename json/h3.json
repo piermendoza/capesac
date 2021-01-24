@@ -1,0 +1,72 @@
+
+
+
+	4 dias habiles
+	
+	ronaldo.prada@pay-me.com
+	979 353 791 ronaldo prada 
+	
+	servicio mensuales, que suscriba su tarjeta y llegado la fecha de pago se descuente automaticamente
+	generar el monto a pagar
+	recordar tarjeta 
+	
+	
+	cliente que trasnfieren 
+	
+	
+	
+	
+	APP MOVIL
+		Aplicación online para sistema operativo android mayores a API 21
+	
+	
+	Login
+		facebook y dni o numero de telefono y dni
+		obtener localización gps para tenerlo como referencia
+	Modulos
+		Planes
+			ver plan, actual y solicitud para reajustar plan
+		Recomendación
+			Genera codigo de recomendación y evalua premois
+		Averia
+			Permite generar tikets de atención por averia, foto comentario.
+		Pagos
+			historial de pagos
+			permite escoger pago con tarjeta o fisico
+				PAGO TARJETA
+					permite el pago mediante tarjeta debito o credito
+				PAGO FISICO
+					tomar foto a baucher
+					permite examinar foto desde la galeria
+		Notificaciones Modal
+			Historial de notificaciones
+			Modal al abrir aplicacion
+		Información
+			Muestra información de la empresa, número telefonico de contacto y cuentas bancarias a depositar
+	Publicación
+		Play Store
+			
+	APP WEB
+	
+	Login
+		usuario y contraseña
+	Dashboard
+		Modulo de clientes
+			Agregar 
+			Editar
+			Ver detalles (mapa, dirección, telefono, estado)
+		Modulo de averias
+			Ver detalles (foto, descripcion, cliente, ubicacion GPS)
+			Gestionar estados de atención
+		Modulo de notificaciones
+		
+			Agregar notificacion para clientes o cliente
+		Reporte
+			clientes activos o desactivados
+			
+		
+	
+	huggis talla m  30
+	pañitos
+	
+	
