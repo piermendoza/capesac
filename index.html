@@ -946,6 +946,7 @@
 				if($('#ini').val().length==16 && $('#fin').val().length==16){
 					if($('#ini').val()<$('#fin').val()){
 						let url_hs="";
+												console.log(" - - "+$('#hs').val());
 						switch($('#hs').val()){
 							case 1:
 								url_hs='/json/h1.json';
@@ -969,7 +970,7 @@
 								url_hs='/json/h7.json';
 								break;
 						 }      
-						console.log(url_hs);
+						console.log(" -- "+url_hs);
 						$.ajax({
 							type: "GET",
 							url:url_hs,
