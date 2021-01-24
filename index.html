@@ -1102,10 +1102,10 @@
 														dangerMode: true,
 														}).then((value) => {
 															
-														switch (value) {
+														switch (value) {	
 														
 															case "defeat":
-window.open('https://api.whatsapp.com/send?phone=51965003620&text=Hola%20entre%20a%20su%20pagina%20web%20y%20quiero%20cotizar%20una%20reserva.', '_blank');
+window.open('https://api.whatsapp.com/send?phone=51965003620&text='+"Establecimiento: "+$("#hs option[value="+tipo[0]['value']+"]").text().toLowerCase()+"\n Habitación: "+tipo[3]['value']+"\n Fecha de Llegada: "+tipo[1]['value']+"\n Fecha de Salida: "+tipo[2]['value']+"\n Nombre: "+tipo[4]['value']+"\n N° Documento: "+tipo[5]['value']+"\n Telefono: "+tipo[6]['value']+"\n Correo: "+tipo[7]['value'] +"\n N° Adultos: "+tipo[8]['value']+"\n N° Niños: "+tipo[9]['value']+"\n Metodo de Pago: "+ $("label[for='paypale"+tipo[10]['value']+"']").text().trim(), '_blank');
 																	
 															break;
 														
