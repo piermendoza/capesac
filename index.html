@@ -975,9 +975,7 @@
 							url:url_hs,
 							//dataType: 'JSON',
 							success: function (data) { 
-							let yourval = jQuery.parseJSON(JSON.stringify(data));
-
-							if(yourval['hs']!=null){
+								let yourval = jQuery.parseJSON(JSON.stringify(data));
 								$("#titulo").html(yourval['hs']);
 								
 								$('#tip').empty();
@@ -991,12 +989,6 @@
 								$('#hst').val($('#hs').val()); 
 								$('#ing').val($('#ini').val());
 								$('#sal').val($('#fin').val());
-
-							}else{
-								alert('Ocurrio un error inesperado!');
-							}
-
-
 							},error : function(xhr, status) {
 								swal({
 									type: 'error',
