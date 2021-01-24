@@ -991,11 +991,7 @@
 								$('#ing').val($('#ini').val());
 								$('#sal').val($('#fin').val());
 							},error : function(xhr, status) {
-								swal({
-									type: 'error',
-									title: 'Oops...',
-									text: 'Ocurrio un error'
-								})
+								alert("Ocurrio un error");
 							}
 						});
 					}else{
