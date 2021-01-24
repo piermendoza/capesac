@@ -969,8 +969,13 @@
 								url_hs='/json/h7.json';
 								break;
 						 }      
-						$.get(url_hs).done(function( data ) {
-							var yourval = jQuery.parseJSON(JSON.stringify(data));
+						
+						$.ajax({
+							type: "GET",
+							url:url_hs,
+							//dataType: 'JSON',
+							success: function (data) { 
+							let yourval = jQuery.parseJSON(JSON.stringify(data));
 
 							if(yourval['hs']!=null){
 								$("#titulo").html(yourval['hs']);
@@ -989,6 +994,15 @@
 
 							}else{
 								alert('Ocurrio un error inesperado!');
+							}
+
+
+							},error : function(xhr, status) {
+								swal({
+									type: 'error',
+									title: 'Oops...',
+									text: 'Ocurrio un error'
+								})
 							}
 						});
 					}else{
