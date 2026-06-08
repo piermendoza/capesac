@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="CWOgMEdNdcOMMbRGrxdRBck9w1BfL2Eo9IfTj7NgqC0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel y Hostales en Lima - Grupo Capesac</title>
+  <meta name="description" content="Hoteles y hostales en Lima con ubicaciones centricas, suites comodas, Wi-Fi, cochera y reservas por WhatsApp. Grupo Capesac.">
+  <meta name="keywords" content="hostales, hotel, lima, peru, reservas, habitaciones, capesac, viajeros">
+  <meta property="og:url" content="https://capesac.com.pe">
+  <meta property="og:title" content="Hotel y Hostales en Lima - Grupo Capesac">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Hoteles y hostales en Lima con ubicaciones centricas, suites comodas y reservas por WhatsApp.">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Grupo Capesac">
+  <meta property="og:image" content="https://capesac.com.pe/images/logo.png">
+  <meta name="theme-color" content="#141414">
+  <link rel="canonical" href="https://capesac.com.pe/">
+  <link rel="shortcut icon" href="icono.ico">
+  <link rel="preload" as="image" href="images/x.jpg">
+  <link rel="stylesheet" href="css/capesac-2026.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="https://capesac.com.pe" aria-label="Grupo Capesac">
+      <img src="images/logo.png" alt="Grupo Capesac">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+    <nav class="site-nav" aria-label="Navegacion principal">
+      <a href="#establecimientos">Establecimientos</a>
+      <a href="#servicios">Servicios</a>
+      <button type="button" data-action="checking">Checking</button>
+      <button type="button" data-action="contact">Contacto</button>
+      <a class="phone-link" href="tel:+51965003620">+51 965 003 620</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="images/x.jpg" alt="" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Lima, Peru</p>
+        <h1 id="hero-title">Grupo Capesac</h1>
+        <p class="hero-copy">Hoteles y hostales con ubicaciones practicas, habitaciones comodas y reserva directa para viajeros, parejas y grupos.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reservar">Reservar ahora</a>
+          <a class="btn secondary" href="#establecimientos">Ver sedes</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Resumen de atencion">
+        <span>Reserva directa</span>
+        <strong>WhatsApp 24/7</strong>
+        <small>Confirmacion rapida al +51 965 003 620</small>
+      </aside>
+    </section>
+
+    <section id="reservar" class="booking-band" aria-labelledby="booking-title">
+      <div>
+        <p class="section-kicker">Reserva rapida</p>
+        <h2 id="booking-title">Elige sede y fechas</h2>
+      </div>
+      <form class="booking-form" id="bookingForm">
+        <label>
+          <span>Establecimiento</span>
+          <select id="hs" name="hotel" required>
+            <option value="">Selecciona una sede</option>
+            <option value="1">Hostal Dluxo</option>
+            <option value="2">Hostal Tu y Yo</option>
+            <option value="3">Hostal Emporio</option>
+            <option value="4">Hotel Urban 901</option>
+            <option value="5">Hostal La Parada</option>
+            <option value="6">Hostal Costa Azul</option>
+            <option value="7">Hostal Conquistador</option>
+          </select>
+        </label>
+        <label>
+          <span>Llegada</span>
+          <input id="ini" name="arrival" type="datetime-local" required>
+        </label>
+        <label>
+          <span>Salida</span>
+          <input id="fin" name="departure" type="datetime-local" required>
+        </label>
+        <button class="btn primary" type="submit">Reservar</button>
+      </form>
+    </section>
+
+    <section id="establecimientos" class="section section-hotels" aria-labelledby="hotels-title">
+      <div class="hotels-head">
+        <div class="hotels-title-block">
+          <p class="section-kicker">Establecimientos</p>
+          <h2 id="hotels-title">Elige tu sede segun zona, habitacion y ubicacion</h2>
+          <p>Una guia practica para turistas y mochileros: revisa habitaciones, zonas de interes cercanas, mapas por sede y reserva directa desde aqui.</p>
+          <div class="hotels-summary">
+            <span>7 sedes</span>
+            <span>Surco, Rimac y La Victoria</span>
+            <span>Referencias turisticas por sede</span>
+          </div>
+          <nav class="hotels-nav" aria-label="Ir a establecimiento">
+            <a href="#hotel-dluxo">Dluxo</a>
+            <a href="#hotel-emporio">Emporio</a>
+            <a href="#hotel-urban-901">Urban 901</a>
+            <a href="#hotel-la-parada">La Parada</a>
+            <a href="#hotel-conquistador">Conquistador</a>
+            <a href="#hotel-costa-azul">Costa Azul</a>
+            <a href="#hotel-tu-y-yo">Tu y Yo</a>
+          </nav>
+        </div>
+        <aside class="location-summary" aria-label="Resumen por zonas">
+          <div class="location-summary-head">
+            <span>Guia por zonas</span>
+            <strong>Elige segun lo que quieres conocer en Lima</strong>
+          </div>
+          <div class="zone-list">
+            <a href="#hotel-dluxo">
+              <span>01</span>
+              <div>
+                <strong>Surco</strong>
+                <small>Parques, zonas residenciales, universidades y comercio cercano.</small>
+              </div>
+            </a>
+            <a href="#hotel-emporio">
+              <span>02</span>
+              <div>
+                <strong>Rimac</strong>
+                <small>Centro historico, rutas tradicionales y conexion por Metropolitano.</small>
+              </div>
+            </a>
+            <a href="#hotel-costa-azul">
+              <span>03</span>
+              <div>
+                <strong>La Victoria</strong>
+                <small>Gamarra, comercio, transporte y puntos clasicos de la ciudad.</small>
+              </div>
+            </a>
+          </div>
+          <button class="btn primary" type="button" data-action="contact">Consultar sede ideal</button>
+        </aside>
+      </div>
+      <div class="hotel-feature-list">
+        <article class="hotel-feature district-surco" id="hotel-dluxo">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/dluxo-portada.jpg" alt="Hostal Dluxo" loading="lazy" decoding="async">
+            <img src="images/dluxo-premiun.jpg" alt="Habitacion premium de Hostal Dluxo" loading="lazy" decoding="async">
+            <img src="images/dluxo-matrimonial.jpg" alt="Habitacion matrimonial de Hostal Dluxo" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">Santiago de Surco</span>
+            <h3>Hostal Dluxo</h3>
+            <p class="hotel-address">Av. Caminos del Inca 2376</p>
+            <p>Ubicado en una zona financiera y residencial de Santiago de Surco, a pocas cuadras del Parque de la Amistad y cerca de centros comerciales y financieros.</p>
+            <div class="hotel-meta">
+              <span>Desde S/50</span>
+              <span>Premium</span>
+              <span>Matrimonial</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Premium: cama redonda queen, TV cable con canal privado, bano privado y agua caliente. Matrimonial: cama de 2 plazas, TV cable, bano privado y agua caliente.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hostal Dluxo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=1_2V07nwncR3SMENPbXf6pA-95JrNtHR7"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Puntos utiles para turistas y mochileros que quieren ubicarse rapido y moverse mejor por la zona.</p>
+                <ol class="nearby-list">
+                  <li>Hostal Dluxo</li>
+                  <li>Museo de Historia Natural</li>
+                  <li>Universidad Ricardo Palma</li>
+                  <li>Casino Mambos</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="1">Reservar esta sede</button>
+              <button type="button" data-map="1">Ver mapa</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hotel-feature district-rimac" id="hotel-emporio">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/emporio-portada.jpg" alt="Hostal Emporio" loading="lazy" decoding="async">
+            <img src="images/emporio-sauna.jpg" alt="Habitacion con sauna de Hostal Emporio" loading="lazy" decoding="async">
+            <img src="images/emporio-matrimonial.jpg" alt="Habitacion matrimonial de Hostal Emporio" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">Rimac</span>
+            <h3>Hostal Emporio</h3>
+            <p class="hotel-address">Av. Francisco Pizarro 911</p>
+            <p>En el Rimac, distrito tradicional e historico de Lima, con conexion rapida al centro historico y al Metropolitano hacia Miraflores y Barranco.</p>
+            <div class="hotel-meta">
+              <span>Desde S/30</span>
+              <span>Sauna</span>
+              <span>Jacuzzi</span>
+              <span>Premium</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Con sauna, con jacuzzi, premium y matrimonial. Opciones con cama de 2 plazas o cama redonda queen, TV cable con canal privado, bano privado y agua caliente.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hostal Emporio" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/u/0/embed?mid=12AMESvKyZL5XH9JMM8eh5A376l2b0S-N"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Una zona conveniente para conocer el centro historico, moverte en transporte publico y tomar referencias conocidas.</p>
+                <ol class="nearby-list">
+                  <li>Hostal Emporio</li>
+                  <li>Banco de la Nacion</li>
+                  <li>Plaza Vea</li>
+                  <li>Centro historico de Lima</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="3">Reservar esta sede</button>
+              <button type="button" data-map="2">Ver mapa</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hotel-feature district-rimac" id="hotel-urban-901">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/901-portada.jpg" alt="Hotel Urban 901" loading="lazy" decoding="async">
+            <img src="images/901-matrimonial.jpg" alt="Habitacion matrimonial de Hotel Urban 901" loading="lazy" decoding="async">
+            <img src="images/fondo901.png" alt="Hotel Urban 901" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">Rimac</span>
+            <h3>Hotel Urban 901</h3>
+            <p class="hotel-address">Rimac, Lima</p>
+            <p>Ubicado en el Rimac, el distrito mas antiguo, tradicional e historico de Lima. A 1 km del centro historico y cerca de la estacion Caqueta del Metropolitano.</p>
+            <div class="hotel-meta">
+              <span>Desde S/50</span>
+              <span>Matrimonial</span>
+              <span>Centro historico</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Matrimonial con cama de 2 plazas, luces psicodelicas, TV cable con canal privado, bano privado y agua caliente.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hotel Urban 901" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=1iaYD9y1bx2VCWbkZdLqZV_95QcO4P6pn"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Referencias pensadas para viajeros que buscan llegar al centro historico y conectar con otros distritos de Lima.</p>
+                <ol class="nearby-list">
+                  <li>Hotel Urban 901</li>
+                  <li>Zonas arqueologicas de Wari</li>
+                  <li>Grifo Gazzel Terpel</li>
+                  <li>Estacion Caqueta</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="4">Reservar esta sede</button>
+              <button type="button" data-action="contact">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hotel-feature district-rimac" id="hotel-la-parada">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/parada.jpg" alt="Hostal La Parada" loading="lazy" decoding="async">
+            <img src="images/parada-matrimonial.jpg" alt="Habitacion matrimonial de Hostal La Parada" loading="lazy" decoding="async">
+            <img src="images/parmin.jpg" alt="Hostal La Parada" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">Rimac</span>
+            <h3>Hostal La Parada</h3>
+            <p class="hotel-address">Av. Samuel Alcazar 888</p>
+            <p>En el Rimac, con cercania al centro historico de Lima y al eje de transporte del Metropolitano hacia otros distritos importantes.</p>
+            <div class="hotel-meta">
+              <span>Desde S/30</span>
+              <span>Matrimonial</span>
+              <span>Rimac</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Matrimonial con cama de 2 plazas, TV cable con canal privado, bano privado y agua caliente.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hostal La Parada" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=1MRpZfoxYbimpdY0v9Ny1o9bf7bETGMuC"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Referencias cercanas para ubicarte rapido, comprar lo necesario y conectar con rutas hacia el centro.</p>
+                <ol class="nearby-list">
+                  <li>Hostal La Parada</li>
+                  <li>Tesoro Inca Slot</li>
+                  <li>Supermercado Mass</li>
+                  <li>Centro historico de Lima</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="5">Reservar esta sede</button>
+              <button type="button" data-map="3">Ver mapa</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hotel-feature district-rimac" id="hotel-conquistador">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/el-conquistador.jpg" alt="Hostal Conquistador" loading="lazy" decoding="async">
+            <img src="images/cq.jpg" alt="Habitacion premium de Hostal Conquistador" loading="lazy" decoding="async">
+            <img src="images/conquistador-matrimonial-1.jpg" alt="Habitacion matrimonial de Hostal Conquistador" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">Rimac</span>
+            <h3>Hostal Conquistador</h3>
+            <p class="hotel-address">Av. Francisco Pizarro 1011</p>
+            <p>Ubicado en el Rimac, distrito historico de Lima, a 1 km del centro historico y a pocas cuadras de la estacion Caqueta.</p>
+            <div class="hotel-meta">
+              <span>Desde S/30</span>
+              <span>Premium</span>
+              <span>Matrimonial</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Premium con cama redonda queen, TV cable con canal privado, bano privado y agua caliente. Matrimonial con cama de 2 plazas y servicios esenciales.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hostal Conquistador" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=1S7MedkmdntUaSA4oqnsS5QknnVTQy46R"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Ideal para viajeros que quieren tener cerca el Rimac historico, referencias comerciales y accesos al centro.</p>
+                <ol class="nearby-list">
+                  <li>Hostal El Conquistador</li>
+                  <li>Zonas arqueologicas de Wari</li>
+                  <li>Centro Comercial Ramon Castilla</li>
+                  <li>Centro historico de Lima</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="7">Reservar esta sede</button>
+              <button type="button" data-map="4">Ver mapa</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hotel-feature district-victoria" id="hotel-costa-azul">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/costaazul-portada.jpg" alt="Hostal Costa Azul" loading="lazy" decoding="async">
+            <img src="images/costaazul-matrimonial.jpg" alt="Habitacion matrimonial de Hostal Costa Azul" loading="lazy" decoding="async">
+            <img src="images/costaazul-doble.jpg" alt="Habitacion doble de Hostal Costa Azul" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">La Victoria</span>
+            <h3>Hostal Costa Azul</h3>
+            <p class="hotel-address">Av. Manco Capac 1090</p>
+            <p>En La Victoria, zona comercial y de transporte terrestre. Cerca de Gamarra, el mercado minorista de La Parada y a 1 km del centro historico.</p>
+            <div class="hotel-meta">
+              <span>Desde S/30</span>
+              <span>Matrimonial</span>
+              <span>Doble</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Matrimonial con cama de 2 plazas y habitacion doble con dos camas. Ambas con TV cable, canal privado, bano privado y agua caliente.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hostal Costa Azul" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=1WO4eMoI2dPcJgI82QlOvL67LTW6jqrsS"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Una base practica para viajeros que necesitan comercio, transporte y puntos urbanos reconocibles a corta distancia.</p>
+                <ol class="nearby-list">
+                  <li>Hostal Costa Azul</li>
+                  <li>Parque de la Reserva</li>
+                  <li>Estadio Nacional</li>
+                  <li>Metro de La Victoria</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="6">Reservar esta sede</button>
+              <button type="button" data-map="5">Ver mapa</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="hotel-feature district-victoria" id="hotel-tu-y-yo">
+          <div class="hotel-gallery">
+            <img class="main-photo" src="images/tuyyo-portada.jpg" alt="Hostal Tu y Yo" loading="lazy" decoding="async">
+            <img src="images/tuyyo-matrimonial.jpg" alt="Habitacion matrimonial de Hostal Tu y Yo" loading="lazy" decoding="async">
+            <img src="images/ty.jpg" alt="Hostal Tu y Yo" loading="lazy" decoding="async">
+          </div>
+          <div class="hotel-info">
+            <span class="district">La Victoria</span>
+            <h3>Hostal Tu y Yo</h3>
+            <p class="hotel-address">Av. Manco Capac 1080</p>
+            <p>Ubicado en La Victoria, zona con actividad comercial, financiera y de transporte. A pocas cuadras de Gamarra y del mercado minorista de La Parada.</p>
+            <div class="hotel-meta">
+              <span>Desde S/30</span>
+              <span>Matrimonial</span>
+              <span>La Victoria</span>
+            </div>
+            <div class="room-list">
+              <strong>Habitaciones</strong>
+              <p>Matrimonial con cama de 2 plazas, TV cable con canal privado, bano privado y agua caliente.</p>
+            </div>
+            <details class="visit-panel">
+              <summary>Zonas de interes cercanas</summary>
+              <div class="visit-body">
+                <iframe title="Mapa de Hostal Tu y Yo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=10foe9F2tuHajeQCHHbcbMOxeiNdHaqRa"></iframe>
+                <div>
+                <span>Explora cerca</span>
+                <p>Referencias cercanas para quienes llegan por compras, rutas urbanas o movilidad rapida dentro de Lima.</p>
+                <ol class="nearby-list">
+                  <li>Hostal Tu y Yo</li>
+                  <li>Parque de la Reserva</li>
+                  <li>Estadio Nacional</li>
+                  <li>Gamarra</li>
+                </ol>
+                </div>
+              </div>
+            </details>
+            <div class="card-actions">
+              <button type="button" data-reserve="2">Reservar esta sede</button>
+              <button type="button" data-map="6">Ver mapa</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios" class="section services-band" aria-labelledby="services-title">
+      <div class="services-layout">
+        <div class="services-copy">
+          <p class="section-kicker">Servicios</p>
+          <h2 id="services-title">Todo listo para una estadia simple y comoda</h2>
+          <p>Detalles utiles para descansar, coordinar pagos y moverte por Lima sin complicarte.</p>
+          <div class="service-highlight">
+            <strong>Reserva directa</strong>
+            <span>Atencion por WhatsApp para confirmar disponibilidad y resolver consultas.</span>
+          </div>
+        </div>
+        <div class="service-visual">
+          <img src="images/hst5.jpg" alt="Ambiente interior de Grupo Capesac" loading="lazy" decoding="async">
+          <span>Foto referencial</span>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="img/wifi.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Wi-Fi</h3>
+              <p>Conexion para trabajar, coordinar o seguir tu ruta.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/tv.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>TV cable</h3>
+              <p>Entretenimiento en habitacion para descansar mejor.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/coffe.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Cafeteria</h3>
+              <p>Un punto practico para iniciar o cerrar el dia.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/tp.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Banos temperados</h3>
+              <p>Comodidad esencial para estadias cortas o largas.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/est.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Estacionamiento</h3>
+              <p>Facilidad para quienes llegan en movilidad propia.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/gp.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Grupos</h3>
+              <p>Coordinacion para delegaciones, viajeros y equipos.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/visa.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Tarjetas</h3>
+              <p>Pago con Visa y Mastercard en sedes habilitadas.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="img/pe.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Pago efectivo</h3>
+              <p>Opciones simples para confirmar tu reserva.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-strip" aria-labelledby="contact-title">
+      <div>
+        <p class="section-kicker">Contacto directo</p>
+        <h2 id="contact-title">Coordina tu reserva por WhatsApp</h2>
+        <p>Tambien puedes enviar una consulta si necesitas disponibilidad para grupos o una sede especifica.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn primary" href="https://api.whatsapp.com/send?phone=51965003620&text=Hola%20Grupo%20Capesac,%20quiero%20hacer%20una%20reserva" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="btn secondary" type="button" data-action="contact">Enviar consulta</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-showcase" aria-label="Ambientes Grupo Capesac">
+      <img src="images/dluxo-portada.jpg" alt="Habitacion de Hostal Dluxo" loading="lazy" decoding="async">
+      <img src="images/emporio-portada.jpg" alt="Habitacion de Hostal Emporio" loading="lazy" decoding="async">
+      <img src="images/costaazul-portada.jpg" alt="Habitacion de Hostal Costa Azul" loading="lazy" decoding="async">
+      <img src="images/901-portada.jpg" alt="Ambiente de Hotel Urban 901" loading="lazy" decoding="async">
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Grupo Capesac">
+        <p>Castañeda Pedrosa SAC es un grupo hotelero con más de quince años de trayectoria, adaptando sus establecimientos a distintos tipos de clientes para ofrecer una mejor experiencia en cada estadia.</p>
+        <div class="footer-badges">
+          <span>Reserva directa</span>
+          <span>15+ años</span>
+          <span>Atencion por WhatsApp</span>
+          <span>7 sedes</span>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Establecimientos en el footer">
+        <h2>Establecimientos</h2>
+        <a href="#hotel-dluxo">Hostal Dluxo</a>
+        <a href="#hotel-emporio">Hostal Emporio</a>
+        <a href="#hotel-urban-901">Hotel Urban 901</a>
+        <a href="#hotel-la-parada">Hostal La Parada</a>
+        <a href="#hotel-conquistador">Hostal Conquistador</a>
+        <a href="#hotel-costa-azul">Hostal Costa Azul</a>
+        <a href="#hotel-tu-y-yo">Hostal Tu y Yo</a>
+      </nav>
+      <div class="footer-contact">
+        <h2>Contacto</h2>
+        <a href="tel:+51965003620">+51 965 003 620</a>
+        <a href="mailto:reservaciones@capesac.com.pe">reservaciones@capesac.com.pe</a>
+        <button class="btn primary" type="button" data-action="contact">Enviar consulta</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Grupo Capesac - Lima, Peru</p>
+      <div class="footer-credits">
+        <a href="#reservar">Reservar ahora</a>
+        <a href="https://deasy.pe/" target="_blank" rel="noopener">Creado por Digital Easy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-labelledby="contactModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close aria-label="Cerrar">x</button>
+      <h2 id="contactModalTitle">Enviar consulta</h2>
+      <form id="contactForm" class="modal-form">
+        <label><span>Nombre</span><input name="name" type="text" required></label>
+        <label><span>Telefono</span><input name="phone" type="tel" required></label>
+        <label><span>Correo</span><input name="email" type="email"></label>
+        <label><span>Mensaje</span><textarea name="message" rows="4" required></textarea></label>
+        <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="mapModal" aria-hidden="true" role="dialog" aria-labelledby="mapModalTitle">
+    <div class="modal-dialog map-dialog">
+      <button class="modal-close" type="button" data-close aria-label="Cerrar">x</button>
+      <h2 id="mapModalTitle">Ubicacion</h2>
+      <iframe id="mapFrame" title="Mapa de establecimiento" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <div class="modal" id="checkingModal" aria-hidden="true" role="dialog" aria-labelledby="checkingModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close aria-label="Cerrar">x</button>
+      <h2 id="checkingModalTitle">Checking</h2>
+      <form id="checkingForm" class="modal-form">
+        <label><span>DNI o pasaporte</span><input name="doc" type="text" required></label>
+        <label><span>Codigo checking</span><input name="code" type="text" required></label>
+        <button class="btn primary" type="submit">Verificar</button>
+        <p class="form-note" id="checkingResult" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/capesac-2026.js"></script>
+</body>
+</html>
